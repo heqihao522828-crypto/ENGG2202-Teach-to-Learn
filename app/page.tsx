@@ -500,6 +500,20 @@ export default function Home() {
             </div>
           </motion.div>
 
+          <div className="w-full">
+            <figure className="w-full overflow-hidden rounded-[1.6rem] border border-slate-200/90 bg-white shadow-[0_20px_56px_-34px_rgba(15,23,42,0.32)]">
+              <div className="relative aspect-[16/9] w-full">
+                <Image
+                  src={imagePath("/images/Course/engg1101poster.png")}
+                  alt="ENGG1101 course poster"
+                  fill
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 92vw, 100vw"
+                  className="object-contain object-center bg-slate-50"
+                />
+              </div>
+            </figure>
+          </div>
+
           <div className="grid gap-6 md:grid-cols-2">
             {courses.map((course) => (
               <motion.article
