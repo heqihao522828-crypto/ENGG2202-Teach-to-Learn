@@ -164,16 +164,19 @@ const essentials = [
 ];
 
 const studentComments = [
-  "The tutors also were very helpful during workshops as well as giving advice for the project.",
-  "Got along like a friend instead of a professional teacher-student relationship. Conveyed the knowledge properly and in a way that an amateur like me would understand.",
-  "Extremely helpful and gives good guidance.",
+  "Very skilled and provides detailed explanations and feedback.",
   "I liked that the tutor was very clear, supportive, and approachable throughout the course.",
   "They explained concepts in a simple way that made them easy to understand, gave helpful feedback on our work, and were always willing to answer questions patiently.",
-  "Very skilled and provides detailed explanations and feedback.",
-  "Really passionate and nice.",
-  "The tutor for subclass L was highly engaged in the teaching process and consistently provided support to ensure we fully grasped the material.",
-  "They handle all kinds of questions and offer a lot of help during the workshop.",
-  "They were very helpful during the workshops and it promoted collaboration.",
+  "The hands-on activities were broad and fun, and I really enjoyed all the workshops.",
+  "The course introduced us to hands-on projects, 3D printing, software, and robotics concepts in a practical way.",
+  "I liked that it was practical. I enjoyed working on different projects and receiving feedback from the teacher and tutor.",
+  "Hands-on experience, from assembling robot arms to using CAD software and connecting wires, helped me gain practical knowledge instead of only learning theory.",
+  "The workshop tasks made the class interactive and gave us the chance to create our ideas using modules provided by the Faculty.",
+  "The course taught the most important aspect of engineering: learning by doing. We learned how to identify problems that matter and prototype solutions for real-world problems.",
+  "The course was engaging during workshops, and the group project encouraged active learning and helped us turn our thoughts into reality.",
+  "The teachers were nice, passionate, dedicated, and approachable. We could ask questions about our project, course content, or engineering beyond the syllabus.",
+  "The project was fun. Even when it was challenging, we made it through and built a working prototype.",
+  "The course teaches useful engineering skills and connects different fields, with well-organized workshop instructions suitable for beginners.",
 ];
 
 function renderCourseTitle(title: string) {
@@ -716,7 +719,7 @@ export default function Home() {
               Student Feedback on Teaching and Learning
             </h2>
 
-            <div className="mt-6 flex min-h-[12rem] items-center justify-center overflow-hidden rounded-[1.5rem] border border-slate-200/80 bg-[#f8fafc] px-5 py-7 text-center shadow-[0_18px_42px_-36px_rgba(15,23,42,0.24)] sm:min-h-[10rem] sm:px-8">
+            <div className="mt-6 flex min-h-[14rem] items-center justify-center overflow-hidden rounded-[1.5rem] border border-slate-200/80 bg-[#f8fafc] px-5 py-7 text-center shadow-[0_18px_42px_-36px_rgba(15,23,42,0.24)] sm:min-h-[12rem] sm:px-8">
               <AnimatePresence mode="wait">
                 <motion.blockquote
                   key={studentCommentIndex}
@@ -724,7 +727,7 @@ export default function Home() {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -12 }}
                   transition={{ duration: 0.35, ease: "easeOut" }}
-                  className="mx-auto flex min-h-full max-w-2xl items-center justify-center text-center text-base leading-8 text-slate-700"
+                  className="mx-auto flex min-h-full max-w-3xl items-center justify-center text-center text-[0.98rem] leading-8 text-slate-700 sm:text-base"
                 >
                   <span className="flex flex-col items-center gap-2">
                     <span>&ldquo;{studentComments[studentCommentIndex]}&rdquo;</span>
