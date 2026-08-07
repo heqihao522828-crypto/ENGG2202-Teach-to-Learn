@@ -6,8 +6,15 @@ import { motion } from "framer-motion";
 import SiteShell from "../components/site-shell";
 import { imagePath } from "../lib/image-path";
 
-const engg1101NotionUrl =
+const engg1101NotionPublicUrl =
   "https://engineering-challenges.notion.site/ENGG1101-Engineering-Challenges-247d72aefb858052a816d5232746d4db?source=copy_link";
+
+// This is the special embeddable Notion path, different from the public share link.
+// It was verified via response headers to return frame-ancestors https: http:,
+// which allows embedding from any site. The double slash after /ebd is intentional
+// and must not be cleaned up or normalized.
+const engg1101NotionEmbedUrl =
+  "https://engineering-challenges.notion.site/ebd//bb7d72aefb85829ea48381c1d8bdd58e";
 
 const sections = [
   {
@@ -308,9 +315,20 @@ export default function Engg1101Page() {
               Course Materials
             </p>
 
+            <p className="text-sm leading-7 text-slate-600">
+              <a
+                href={engg1101NotionPublicUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-semibold text-slate-900 underline underline-offset-2"
+              >
+                Open in new tab
+              </a>
+            </p>
+
             <div className="overflow-hidden rounded-[1.5rem] border border-slate-200 bg-white shadow-[0_20px_50px_-36px_rgba(15,23,42,0.24)]">
               <iframe
-                src={engg1101NotionUrl}
+                src={engg1101NotionEmbedUrl}
                 title="ENGG1101 Course Materials"
                 width="100%"
                 height="980"
