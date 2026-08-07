@@ -308,23 +308,41 @@ export default function Engg1101Page() {
           viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 0.6 }}
           variants={fadeIn}
-          className="mt-10"
+          className="mt-10 rounded-[2rem] border border-slate-200/80 bg-white/92 p-8 shadow-[0_20px_60px_-40px_rgba(15,23,42,0.15)] sm:p-10"
         >
           <div className="space-y-4">
-            <p className="text-sm font-semibold uppercase tracking-[0.24em] text-slate-700/80">
-              Course Materials
-            </p>
+            <div className="space-y-3">
+              <p className="text-sm font-semibold uppercase tracking-[0.24em] text-slate-700/80">
+                Course Materials
+              </p>
+              <h2 className="text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl">
+                Notion Page
+              </h2>
+            </div>
 
-            <p className="text-sm leading-7 text-slate-600">
+            <div>
               <a
                 href={engg1101NotionPublicUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="font-semibold text-slate-900 underline underline-offset-2"
+                className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-2.5 text-sm font-semibold text-slate-900 shadow-[0_12px_30px_-24px_rgba(15,23,42,0.35)] transition hover:-translate-y-0.5 hover:border-slate-300 hover:bg-slate-50"
               >
-                Open in new tab
+                <span>Open in new tab</span>
+                <svg
+                  className="h-4 w-4"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  aria-hidden="true"
+                >
+                  <path d="M7 17 17 7" />
+                  <path d="M8 7h9v9" />
+                </svg>
               </a>
-            </p>
+            </div>
 
             <div className="overflow-hidden rounded-[1.5rem] border border-slate-200 bg-white shadow-[0_20px_50px_-36px_rgba(15,23,42,0.24)]">
               <iframe
