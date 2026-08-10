@@ -6,8 +6,15 @@ import { motion } from "framer-motion";
 import SiteShell from "../components/site-shell";
 import { imagePath } from "../lib/image-path";
 
-const engg1101NotionUrl =
+const engg1101NotionPublicUrl =
   "https://engineering-challenges.notion.site/ENGG1101-Engineering-Challenges-247d72aefb858052a816d5232746d4db?source=copy_link";
+
+// This is the special embeddable Notion path, different from the public share link.
+// It was verified via response headers to return frame-ancestors https: http:,
+// which allows embedding from any site. The double slash after /ebd is intentional
+// and must not be cleaned up or normalized.
+const engg1101NotionEmbedUrl =
+  "https://engineering-challenges.notion.site/ebd//bb7d72aefb85829ea48381c1d8bdd58e";
 
 const sections = [
   {
@@ -301,51 +308,54 @@ export default function Engg1101Page() {
           viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 0.6 }}
           variants={fadeIn}
-          whileHover={{ scale: 1.01, y: -2 }}
-          className="mt-10 rounded-[2rem] border border-slate-200/80 bg-slate-950 px-8 py-8 text-slate-100 shadow-[0_24px_60px_-44px_rgba(15,23,42,0.22)] transition-transform duration-200 ease-out sm:p-10"
+          className="mt-10 rounded-[2rem] border border-slate-200/80 bg-white/92 p-8 shadow-[0_20px_60px_-40px_rgba(15,23,42,0.15)] sm:p-10"
         >
-          <div className="grid gap-8 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
-            <div>
-              <p className="text-sm font-semibold uppercase tracking-[0.24em] text-slate-300">
+          <div className="space-y-4">
+            <div className="space-y-3">
+              <p className="text-sm font-semibold uppercase tracking-[0.24em] text-slate-700/80">
                 Course Materials
               </p>
-              <div className="mt-4 max-w-2xl space-y-4">
-                <h2 className="text-3xl font-semibold tracking-tight text-white sm:text-4xl">
-                  View the full ENGG1101 course materials in Notion.
-                </h2>
-                <p className="text-sm leading-7 text-slate-300 sm:text-base">
-                  Use the course materials page for the latest resources, schedules, project guidance and supporting notes prepared for students.
-                </p>
-                <a
-                  href={engg1101NotionUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center rounded-full bg-white px-5 py-3 text-sm font-semibold text-slate-950 transition hover:bg-slate-100"
-                >
-                  Open ENGG1101 materials in Notion
-                </a>
-              </div>
+              <h2 className="text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl">
+                Notion Page
+              </h2>
             </div>
 
-            <div className="relative overflow-hidden rounded-[1.75rem] border border-white/10 bg-white/5 p-4 shadow-[0_24px_50px_-36px_rgba(255,255,255,0.18)]">
-              <div className="absolute inset-x-6 top-0 h-24 rounded-full bg-white/10 blur-3xl" aria-hidden="true" />
-              <div className="relative rounded-[1.35rem] border border-white/10 bg-slate-900/80 p-4">
-                <div className="mb-4">
-                  <p className="text-xs font-semibold uppercase tracking-[0.22em] text-slate-400">
-                    Official course workspace
-                  </p>
-                </div>
-                <div className="overflow-hidden rounded-[1rem] border border-white/10 bg-white">
-                  <Image
-                    src={imagePath("/images/Course/notion.png")}
-                    alt="Notion preview for ENGG1101 course materials"
-                    width={960}
-                    height={720}
-                    className="h-auto w-full object-cover"
-                  />
-                </div>
-              </div>
+            <div>
+              <a
+                href={engg1101NotionPublicUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-2.5 text-sm font-semibold text-slate-900 shadow-[0_12px_30px_-24px_rgba(15,23,42,0.35)] transition hover:-translate-y-0.5 hover:border-slate-300 hover:bg-slate-50"
+              >
+                <span>Open in new tab</span>
+                <svg
+                  className="h-4 w-4"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  aria-hidden="true"
+                >
+                  <path d="M7 17 17 7" />
+                  <path d="M8 7h9v9" />
+                </svg>
+              </a>
             </div>
+
+            <div className="overflow-hidden rounded-[1.5rem] border border-slate-200 bg-white shadow-[0_20px_50px_-36px_rgba(15,23,42,0.24)]">
+              <iframe
+                src={engg1101NotionEmbedUrl}
+                title="ENGG1101 Course Materials"
+                width="100%"
+                height="980"
+                loading="lazy"
+                className="block h-[900px] w-full md:h-[980px]"
+                style={{ border: 0 }}
+              />
+            </div>
+
           </div>
         </motion.section>
 
