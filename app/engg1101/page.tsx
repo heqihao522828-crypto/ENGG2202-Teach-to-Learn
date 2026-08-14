@@ -166,7 +166,7 @@ export default function Engg1101Page() {
               className="object-cover object-center"
             />
             <div className="absolute inset-0 bg-gradient-to-r from-slate-950/88 via-slate-950/52 to-slate-950/18" />
-            <div className="absolute inset-0 bg-gradient-to-t from-slate-950/72 via-slate-950/12 to-transparent" />
+                A first-year course where students build their engineering toolkit and fundamentals through hands-on, team-based activities.
           </div>
 
           <div className="relative z-10 flex min-h-[360px] items-center p-8 sm:min-h-[420px] sm:p-10">
@@ -180,7 +180,7 @@ export default function Engg1101Page() {
                 </span>
               </h1>
               <p className="max-w-xl text-base leading-8 text-slate-200 sm:text-lg">
-                This course is a hands-on, project-based experience for first-year engineering students.
+                A first-year course where students build their engineering toolkit and fundamentals through hands-on, team-based activities.
               </p>
             </div>
           </div>
@@ -322,7 +322,7 @@ export default function Engg1101Page() {
                   Check the Story of ENGG1101
                 </h2>
                 <p className="text-sm leading-7 text-slate-700 sm:text-base">
-                  The Story of ENGG1101 students tackling real challenges through prototype building, live pitching, teamwork, iterative problem-solving, and senior-to-junior mentoring.
+                  The students of ENGG1101 tackle real challenges through prototype building, live pitching, teamwork, iterative problem-solving, and senior-to-junior mentoring.
                 </p>
                 <Link
                   href="/engg1101/gallery"

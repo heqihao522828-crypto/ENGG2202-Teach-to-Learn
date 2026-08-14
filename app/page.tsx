@@ -493,7 +493,7 @@ export default function Home() {
                 </h2>
 
                 <p className="mt-3 max-w-4xl text-[0.98rem] leading-7 text-slate-700 lg:max-w-5xl">
-                  Active learning through real engineering challenges. Across Engineering Challenges (ENGG1101) and Engineering Challenges II (ENGG2202), students move from building core engineering fundamentals
+                  Across Engineering Challenges (ENGG1101) and Engineering Challenges II (ENGG2202), students move from building core engineering fundamentals
                   to tackling open-ended, real-world problems, learning by doing as teams design, prototype, and reflect.
                 </p>
               </div>
@@ -638,7 +638,7 @@ export default function Home() {
                   Check the Story of ENGG1101
                 </h2>
                 <p className="text-sm leading-7 text-slate-700 sm:text-base">
-                  The story of ENGG1101 students tackling real challenges through prototype building, live pitching, teamwork, iterative problem-solving, and senior-to-junior mentoring.
+                  The students of ENGG1101 tackle real challenges through prototype building, live pitching, teamwork, iterative problem-solving, and senior-to-junior mentoring.
                 </p>
                 <Link
                   href="/engg1101/gallery"

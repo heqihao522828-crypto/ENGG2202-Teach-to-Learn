@@ -33,7 +33,7 @@ export default function Engg1101GalleryPage() {
               The Story of ENGG1101
             </h1>
             <p className="mt-4 max-w-4xl text-base leading-8 text-slate-700 sm:text-lg">
-              The Story of ENGG1101 students tackling real challenges through prototype building, live pitching, teamwork, iterative problem-solving, and senior-to-junior mentoring.
+              The students of ENGG1101 tackle real challenges through prototype building, live pitching, teamwork, iterative problem-solving, and senior-to-junior mentoring.
             </p>
           </motion.section>
 

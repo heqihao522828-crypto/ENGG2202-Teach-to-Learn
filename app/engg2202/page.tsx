@@ -9,7 +9,7 @@ const templateSections = [
     items: [
       "Project-based studio module for Engineering Challenges II.",
       "Teams will work through a two-semester engineering challenge.",
-      "Detailed ENGG2202 module content will be added soon.",
+      "A second-year or above, project-based course in which teams prototype and solve a real, open-ended engineering challenge, applying their skills through design, iteration, and structured reflection.",
     ],
   },
   {
@@ -47,7 +47,15 @@ export default function Engg2202Page() {
               Engineering Challenges II
             </h1>
             <p className="text-base leading-8 text-slate-700 sm:text-lg">
-              Detailed ENGG2202 module content will be added soon.
+              <span className="block">
+                A second-year or above, project-based course in which teams prototype and solve a
+              </span>
+              <span className="block">
+                real, open-ended engineering challenge, applying their skills through design, iteration,
+              </span>
+              <span className="block">
+                and structured reflection.
+              </span>
             </p>
           </div>
         </motion.section>
