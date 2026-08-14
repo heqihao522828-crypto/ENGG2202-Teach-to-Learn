@@ -7,7 +7,7 @@ const templateSections = [
   {
     title: "Course Overview",
     items: [
-      "Project-based studio module for Engineering Challenge 2.",
+      "Project-based studio module for Engineering Challenges II.",
       "Teams will work through a two-semester engineering challenge.",
       "Detailed ENGG2202 module content will be added soon.",
     ],
@@ -44,7 +44,7 @@ export default function Engg2202Page() {
           </p>
           <div className="mt-6 max-w-3xl space-y-5">
             <h1 className="text-4xl font-semibold tracking-tight text-slate-950 sm:text-5xl">
-              Engineering Challenge 2
+              Engineering Challenges II
             </h1>
             <p className="text-base leading-8 text-slate-700 sm:text-lg">
               Detailed ENGG2202 module content will be added soon.

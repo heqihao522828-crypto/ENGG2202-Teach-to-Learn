@@ -9,14 +9,14 @@ import { imagePath } from "./lib/image-path";
 
 const courses = [
   {
-    title: "Engineering Challenge 1",
+    title: "Engineering Challenges",
     description:
       "A first-year course where students build their engineering toolkit and fundamentals through hands-on, team-based activities.",
     status: "ENGG1101",
     detailsHref: "/engg1101",
   },
   {
-    title: "Engineering Challenge 2",
+    title: "Engineering Challenges II",
     description:
       "A second-year or above, project-based course in which teams prototype and solve a real, open-ended engineering challenge, applying their skills through design, iteration, and structured reflection.",
     status: "ENGG2202",
@@ -488,12 +488,12 @@ export default function Home() {
             <div className="space-y-3 sm:flex sm:items-end sm:justify-between sm:gap-6">
               <div>
                 <h2 className="text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl">
-                  Active learning through real{" "}
-                  <span className="text-[#0f4d2e]">engineering challenges.</span>
+                  Active Learning through Real{" "}
+                  <span className="text-[#0f4d2e]">Engineering Challenges.</span>
                 </h2>
 
                 <p className="mt-3 max-w-4xl text-[0.98rem] leading-7 text-slate-700 lg:max-w-5xl">
-                  Active learning through real engineering challenges. Across Engineering Challenges I (ENGG1101) and II (ENGG2202), students move from building core engineering fundamentals
+                  Active learning through real engineering challenges. Across Engineering Challenges (ENGG1101) and Engineering Challenges II (ENGG2202), students move from building core engineering fundamentals
                   to tackling open-ended, real-world problems, learning by doing as teams design, prototype, and reflect.
                 </p>
               </div>
@@ -635,7 +635,7 @@ export default function Home() {
                   Story
                 </p>
                 <h2 className="text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl">
-                  Check the story of ENGG1101
+                  Check the Story of ENGG1101
                 </h2>
                 <p className="text-sm leading-7 text-slate-700 sm:text-base">
                   The story of ENGG1101 students tackling real challenges through prototype building, live pitching, teamwork, iterative problem-solving, and senior-to-junior mentoring.

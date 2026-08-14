@@ -40,6 +40,11 @@ const fadeIn = {
   visible: { opacity: 1, y: 0 },
 };
 
+/*
+  Assessment details are temporarily hidden because ENGG1101 assessment
+  is not finalized yet. Keep the original data and icon renderer here for
+  quick restoration when the final scheme is confirmed.
+
 const assessmentCards = [
   {
     weight: "55%",
@@ -138,6 +143,7 @@ function AssessmentIcon({ type }: { type: string }) {
     </svg>
   );
 }
+*/
 
 export default function Engg1101Page() {
   return (
@@ -170,7 +176,7 @@ export default function Engg1101Page() {
               </p>
               <h1 className="text-4xl font-semibold leading-[1.12] tracking-tight sm:text-5xl sm:leading-[1.08]">
                 <span className="block bg-gradient-to-r from-cyan-300/80 via-sky-400/80 to-emerald-400/80 bg-clip-text text-transparent">
-                  Engineering Challenge 1
+                  Engineering Challenges
                 </span>
               </h1>
               <p className="max-w-xl text-base leading-8 text-slate-200 sm:text-lg">
@@ -219,85 +225,12 @@ export default function Engg1101Page() {
                 Course Assessment
               </h2>
               <p className="max-w-3xl text-sm leading-7 text-slate-600 sm:text-base">
-                Assessment is distributed across checkpoints, presentations and reports, with both individual and group components.
+                Course assessment details are to be confirmed.
               </p>
             </div>
 
-            <div className="grid gap-5 md:grid-cols-3">
-              {assessmentCards.map((card) => (
-                <motion.div
-                  key={card.title}
-                  initial="rest"
-                  whileHover="hover"
-                  animate="rest"
-                  variants={{
-                    rest: { scale: 1, y: 0 },
-                    hover: { scale: 1.01, y: -2 },
-                  }}
-                  transition={{ duration: 0.22, ease: "easeOut" }}
-                  className="overflow-hidden rounded-[1.75rem] border border-slate-200 bg-[#fdf8ff] p-6 shadow-[0_18px_42px_-34px_rgba(15,23,42,0.18)]"
-                >
-                  <div className="mx-auto flex h-11 w-11 items-center justify-center rounded-full bg-[#efe1f5] text-[#9b2c8a]">
-                    <AssessmentIcon type={card.icon} />
-                  </div>
-                  <div className="mt-5 text-center">
-                    <p className="text-2xl font-semibold tracking-tight text-[#8b2bb8]">
-                      {card.weight}
-                    </p>
-                    <h3 className="mt-2 text-lg font-semibold text-slate-900">
-                      {card.title}
-                    </h3>
-                    <p className="mt-2 text-sm font-medium text-slate-600">
-                      {card.subtitle}
-                    </p>
-                    <p className="mt-3 text-sm leading-6 text-slate-600">
-                      {card.description}
-                    </p>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-
-            <div className="space-y-4">
-              {assessmentRows.map((row) => (
-                <motion.div
-                  key={row.type}
-                  initial="rest"
-                  whileHover="hover"
-                  animate="rest"
-                  variants={{
-                    rest: { scale: 1, y: 0 },
-                    hover: { scale: 1.01, y: -2 },
-                  }}
-                  transition={{ duration: 0.22, ease: "easeOut" }}
-                  className="rounded-[1.5rem] border border-slate-200 bg-white px-5 py-4 shadow-[0_16px_40px_-34px_rgba(15,23,42,0.18)] sm:px-6"
-                >
-                  <div className="flex items-start gap-4">
-                    <div className="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-emerald-50 text-emerald-600">
-                      <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                        <path d="m20 6-11 11-5-5" />
-                      </svg>
-                    </div>
-
-                    <div className="min-w-0 flex-1 space-y-1">
-                      <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
-                        <h3 className="text-base font-semibold text-slate-950 sm:text-lg">
-                          {row.type}
-                        </h3>
-                        <span className="text-base font-semibold text-slate-700">
-                          ({row.weight})
-                        </span>
-                        <span className="rounded-full bg-[#f3e8ff] px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-[#8b2bb8]">
-                          {row.note}
-                        </span>
-                      </div>
-                      <p className="text-sm leading-7 text-slate-600 sm:text-[0.98rem]">
-                        {row.description}
-                      </p>
-                    </div>
-                  </div>
-                </motion.div>
-              ))}
+            <div className="rounded-[1.5rem] border border-slate-200 bg-slate-50 px-6 py-8 text-center shadow-[0_16px_40px_-34px_rgba(15,23,42,0.18)] sm:px-8">
+              <p className="text-lg font-semibold text-slate-900">To be confirmed.</p>
             </div>
           </div>
         </section>
@@ -386,10 +319,10 @@ export default function Engg1101Page() {
                   Story
                 </p>
                 <h2 className="text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl">
-                  Check the story of ENGG1101
+                  Check the Story of ENGG1101
                 </h2>
                 <p className="text-sm leading-7 text-slate-700 sm:text-base">
-                  The story of ENGG1101 students tackling real challenges through prototype building, live pitching, teamwork, iterative problem-solving, and senior-to-junior mentoring.
+                  The Story of ENGG1101 students tackling real challenges through prototype building, live pitching, teamwork, iterative problem-solving, and senior-to-junior mentoring.
                 </p>
                 <Link
                   href="/engg1101/gallery"

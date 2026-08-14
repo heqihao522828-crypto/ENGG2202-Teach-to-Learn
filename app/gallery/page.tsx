@@ -131,9 +131,6 @@ export default function GalleryPage() {
                   />
                 </div>
                 <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/40 via-black/0 to-transparent opacity-90 transition-opacity duration-300 group-hover:opacity-100" />
-                <figcaption className="pointer-events-none absolute inset-x-0 bottom-0 p-4 text-sm font-medium text-white/95 sm:p-5">
-                  {photo.alt}
-                </figcaption>
               </motion.figure>
             ))}
           </section>

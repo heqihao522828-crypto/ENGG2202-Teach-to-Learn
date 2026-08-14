@@ -30,10 +30,10 @@ export default function Engg1101GalleryPage() {
           >
             <p className="text-xs font-semibold uppercase tracking-[0.28em] text-slate-600">Story</p>
             <h1 className="mt-3 max-w-4xl text-4xl font-semibold tracking-tight text-slate-950 sm:text-5xl">
-              The story of ENGG1101
+              The Story of ENGG1101
             </h1>
             <p className="mt-4 max-w-4xl text-base leading-8 text-slate-700 sm:text-lg">
-              The story of ENGG1101 students tackling real challenges through prototype building, live pitching, teamwork, iterative problem-solving, and senior-to-junior mentoring.
+              The Story of ENGG1101 students tackling real challenges through prototype building, live pitching, teamwork, iterative problem-solving, and senior-to-junior mentoring.
             </p>
           </motion.section>
 
@@ -54,7 +54,7 @@ export default function Engg1101GalleryPage() {
                     Our Year-1 students are solving Hong Kong's real engineering challenges.
                   </h2>
                   <div className="h-1.5 w-28 rounded-full bg-[#0f4d94]" />
-                  <p className="inline bg-yellow-300 px-2 py-1 text-[1.2rem] font-semibold italic leading-snug text-red-600 box-decoration-clone sm:text-[1.4rem] lg:text-[1.65rem]">
+                  <p className="inline bg-white px-2 py-1 text-[1.2rem] font-semibold italic leading-snug text-[#0f4d94] box-decoration-clone sm:text-[1.4rem] lg:text-[1.65rem]">
                     &ldquo;I learnt a lot of new things about engineering - from drones to 3D printing.&rdquo;
                   </p>
                   <p className="text-sm font-medium tracking-[0.14em] text-slate-500 sm:text-base">

@@ -209,8 +209,8 @@ export default function CourseEditorialGallery({
     ? "text-[1.8rem] font-semibold leading-[0.96] tracking-tight text-[#0f4d94] sm:text-[2.25rem] lg:text-[2.7rem]"
     : "text-4xl font-semibold leading-[1.1] tracking-tight text-[#0f4d94] sm:text-5xl lg:text-[3.35rem]";
   const quoteClassName = compact
-    ? "inline bg-yellow-300 px-2 py-1 text-[1.15rem] font-semibold italic leading-snug text-red-600 box-decoration-clone sm:text-[1.35rem] lg:text-[1.55rem]"
-    : "inline bg-yellow-300 px-2 py-1 text-2xl font-semibold italic leading-snug text-red-600 box-decoration-clone sm:text-3xl";
+    ? "inline bg-white px-2 py-1 text-[1.15rem] font-semibold italic leading-snug text-[#0f4d94] box-decoration-clone sm:text-[1.35rem] lg:text-[1.55rem]"
+    : "inline bg-white px-2 py-1 text-2xl font-semibold italic leading-snug text-[#0f4d94] box-decoration-clone sm:text-3xl";
   const sectionInitial = compact ? false : "hidden";
   const sectionWhileInView = compact ? undefined : "visible";
   const articleInitial = compact ? false : "hidden";
