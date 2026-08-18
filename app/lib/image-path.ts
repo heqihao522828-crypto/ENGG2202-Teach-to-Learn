@@ -8,5 +8,6 @@ export function imagePath(path: string): string {
   }
 
   const normalizedPath = path.startsWith("/") ? path : `/${path}`;
-  return normalizedPath;
+  const basePath = process.env.NODE_ENV === "production" ? "/activelearning-web" : "";
+  return `${basePath}${normalizedPath}`;
 }
