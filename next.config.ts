@@ -1,10 +1,12 @@
 import type { NextConfig } from "next";
-
-const isProduction = process.env.NODE_ENV === "production";
+import { siteBasePath } from "./site-paths.mjs";
 
 const nextConfig: NextConfig = {
   output: "export",
-  basePath: isProduction ? "/activelearning-web" : "",
+  // GitHub Pages redirects this repository to activelearning.engg.hku.hk,
+  // where the export is served from the domain root. Set
+  // NEXT_PUBLIC_BASE_PATH only when deploying the export under a subpath.
+  basePath: siteBasePath,
   turbopack: {
     root: process.cwd(),
   },
