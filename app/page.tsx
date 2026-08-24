@@ -340,7 +340,7 @@ export default function Home() {
             <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent" />
           </div>
 
-          <div className="relative z-10 mx-auto grid max-w-7xl gap-12 px-6 py-20 sm:px-8 lg:gap-16 lg:py-28">
+          <div className="relative z-10 mx-auto grid max-w-7xl gap-12 px-6 pb-20 pt-24 sm:px-8 sm:pt-28 lg:gap-16 lg:pb-28 lg:pt-32">
             <motion.div
               className="max-w-3xl space-y-8 text-white"
               initial="hidden"
@@ -368,21 +368,6 @@ export default function Home() {
                 </p>
               </motion.div>
 
-              <motion.div variants={heroTextItem} className="flex flex-col gap-4 sm:flex-row">
-                <a
-                  href="#courses"
-                  className="inline-flex w-full items-center justify-center rounded-full bg-slate-950/95 px-6 py-3 text-sm font-semibold text-white shadow-[0_16px_40px_-24px_rgba(0,0,0,0.32)] transition hover:bg-slate-900 sm:w-auto"
-                >
-                  Explore Courses
-                </a>
-
-                <a
-                  href="#schedule"
-                  className="inline-flex w-full items-center justify-center rounded-full border border-white/20 bg-white/10 px-6 py-3 text-sm font-semibold text-white transition hover:border-white/40 sm:w-auto"
-                >
-                  View Schedule
-                </a>
-              </motion.div>
             </motion.div>
 
             {heroImages.length > 1 ? (
@@ -650,41 +635,6 @@ export default function Home() {
             </div>
           </div>
         </motion.section>
-
-        <section
-          id="schedule"
-          className="mt-16 rounded-[2rem] border border-slate-200/80 bg-white/90 p-8 shadow-[0_20px_60px_-40px_rgba(15,23,42,0.18)]"
-        >
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: false, amount: 0.2 }}
-            transition={{ duration: 0.7 }}
-            variants={fadeIn}
-            className="space-y-5"
-          >
-            <div className="space-y-3">
-              <p className="text-sm font-semibold uppercase tracking-[0.24em] text-slate-700/80">
-                Schedule
-              </p>
-
-              <h2 className="text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl">
-                Schedule to be confirmed.
-              </h2>
-            </div>
-
-            <div className="rounded-[1.75rem] border border-slate-200 bg-slate-50 px-6 py-12 text-center sm:px-10">
-              <p className="text-lg font-semibold text-slate-900">
-                All schedule details are pending confirmation.
-              </p>
-
-              <p className="mt-3 text-sm leading-6 text-slate-600">
-                Class groups, rooms, session times and instructors will be
-                shared once confirmed.
-              </p>
-            </div>
-          </motion.div>
-        </section>
 
         <section className="mt-16 rounded-[2rem] border border-slate-200/80 bg-white/92 p-8 shadow-[0_20px_60px_-40px_rgba(15,23,42,0.15)] sm:p-10">
           <div className="space-y-10">

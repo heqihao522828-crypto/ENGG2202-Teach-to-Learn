@@ -10,14 +10,19 @@ const navigation = [
   { label: "Home", href: "/#about" },
   { label: "ENGG1101", href: "/engg1101" },
   { label: "ENGG2202", href: "/engg2202" },
-  { label: "Schedule", href: "/#schedule" },
   { label: "Gallery", href: "/gallery" },
   { label: "Team", href: "/team" },
   { label: "Contact", href: "/contact" },
 ];
 
+const scheduleLinks = [
+  { label: "ENGG1101", href: "/engg1101/schedule" },
+  { label: "ENGG2202", href: "/engg2202/schedule" },
+];
+
 export default function SiteShell({ children }: { children: ReactNode }) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isScheduleOpen, setIsScheduleOpen] = useState(false);
   const pathname = usePathname();
   const router = useRouter();
 
@@ -93,7 +98,53 @@ export default function SiteShell({ children }: { children: ReactNode }) {
 
           <nav className="hidden min-w-0 flex-1 justify-center lg:flex">
             <ul className="flex items-center gap-6 text-sm font-semibold text-slate-800 xl:gap-8">
-              {navigation.map((item) => (
+              {navigation.slice(0, 3).map((item) => (
+                <li key={item.href}>
+                  {item.href.startsWith("http") ? (
+                    <a
+                      href={item.href}
+                      className="transition-colors hover:text-slate-950"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      {item.label}
+                    </a>
+                  ) : (
+                    <Link href={item.href} className="transition-colors hover:text-slate-950" onClick={(event) => handleNavClick(event, item.href)}>
+                      {item.label}
+                    </Link>
+                  )}
+                </li>
+              ))}
+              <li className="group relative" onMouseEnter={() => setIsScheduleOpen(true)} onMouseLeave={() => setIsScheduleOpen(false)}>
+                <button
+                  type="button"
+                  onClick={() => setIsScheduleOpen((open) => !open)}
+                  onKeyDown={(event) => {
+                    if (event.key === "Escape") {
+                      setIsScheduleOpen(false);
+                    }
+                  }}
+                  className="inline-flex items-center gap-1 transition-colors hover:text-slate-950"
+                  aria-expanded={isScheduleOpen}
+                  aria-controls="schedule-menu"
+                >
+                  Schedule
+                  <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.8" className={`h-3.5 w-3.5 transition-transform ${isScheduleOpen ? "rotate-180" : ""}`} aria-hidden="true">
+                    <path d="m4 6 4 4 4-4" />
+                  </svg>
+                </button>
+                {isScheduleOpen ? (
+                  <div id="schedule-menu" className="absolute left-1/2 top-full z-50 w-72 -translate-x-1/2 rounded-xl border border-slate-200 bg-white p-2 shadow-[0_18px_40px_-20px_rgba(15,23,42,0.28)]">
+                    {scheduleLinks.map((item) => (
+                      <Link key={item.href} href={item.href} onClick={() => setIsScheduleOpen(false)} className="block rounded-lg px-3 py-2.5 text-sm font-semibold text-slate-800 transition hover:bg-cyan-50 hover:text-cyan-950">
+                        {item.label}
+                      </Link>
+                    ))}
+                  </div>
+                ) : null}
+              </li>
+              {navigation.slice(3).map((item) => (
                 <li key={item.href}>
                   {item.href.startsWith("http") ? (
                     <a
@@ -184,7 +235,42 @@ export default function SiteShell({ children }: { children: ReactNode }) {
           <div id="mobile-nav-menu" className="border-t border-slate-200/80 bg-white px-4 py-3 sm:px-8 lg:hidden">
             <nav aria-label="Mobile navigation">
               <ul className="grid gap-2">
-                {navigation.map((item) => (
+                {navigation.slice(0, 3).map((item) => (
+                  <li key={`mobile-${item.href}`}>
+                    {item.href.startsWith("http") ? (
+                      <a
+                        href={item.href}
+                        className="block rounded-xl px-3 py-2 text-sm font-semibold text-slate-800 transition hover:bg-slate-100"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onClick={() => setIsMobileMenuOpen(false)}
+                      >
+                        {item.label}
+                      </a>
+                    ) : (
+                      <Link
+                        href={item.href}
+                        className="block rounded-xl px-3 py-2 text-sm font-semibold text-slate-800 transition hover:bg-slate-100"
+                        onClick={(event) => handleNavClick(event, item.href)}
+                      >
+                        {item.label}
+                      </Link>
+                    )}
+                  </li>
+                ))}
+                <li className="rounded-xl border border-slate-200 bg-slate-50 px-3 py-2">
+                  <p className="text-sm font-semibold text-slate-800">Schedule</p>
+                  <ul className="mt-2 grid gap-1 border-l border-slate-200 pl-3">
+                    {scheduleLinks.map((item) => (
+                      <li key={`mobile-${item.href}`}>
+                        <Link href={item.href} className="block py-1.5 text-sm font-semibold text-cyan-800 transition hover:text-cyan-950" onClick={() => setIsMobileMenuOpen(false)}>
+                          {item.label}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </li>
+                {navigation.slice(3).map((item) => (
                   <li key={`mobile-${item.href}`}>
                     {item.href.startsWith("http") ? (
                       <a

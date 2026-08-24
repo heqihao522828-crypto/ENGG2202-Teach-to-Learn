@@ -104,6 +104,21 @@ code {
   overflow: hidden;
 }
 
+.controller-back-link {
+  display: inline-flex;
+  margin-bottom: 18px;
+  color: var(--blue);
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-decoration: underline;
+  text-decoration-color: rgba(89, 167, 255, 0.65);
+  text-underline-offset: 4px;
+}
+
+.controller-back-link:hover {
+  color: var(--text);
+}
+
 .app-header {
   display: flex;
   align-items: flex-end;

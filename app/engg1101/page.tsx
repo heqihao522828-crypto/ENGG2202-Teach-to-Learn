@@ -187,6 +187,35 @@ export default function Engg1101Page() {
         </motion.section>
 
         <section className="mt-10 grid gap-6 lg:grid-cols-2">
+          <motion.article
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.55 }}
+            variants={fadeIn}
+            className="rounded-[2rem] border border-cyan-200 bg-cyan-50/80 p-7 shadow-[0_20px_60px_-42px_rgba(8,145,178,0.24)] lg:col-span-2"
+          >
+            <p className="text-sm font-semibold uppercase tracking-[0.24em] text-cyan-800">
+              Schedule
+            </p>
+            <h2 className="mt-3 text-3xl font-semibold tracking-tight text-slate-950 lg:whitespace-nowrap">
+              Class Schedule · Semester 1 · Academic Year 2026/27
+            </h2>
+            <div className="mt-2 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+              <div className="max-w-3xl">
+                <p className="text-sm leading-7 text-slate-700 sm:text-base">
+                  Select your subclass to see every lecture and workshop date, time, venue and teacher.
+                </p>
+              </div>
+              <Link
+                href="/engg1101/schedule"
+                className="inline-flex w-full shrink-0 items-center justify-center rounded-full bg-slate-950 px-5 py-3 text-sm font-semibold text-white transition hover:bg-slate-800 sm:w-auto"
+              >
+                View Semester 1 Schedule
+              </Link>
+            </div>
+          </motion.article>
+
           {sections.map((section, index) => (
             <motion.article
               key={section.title}

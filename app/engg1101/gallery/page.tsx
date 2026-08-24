@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { motion } from "framer-motion";
 import CourseEditorialGallery from "../../components/course-editorial-gallery";
 import SiteShell from "../../components/site-shell";
@@ -21,6 +22,7 @@ export default function Engg1101GalleryPage() {
         </div>
 
         <div className="relative mx-auto max-w-7xl px-6 pb-10 pt-6 sm:px-8">
+          <Link href="/engg1101" className="mb-5 inline-flex text-sm font-semibold text-cyan-800 underline decoration-cyan-400 underline-offset-4 hover:text-cyan-950">‹ ENGG1101</Link>
           <motion.section
             initial="hidden"
             animate="visible"

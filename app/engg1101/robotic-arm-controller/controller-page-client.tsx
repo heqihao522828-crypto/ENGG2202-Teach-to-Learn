@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { CalibrationModeLink } from "./components/CalibrationModeLink";
 import { ConnectionPanel } from "./components/ConnectionPanel";
 import { GlobalControls } from "./components/GlobalControls";
@@ -14,6 +15,7 @@ export function ControllerPageClient() {
 
   return (
     <main className="app-shell">
+      <Link href="/engg1101" className="controller-back-link">‹ ENGG1101</Link>
       <header className="app-header">
         <div className="brand-block">
           <div className="brand-mark" aria-hidden="true">RA</div>
