@@ -11,7 +11,6 @@ const navigation = [
   { label: "ENGG1101", href: "/engg1101" },
   { label: "ENGG2202", href: "/engg2202" },
   { label: "Schedule", href: "/#schedule" },
-  { label: "Consultation", href: "/consultation" },
   { label: "Gallery", href: "/gallery" },
   { label: "Team", href: "/team" },
   { label: "Contact", href: "/contact" },
