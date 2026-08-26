@@ -8,25 +8,25 @@ import { imagePath } from "../lib/image-path";
 const team = [
   {
     name: "Dr. Timmy Cheng",
-    role: "Course Instructor",
+    role: "Instructor",
     image: imagePath("/images/team/Timmy-scaled.jpg"),
     note: "Course instructor focusing on studio pedagogy and hands-on project supervision.",
   },
   {
     name: "Dr. Ryan Wang",
-    role: "Course Instructor",
+    role: "Instructor",
     image: imagePath("/images/team/Ryan.jpg"),
     note: "Leads modules in collaborative systems and team-based design practice.",
   },
   {
     name: "Dr. Edwin Dung",
-    role: "Course Instructor",
+    role: "Instructor",
     image: imagePath("/images/team/Edwin.jpg"),
     note: "Specialises in prototype development and reflective assessment in studio courses.",
   },
   {
     name: "Mr. Kyle He",
-    role: "Course Instructor",
+    role: "Instructor",
     image: imagePath("/images/team/Kyle.jpg"),
     note: "Supports lab sessions, peer learning coordination and technical workshops.",
   },
@@ -75,7 +75,7 @@ export default function TeamPage() {
               <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} transition={{ duration: 0.7 }} variants={fadeIn} className="space-y-4 text-left">
                 <p className="text-sm font-semibold uppercase tracking-[0.24em] text-slate-700/80">Team</p>
                 <h2 className="text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl">
-                  Active Learning Teaching Team
+                  Meet the Teaching Team
                 </h2>
               </motion.div>
 

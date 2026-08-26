@@ -1,7 +1,8 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import SiteShell from "../components/site-shell";
 import { imagePath } from "../lib/image-path";
 
@@ -85,6 +86,19 @@ const fadeIn = {
 };
 
 export default function GalleryPage() {
+  const [selectedPhoto, setSelectedPhoto] = useState<GalleryPhoto | null>(null);
+
+  useEffect(() => {
+    function closeOnEscape(event: KeyboardEvent) {
+      if (event.key === "Escape") {
+        setSelectedPhoto(null);
+      }
+    }
+
+    window.addEventListener("keydown", closeOnEscape);
+    return () => window.removeEventListener("keydown", closeOnEscape);
+  }, []);
+
   return (
     <SiteShell>
       <main className="relative overflow-hidden bg-[#f5f5f7]">
@@ -112,14 +126,17 @@ export default function GalleryPage() {
 
           <section className="mt-12 grid grid-cols-1 gap-5 sm:grid-cols-2 sm:gap-6 md:auto-rows-[210px] md:grid-cols-6 md:gap-6">
             {galleryPhotos.map((photo, index) => (
-              <motion.figure
+              <motion.button
+                type="button"
                 key={photo.src}
+                onClick={() => setSelectedPhoto(photo)}
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true, amount: 0.15 }}
                 variants={fadeIn}
                 transition={{ duration: 0.55, delay: index * 0.03 }}
-                className={`group relative overflow-hidden rounded-[1.75rem] border border-white/80 bg-white/70 shadow-[0_16px_45px_-32px_rgba(15,23,42,0.55)] ${photo.span}`}
+                className={`group relative overflow-hidden rounded-[1.75rem] border border-white/80 bg-white/70 text-left shadow-[0_16px_45px_-32px_rgba(15,23,42,0.55)] transition focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-cyan-700 ${photo.span}`}
+                aria-label={`View larger image: ${photo.alt}`}
               >
                 <div className="relative h-64 w-full sm:h-72 md:h-full">
                   <Image
@@ -131,9 +148,49 @@ export default function GalleryPage() {
                   />
                 </div>
                 <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/40 via-black/0 to-transparent opacity-90 transition-opacity duration-300 group-hover:opacity-100" />
-              </motion.figure>
+              </motion.button>
             ))}
           </section>
+
+          <AnimatePresence>
+            {selectedPhoto ? (
+              <motion.div
+                className="fixed inset-0 z-50 flex items-center justify-center bg-slate-950/90 p-4 sm:p-8"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                role="dialog"
+                aria-modal="true"
+                aria-label={selectedPhoto.alt}
+                onClick={() => setSelectedPhoto(null)}
+              >
+                <motion.div
+                  className="relative max-h-full w-full max-w-6xl"
+                  initial={{ opacity: 0, scale: 0.96 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.96 }}
+                  onClick={(event) => event.stopPropagation()}
+                >
+                  <Image
+                    src={selectedPhoto.src}
+                    alt={selectedPhoto.alt}
+                    width={1600}
+                    height={1067}
+                    sizes="100vw"
+                    className="max-h-[82vh] w-full rounded-xl object-contain"
+                  />
+                  <button
+                    type="button"
+                    onClick={() => setSelectedPhoto(null)}
+                    className="absolute right-3 top-3 inline-flex h-10 w-10 items-center justify-center rounded-full bg-white/95 text-xl font-semibold text-slate-900 shadow-lg transition hover:bg-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-400"
+                    aria-label="Close enlarged image"
+                  >
+                    ×
+                  </button>
+                </motion.div>
+              </motion.div>
+            ) : null}
+          </AnimatePresence>
         </div>
       </main>
     </SiteShell>
