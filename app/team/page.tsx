@@ -19,7 +19,7 @@ const team = [
     note: "Leads modules in collaborative systems and team-based design practice.",
   },
   {
-    name: "Dr. Edwin Chung-Hin Dung",
+    name: "Dr. Edwin Dung",
     role: "Course Instructor",
     image: imagePath("/images/team/Edwin.jpg"),
     note: "Specialises in prototype development and reflective assessment in studio courses.",

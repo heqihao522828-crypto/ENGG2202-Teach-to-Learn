@@ -9,9 +9,44 @@ type ScheduleDetailProps = {
   subclass: Subclass;
 };
 
+function calendarDateTime(date: string, time: string) {
+  return `${date.replaceAll("-", "")}T${time.replace(":", "")}00`;
+}
+
+function escapeIcs(value: string) {
+  return value.replace(/\\/g, "\\\\").replace(/;/g, "\\;").replace(/,/g, "\\,").replace(/\n/g, "\\n");
+}
+
 export default function ScheduleDetail({ subclass }: ScheduleDetailProps) {
   const sessions = getSubclassSessions(subclass);
   const nextSession = sessions.find((session) => isTodayOrLater(session.date));
+
+  function downloadCalendar() {
+    const calendar = [
+      "BEGIN:VCALENDAR",
+      "VERSION:2.0",
+      "PRODID:-//HKU Engineering//ENGG1101 Schedule//EN",
+      "CALSCALE:GREGORIAN",
+      "METHOD:PUBLISH",
+      ...sessions.flatMap((session) => [
+        "BEGIN:VEVENT",
+        `UID:engg1101-${subclass.id}-${session.session.replace(" ", "-").toLowerCase()}-${session.date}@activelearning.engg.hku.hk`,
+        `DTSTART;TZID=Asia/Hong_Kong:${calendarDateTime(session.date, session.start)}`,
+        `DTEND;TZID=Asia/Hong_Kong:${calendarDateTime(session.date, session.end)}`,
+        `SUMMARY:${escapeIcs(`ENGG1101 ${session.session}`)}`,
+        `LOCATION:${escapeIcs(session.venue)}`,
+        "END:VEVENT",
+      ]),
+      "END:VCALENDAR",
+      "",
+    ].join("\r\n");
+    const url = URL.createObjectURL(new Blob([calendar], { type: "text/calendar;charset=utf-8" }));
+    const link = document.createElement("a");
+    link.href = url;
+    link.download = `engg1101-semester-1-subclass-${subclass.id}.ics`;
+    link.click();
+    URL.revokeObjectURL(url);
+  }
 
   return (
     <SiteShell>
@@ -21,10 +56,19 @@ export default function ScheduleDetail({ subclass }: ScheduleDetailProps) {
         </div>
 
         <section className="mt-5 rounded-[2rem] border border-cyan-200 bg-cyan-50/70 p-7 shadow-[0_20px_60px_-42px_rgba(8,145,178,0.22)] sm:p-10">
-          <div>
-            <p className="text-sm font-semibold uppercase tracking-[0.24em] text-cyan-800">ENGG1101 · Semester 1</p>
-            <h1 className="mt-3 text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl">Subclass {subclass.id}</h1>
-            <p className="mt-3 text-sm leading-7 text-slate-700 sm:text-base">Semester 1, 2026/27 · Lecture Group {subclass.lectureGroup} ({subclass.lectureTeacher})</p>
+          <div className="flex flex-col gap-5 sm:flex-row sm:items-start sm:justify-between">
+            <div>
+              <p className="text-sm font-semibold uppercase tracking-[0.24em] text-cyan-800">ENGG1101 · Semester 1</p>
+              <h1 className="mt-3 text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl">Subclass {subclass.id}</h1>
+              <p className="mt-3 text-sm leading-7 text-slate-700 sm:text-base">Semester 1, 2026/27 · Lecture Group {subclass.lectureGroup} ({subclass.lectureTeacher})</p>
+            </div>
+            <button type="button" onClick={downloadCalendar} className="inline-flex shrink-0 items-center justify-center gap-2 rounded-full border border-cyan-300 bg-white px-4 py-2.5 text-sm font-semibold text-cyan-950 shadow-[0_12px_24px_-20px_rgba(8,145,178,0.55)] transition hover:-translate-y-0.5 hover:border-cyan-500 hover:bg-cyan-100">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" className="h-4 w-4" aria-hidden="true">
+                <rect x="3" y="5" width="18" height="16" rx="2" />
+                <path d="M16 3v4M8 3v4M3 10h18M12 14v4m-2-2h4" />
+              </svg>
+              Add to calendar
+            </button>
           </div>
           <div className="mt-7 flex flex-wrap gap-3">
             <p className="rounded-full border border-cyan-200 bg-white px-4 py-2 text-sm font-semibold text-slate-800">Lecture: Wed {LECTURE_SLOT.start} - {LECTURE_SLOT.end}</p>
