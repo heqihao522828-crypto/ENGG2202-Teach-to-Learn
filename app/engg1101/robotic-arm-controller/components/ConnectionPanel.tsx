@@ -1,3 +1,5 @@
+import { BAUD_RATE_OPTIONS, formatBaudRateDisplay } from "../controller/baudRateDisplay";
+
 interface ConnectionPanelProps {
   serialSupported: boolean;
   connected: boolean;
@@ -47,11 +49,9 @@ export function ConnectionPanel({
             onChange={(event) => onBaudRateChange(Number(event.target.value))}
             disabled={busy || connected}
           >
-            <option value={9600}>9,600</option>
-            <option value={57600}>57,600</option>
-            <option value={115200}>115,200</option>
-            <option value={500000}>500,000</option>
-            <option value={1000000}>1,000,000</option>
+            {BAUD_RATE_OPTIONS.map((option) => (
+              <option key={option} value={option}>{formatBaudRateDisplay(option)}</option>
+            ))}
           </select>
         </label>
 

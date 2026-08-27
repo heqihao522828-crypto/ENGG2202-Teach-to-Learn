@@ -1,6 +1,7 @@
 "use client";
 
-import { createContext, useContext, useSyncExternalStore, type ReactNode } from "react";
+import { createContext, useContext, useEffect, useSyncExternalStore, type ReactNode } from "react";
+import { registerEmergencyStopShortcut } from "./controller/keyboardEmergencyStop";
 import { useRobotController } from "./controller/useRobotController";
 
 type RobotController = ReturnType<typeof useRobotController>;
@@ -23,6 +24,11 @@ export function RobotControllerProvider({ children }: { children: ReactNode }) {
 
 function BrowserRobotControllerProvider({ children }: { children: ReactNode }) {
   const controller = useRobotController();
+
+  useEffect(
+    () => registerEmergencyStopShortcut(controller.emergencyStop),
+    [controller.emergencyStop]
+  );
 
   return (
     <RobotControllerContext.Provider value={controller}>

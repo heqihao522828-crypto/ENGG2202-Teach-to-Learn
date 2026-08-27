@@ -48,7 +48,7 @@ export function ControllerPageClient() {
         onBaudRateChange={controller.setBaudRate}
         onConnect={() => void controller.connect()}
         onDisconnect={() => void controller.disconnect()}
-        onEmergencyStop={() => void controller.emergencyStop()}
+        onEmergencyStop={controller.emergencyStop}
         onResetEmergencyStop={controller.resetEmergencyStop}
       />
 
