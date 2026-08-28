@@ -82,7 +82,7 @@ export default function ScheduleDetail({ subclass }: ScheduleDetailProps) {
               <div>
                 <p className="text-xs font-semibold uppercase tracking-[0.2em] text-amber-800">Workshop location</p>
                 <p className="mt-1 text-lg font-semibold text-slate-900">{subclass.workshopVenue}</p>
-                <p className="mt-1 text-sm text-slate-700">Please check the workshop location guide in the first column of "Course Materials" in the ENGG1101 Notion page.</p>
+                <p className="mt-1 text-sm text-slate-700">Please check the workshop location guide in the first row of "Course Materials" in the ENGG1101 Notion page.</p>
               </div>
               <a href={engg1101NotionEmbedUrl} target="_blank" rel="noreferrer" className="inline-flex items-center justify-center rounded-full bg-amber-600 px-4 py-2 text-sm font-semibold text-white transition hover:bg-amber-500">
                 Open Notion page

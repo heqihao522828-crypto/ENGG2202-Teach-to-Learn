@@ -281,7 +281,7 @@ export default function Engg1101Page() {
                 Notion Page
               </h2>
               <p className="max-w-3xl text-sm leading-7 text-slate-600 sm:text-base">
-                Please check the workshop location guide in the first row of "Course Materials" in the ENGG1101 Notion page.
+                Please check the workshop location guide in the first row of "Course Materials" on the ENGG1101 Notion page.
               </p>
             </div>
 
