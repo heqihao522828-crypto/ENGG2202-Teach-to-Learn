@@ -166,7 +166,7 @@ export default function Engg1101Page() {
               className="object-cover object-center"
             />
             <div className="absolute inset-0 bg-gradient-to-r from-slate-950/88 via-slate-950/52 to-slate-950/18" />
-                A first-year course where students build their engineering toolkit and fundamentals through hands-on, team-based activities.
+            A first-year course where students build their engineering toolkit and fundamentals through hands-on, team-based activities.
           </div>
 
           <div className="relative z-10 flex min-h-[360px] items-center p-8 sm:min-h-[420px] sm:p-10">
@@ -280,6 +280,9 @@ export default function Engg1101Page() {
               <h2 className="text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl">
                 Notion Page
               </h2>
+              <p className="max-w-3xl text-sm leading-7 text-slate-600 sm:text-base">
+                Please check the workshop location guide in the first row of "Course Materials" in the ENGG1101 Notion page.
+              </p>
             </div>
 
             <div>

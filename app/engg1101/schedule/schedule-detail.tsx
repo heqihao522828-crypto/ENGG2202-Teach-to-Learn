@@ -5,6 +5,8 @@ import SiteShell from "../../components/site-shell";
 import { LECTURE_SLOT, SUBCLASSES } from "../../../src/data/engg1101Schedule";
 import { formatDate, formatWorkshopSlot, getSubclassSessions, isTodayOrLater, type Subclass } from "./schedule-data";
 
+const engg1101NotionEmbedUrl = "https://engineering-challenges.notion.site/ebd//bb7d72aefb85829ea48381c1d8bdd58e";
+
 type ScheduleDetailProps = {
   subclass: Subclass;
 };
@@ -73,6 +75,19 @@ export default function ScheduleDetail({ subclass }: ScheduleDetailProps) {
           <div className="mt-7 flex flex-wrap gap-3">
             <p className="rounded-full border border-cyan-200 bg-white px-4 py-2 text-sm font-semibold text-slate-800">Lecture: Wed {LECTURE_SLOT.start} - {LECTURE_SLOT.end}</p>
             <p className="rounded-full border border-emerald-200 bg-white px-4 py-2 text-sm font-semibold text-slate-800">Workshop: {formatWorkshopSlot(subclass)}</p>
+          </div>
+
+          <div className="mt-7 rounded-2xl border border-amber-200 bg-amber-50 p-4 shadow-sm">
+            <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+              <div>
+                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-amber-800">Workshop location</p>
+                <p className="mt-1 text-lg font-semibold text-slate-900">{subclass.workshopVenue}</p>
+                <p className="mt-1 text-sm text-slate-700">Please check the workshop location guide in the first column of "Course Materials" in the ENGG1101 Notion page.</p>
+              </div>
+              <a href={engg1101NotionEmbedUrl} target="_blank" rel="noreferrer" className="inline-flex items-center justify-center rounded-full bg-amber-600 px-4 py-2 text-sm font-semibold text-white transition hover:bg-amber-500">
+                Open Notion page
+              </a>
+            </div>
           </div>
         </section>
 
