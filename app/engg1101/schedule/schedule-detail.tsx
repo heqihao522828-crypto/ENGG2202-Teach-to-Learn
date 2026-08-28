@@ -114,7 +114,7 @@ export default function ScheduleDetail({ subclass }: ScheduleDetailProps) {
               {sessions.map((session, index) => (
                 <tr key={`${session.session}-${session.date}`}>
                   <td data-label="#" className="px-5 py-4 font-semibold text-slate-950">{index + 1}</td>
-                  <td data-label="Date" className="px-5 py-4 whitespace-nowrap">{formatDate(session.date)}{nextSession?.session === session.session && nextSession.date === session.date ? <span className="ml-2 rounded-full bg-orange-100 px-2 py-1 text-xs font-semibold text-orange-800">Next</span> : null}</td>
+                  <td data-label="Date" className="px-5 py-4 whitespace-nowrap">{formatDate(session.date)}</td>
                   <td data-label="Type" className="px-5 py-4"><span className={session.type === "Lecture" ? "rounded-full bg-sky-100 px-2.5 py-1 text-xs font-semibold text-sky-800" : "rounded-full bg-emerald-100 px-2.5 py-1 text-xs font-semibold text-emerald-800"}>{session.type}</span></td>
                   <td data-label="Session" className="px-5 py-4 font-semibold text-slate-900">{session.session}</td>
                   <td data-label="Time" className="px-5 py-4 whitespace-nowrap">{session.start} - {session.end}</td>
