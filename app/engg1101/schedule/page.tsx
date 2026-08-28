@@ -2,8 +2,7 @@ import Link from "next/link";
 import SiteShell from "../../components/site-shell";
 import { SUBCLASSES } from "../../../src/data/engg1101Schedule";
 
-const displayOrder = ["A", "B", "C", "G", "H", "I", "M", "O", "N", "P", "D", "E", "F", "J", "K", "L"];
-const displaySubclasses = displayOrder.map((id) => SUBCLASSES.find((subclass) => subclass.id === id)!);
+const orderedSubclasses = [...SUBCLASSES].sort((a, b) => a.id.localeCompare(b.id));
 
 export default function Engg1101SchedulePage() {
   return (
@@ -16,7 +15,7 @@ export default function Engg1101SchedulePage() {
           <p className="mt-4 max-w-3xl text-sm leading-7 text-slate-700 sm:text-base">Choose your subclass letter to see every scheduled lecture and workshop for Semester 1, AY2026-27.</p>
 
           <div className="mt-7 grid grid-cols-4 gap-2 sm:grid-cols-8 lg:grid-cols-16" aria-label="Choose your subclass">
-            {SUBCLASSES.map((subclass) => (
+            {orderedSubclasses.map((subclass) => (
               <Link key={subclass.id} href={`/engg1101/schedule/${subclass.id}`} className="flex min-h-12 items-center justify-center rounded-xl border border-cyan-200 bg-white text-lg font-semibold text-slate-900 shadow-sm transition hover:-translate-y-0.5 hover:border-cyan-500 hover:bg-cyan-100 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-700">
                 {subclass.id}
               </Link>
@@ -41,7 +40,7 @@ export default function Engg1101SchedulePage() {
                 </tr>
               </thead>
               <tbody className="divide-y divide-slate-200 text-slate-700">
-                {displaySubclasses.map((subclass) => (
+                {orderedSubclasses.map((subclass) => (
                   <tr key={subclass.id} className="hover:bg-slate-50/80">
                     <td className="px-5 py-4 text-center font-semibold text-slate-950">{subclass.id}</td>
                     <td className="px-5 py-4 text-center">{subclass.lectureTeacher}</td>
