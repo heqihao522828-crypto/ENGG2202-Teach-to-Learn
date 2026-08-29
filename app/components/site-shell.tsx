@@ -39,8 +39,9 @@ export default function SiteShell({ children }: { children: ReactNode }) {
               alt="HKU Engineering"
               width={160}
               height={36}
+              style={{ width: "auto" }}
               className="h-8 w-auto shrink-0 object-contain sm:h-9"
-              priority
+              preload
             />
             <span className="hidden h-7 w-px bg-[#ccd9cf] sm:block" aria-hidden="true" />
             <span className="hidden min-w-0 sm:block">
