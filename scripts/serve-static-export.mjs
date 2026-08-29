@@ -2,6 +2,8 @@ import { createReadStream, existsSync, statSync } from "node:fs";
 import { createServer } from "node:http";
 import { extname, join, normalize } from "node:path";
 
+import { siteBasePath } from "../site-paths.mjs";
+
 const exportRoot = join(process.cwd(), "out");
 const port = Number(process.env.PORT ?? 4173);
 const contentTypes = {
@@ -20,7 +22,12 @@ const contentTypes = {
 };
 
 function resolveExportPath(requestPath) {
-  const decodedPath = decodeURIComponent(requestPath).replace(/^\/+/, "");
+  const decodedRequestPath = decodeURIComponent(requestPath);
+  const pathWithoutBase = siteBasePath &&
+      (decodedRequestPath === siteBasePath || decodedRequestPath.startsWith(`${siteBasePath}/`))
+    ? decodedRequestPath.slice(siteBasePath.length) || "/"
+    : decodedRequestPath;
+  const decodedPath = pathWithoutBase.replace(/^\/+/, "");
   const safePath = normalize(decodedPath).replace(/^(\.\.(?:[\\/]|$))+/, "");
   const candidates = safePath
     ? [join(exportRoot, safePath), join(exportRoot, `${safePath}.html`), join(exportRoot, safePath, "index.html")]

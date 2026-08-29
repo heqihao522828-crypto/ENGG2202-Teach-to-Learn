@@ -1,197 +1,133 @@
-"use client";
-
-import { useEffect, useState } from "react";
+import type { Metadata } from "next";
 import Image from "next/image";
-import { AnimatePresence, motion } from "framer-motion";
 import SiteShell from "../components/site-shell";
 import { imagePath } from "../lib/image-path";
 
-type GalleryPhoto = {
-  src: string;
-  alt: string;
-  span: string;
+export const metadata: Metadata = {
+  title: "Student Projects",
+  description:
+    "Explore ENGG2202 engineering projects through their open repositories, evidence and learning stories.",
 };
 
-const galleryPhotos: GalleryPhoto[] = [
+const projects = [
   {
-    src: imagePath("/images/Course/20250707014_Pilot_Workshop-scaled.jpg"),
-    alt: "Pilot workshop on building your own prototype arm",
-    span: "md:col-span-3 md:row-span-2",
-  },
-  {
-    src: imagePath("/images/Course/edwin_workshop.jpg"),
-    alt: "Instructor is guiding students during a workshop session",
-    span: "md:col-span-3 md:row-span-1",
-  },
-  {
-    src: imagePath("/images/Course/edwin_lecture.jpg"),
-    alt: "Instructor is delivering a lecture on sustainable technologies",
-    span: "md:col-span-3 md:row-span-2",
-  },
-  {
-    src: imagePath("/images/Course/kyle_lecture.jpg"),
-    alt: "Instructor is delivering a lecture on rapid prototyping",
-    span: "md:col-span-3 md:row-span-1",
-  },
-  {
-    src: imagePath("/images/Course/kyle_workshop1.jpg"),
-    alt: "Student team is posing with their prototype",
-    span: "md:col-span-3 md:row-span-2",
-  },
-  {
-    src: imagePath("/images/Course/kyle_workshop2.jpg"),
-    alt: "Student team is posing with their prototype",
-    span: "md:col-span-3 md:row-span-2",
-  },
-  {
-    src: imagePath("/images/Course/kyle_workshop3.jpg"),
-    alt: "Student team is posing with their prototype",
-    span: "md:col-span-3 md:row-span-1",
-  },
-  {
-    src: imagePath("/images/Course/ryan_lecture.jpg"),
-    alt: "Instructor is delivering a lecture on aerial robotics",
-    span: "md:col-span-3 md:row-span-2",
-  },
-  {
-    src: imagePath("/images/Course/studentgroup.jpg"),
-    alt: "Student team is posing with their prototype",
-    span: "md:col-span-3 md:row-span-1",
-  },
-  {
-    src: imagePath("/images/Course/Timmy_groupphoto.jpg"),
-    alt: "Students and instructor",
-    span: "md:col-span-3 md:row-span-1",
-  },
-  {
-    src: imagePath("/images/Course/timmy_lecture.jpg"),
-    alt: "Instructor is delivering a lecture on design thinking",
-    span: "md:col-span-3 md:row-span-2",
-  },
-  {
-    src: imagePath("/images/Course/with_TO1.jpg"),
-    alt: "Instructor is engaging in a lab showcase",
-    span: "md:col-span-3 md:row-span-1",
-  },
-  {
-    src: imagePath("/images/Course/with_TO2.jpg"),
-    alt: "Instructor is engaging in a lab showcase",
-    span: "md:col-span-3 md:row-span-1",
+    title: "Solar Weather Station",
+    theme: "Green Technology",
+    status: "Instructor exemplar · in development",
+    description:
+      "A modular, solar-powered environmental sensing prototype used to show how an engineering project develops through open-source study, testing, iteration and responsible release.",
+    image: "/images/teach-to-learn/green-technology-products.png",
+    href: "https://github.com/heqihao522828-crypto/solar-weather-station",
+    tags: ["Sensing", "IoT", "Solar power", "Field testing"],
   },
 ];
 
-const fadeIn = {
-  hidden: { opacity: 0, y: 22 },
-  visible: { opacity: 1, y: 0 },
-};
+function ArrowIcon() {
+  return (
+    <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.8" className="h-4 w-4" aria-hidden="true">
+      <path d="M4 10h12M11 5l5 5-5 5" />
+    </svg>
+  );
+}
 
-export default function GalleryPage() {
-  const [selectedPhoto, setSelectedPhoto] = useState<GalleryPhoto | null>(null);
-
-  useEffect(() => {
-    function closeOnEscape(event: KeyboardEvent) {
-      if (event.key === "Escape") {
-        setSelectedPhoto(null);
-      }
-    }
-
-    window.addEventListener("keydown", closeOnEscape);
-    return () => window.removeEventListener("keydown", closeOnEscape);
-  }, []);
-
+export default function StudentProjectsPage() {
   return (
     <SiteShell>
-      <main className="relative overflow-hidden bg-[#f5f5f7]">
-        <div className="pointer-events-none absolute inset-0">
-          <div className="absolute -left-20 top-0 h-72 w-72 rounded-full bg-white/90 blur-3xl" />
-          <div className="absolute right-0 top-32 h-80 w-80 rounded-full bg-slate-200/60 blur-3xl" />
-        </div>
+      <main>
+        <section className="overflow-hidden border-b border-[#d9e6db] bg-white">
+          <div className="mx-auto grid max-w-[90rem] gap-12 px-5 py-20 sm:px-8 lg:grid-cols-[0.92fr_1.08fr] lg:items-center lg:px-10 lg:py-28">
+            <div>
+              <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#4f765a]">Open engineering in practice</p>
+              <h1 className="mt-5 text-6xl font-semibold leading-[0.92] tracking-[-0.055em] text-[#112e1d] sm:text-7xl lg:text-8xl">
+                Student
+                <span className="block text-[#318248]">Projects.</span>
+              </h1>
+              <p className="mt-7 max-w-xl text-lg leading-9 text-[#48614f]">
+                Each card opens the project’s own repository: the place where
+                its design files, decisions, test evidence, versions and
+                learning story remain visible.
+              </p>
+            </div>
+            <div className="relative min-h-[330px] overflow-hidden rounded-[2.2rem] bg-[#173f28] p-8 text-white sm:min-h-[390px] sm:p-10">
+              <div className="absolute -right-20 -top-24 h-72 w-72 rounded-full border-[44px] border-[#d7f43c]/80" />
+              <div className="absolute -bottom-28 -left-20 h-72 w-72 rotate-12 bg-[#5ab66b]/55" />
+              <div className="relative flex h-full min-h-[270px] flex-col justify-between">
+                <span className="text-xs font-bold uppercase tracking-[0.2em] text-[#bfd8c3]">A growing directory</span>
+                <p className="max-w-sm text-4xl font-semibold leading-tight tracking-[-0.04em] sm:text-5xl">
+                  One real project today.
+                  <span className="block text-[#d7f43c]">More student work tomorrow.</span>
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
 
-        <div className="relative mx-auto max-w-7xl px-6 pb-20 pt-10 sm:px-8">
-          <motion.section
-            initial="hidden"
-            animate="visible"
-            variants={fadeIn}
-            transition={{ duration: 0.75, ease: "easeOut" }}
-            className="rounded-[2.25rem] border border-white/70 bg-gradient-to-b from-white to-[#f4f4f6] p-8 shadow-[0_24px_80px_-56px_rgba(15,23,42,0.35)] sm:p-10"
-          >
-            <p className="text-xs font-semibold uppercase tracking-[0.28em] text-slate-600">Course Gallery</p>
-            <h1 className="mt-4 max-w-3xl text-4xl font-semibold tracking-tight text-slate-950 sm:text-5xl">
-              Course Moments Gallery
-            </h1>
-            <p className="mt-4 max-w-3xl text-base leading-8 text-slate-700 sm:text-lg">
-              A curated visual archive of studio moments, workshops, lectures and project collaboration across the course journey.
-            </p>
-          </motion.section>
+        <section className="mx-auto max-w-[90rem] px-5 py-16 sm:px-8 lg:px-10 lg:py-24">
+          <div className="flex flex-col gap-4 border-b border-[#d5e2d7] pb-8 sm:flex-row sm:items-end sm:justify-between">
+            <div>
+              <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#57735e]">Project directory</p>
+              <h2 className="mt-3 text-3xl font-semibold tracking-[-0.035em] text-[#153321]">Explore the evidence, not only the final demo.</h2>
+            </div>
+            <p className="text-sm text-[#607566]">{projects.length} published project</p>
+          </div>
 
-          <section className="mt-12 grid grid-cols-1 gap-5 sm:grid-cols-2 sm:gap-6 md:auto-rows-[210px] md:grid-cols-6 md:gap-6">
-            {galleryPhotos.map((photo, index) => (
-              <motion.button
-                type="button"
-                key={photo.src}
-                onClick={() => setSelectedPhoto(photo)}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true, amount: 0.15 }}
-                variants={fadeIn}
-                transition={{ duration: 0.55, delay: index * 0.03 }}
-                className={`group relative overflow-hidden rounded-[1.75rem] border border-white/80 bg-white/70 text-left shadow-[0_16px_45px_-32px_rgba(15,23,42,0.55)] transition focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-cyan-700 ${photo.span}`}
-                aria-label={`View larger image: ${photo.alt}`}
+          <div className="mt-10 grid gap-7 md:grid-cols-2 xl:grid-cols-3">
+            {projects.map((project) => (
+              <a
+                key={project.title}
+                href={project.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex min-h-full flex-col overflow-hidden rounded-[1.8rem] border border-[#cfddcf] bg-white shadow-[0_24px_70px_-52px_rgba(15,60,32,0.42)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_28px_80px_-48px_rgba(15,60,32,0.48)]"
               >
-                <div className="relative h-64 w-full sm:h-72 md:h-full">
-                  <Image
-                    src={photo.src}
-                    alt={photo.alt}
-                    fill
-                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                    className="object-cover transition duration-500 ease-out group-hover:scale-[1.03]"
-                  />
+                <div className="relative aspect-[4/3] overflow-hidden bg-[#dce9dc]">
+                  <Image src={imagePath(project.image)} alt="Solar weather station and related green technology engineering systems" fill sizes="(min-width: 1280px) 30vw, (min-width: 768px) 48vw, 100vw" className="object-cover object-left transition duration-700 group-hover:scale-[1.035]" />
+                  <span className="absolute left-5 top-5 rounded-full bg-[#d7f43c] px-3 py-2 text-[0.66rem] font-bold uppercase tracking-[0.12em] text-[#17351f]">{project.theme}</span>
                 </div>
-                <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/40 via-black/0 to-transparent opacity-90 transition-opacity duration-300 group-hover:opacity-100" />
-              </motion.button>
+                <div className="flex flex-1 flex-col p-6 sm:p-7">
+                  <p className="text-xs font-bold uppercase tracking-[0.12em] text-[#69806e]">{project.status}</p>
+                  <h3 className="mt-4 text-2xl font-semibold tracking-[-0.03em] text-[#153321]">{project.title}</h3>
+                  <p className="mt-4 text-sm leading-7 text-[#506456]">{project.description}</p>
+                  <div className="mt-5 flex flex-wrap gap-2">
+                    {project.tags.map((tag) => (
+                      <span key={tag} className="rounded-full bg-[#edf4ed] px-3 py-1.5 text-xs font-semibold text-[#41614a]">{tag}</span>
+                    ))}
+                  </div>
+                  <span className="mt-8 inline-flex items-center gap-2 text-sm font-bold text-[#226439]">
+                    View project repository
+                    <ArrowIcon />
+                  </span>
+                </div>
+              </a>
             ))}
-          </section>
 
-          <AnimatePresence>
-            {selectedPhoto ? (
-              <motion.div
-                className="fixed inset-0 z-50 flex items-center justify-center bg-slate-950/90 p-4 sm:p-8"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                role="dialog"
-                aria-modal="true"
-                aria-label={selectedPhoto.alt}
-                onClick={() => setSelectedPhoto(null)}
-              >
-                <motion.div
-                  className="relative max-h-full w-full max-w-6xl"
-                  initial={{ opacity: 0, scale: 0.96 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0, scale: 0.96 }}
-                  onClick={(event) => event.stopPropagation()}
-                >
-                  <Image
-                    src={selectedPhoto.src}
-                    alt={selectedPhoto.alt}
-                    width={1600}
-                    height={1067}
-                    sizes="100vw"
-                    className="max-h-[82vh] w-full rounded-xl object-contain"
-                  />
-                  <button
-                    type="button"
-                    onClick={() => setSelectedPhoto(null)}
-                    className="absolute right-3 top-3 inline-flex h-10 w-10 items-center justify-center rounded-full bg-white/95 text-xl font-semibold text-slate-900 shadow-lg transition hover:bg-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-400"
-                    aria-label="Close enlarged image"
-                  >
-                    ×
-                  </button>
-                </motion.div>
-              </motion.div>
-            ) : null}
-          </AnimatePresence>
-        </div>
+            <div className="flex min-h-[31rem] flex-col justify-between rounded-[1.8rem] border border-dashed border-[#acc2b0] bg-[#edf4ed] p-7 text-[#34543e]">
+              <div>
+                <span className="flex h-11 w-11 items-center justify-center rounded-full border border-[#afc6b3] bg-white text-xl">+</span>
+                <h3 className="mt-8 text-2xl font-semibold tracking-[-0.03em] text-[#173823]">Future student work lives here.</h3>
+                <p className="mt-4 text-sm leading-7 text-[#526a58]">
+                  Projects are added after evidence, attribution, consent,
+                  safety and public-release checks are complete.
+                </p>
+              </div>
+              <p className="border-t border-[#ceddcf] pt-5 text-xs font-bold uppercase tracking-[0.14em] text-[#667b6a]">Gallery structure ready to expand</p>
+            </div>
+          </div>
+        </section>
+
+        <section className="border-y border-[#d8e4d9] bg-white px-5 py-16 sm:px-8 lg:px-10">
+          <div className="mx-auto grid max-w-[90rem] gap-8 lg:grid-cols-[0.7fr_1.3fr] lg:items-start">
+            <div>
+              <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#57735e]">Before a project appears here</p>
+              <h2 className="mt-3 text-3xl font-semibold tracking-[-0.035em] text-[#153321]">Responsible release is part of the engineering.</h2>
+            </div>
+            <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+              {['Useful evidence remains', 'Licence and sources are clear', 'Privacy and location are checked', 'Safety claims are proportionate', 'Stakeholder consent is respected', 'Another person can understand it'].map((item) => (
+                <div key={item} className="rounded-2xl border border-[#d7e3d9] bg-[#f8fbf8] p-4 text-sm font-semibold leading-6 text-[#3d5945]">{item}</div>
+              ))}
+            </div>
+          </div>
+        </section>
       </main>
     </SiteShell>
   );

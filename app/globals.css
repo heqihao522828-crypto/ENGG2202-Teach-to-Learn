@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #f7faf6;
+  --foreground: #102319;
 }
 
 @theme inline {
@@ -12,17 +12,19 @@
   --font-mono: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-sans);
+}
+
+::selection {
+  background: #d7f43c;
+  color: #17351f;
+}
+
+html {
+  scroll-padding-top: 6.5rem;
 }
 
 @media (max-width: 640px) {
