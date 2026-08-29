@@ -39,8 +39,8 @@ export default function StudentProjectsPage() {
     <SiteShell>
       <main>
         <section className="overflow-hidden border-b border-[#d9e6db] bg-white">
-          <div className="mx-auto grid max-w-[90rem] gap-12 px-5 py-20 sm:px-8 lg:grid-cols-[0.92fr_1.08fr] lg:items-center lg:px-10 lg:py-28">
-            <div>
+          <div className="mx-auto max-w-[90rem] px-5 py-20 sm:px-8 lg:px-10 lg:py-24">
+            <div className="max-w-3xl">
               <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#4f765a]">Open engineering in practice</p>
               <h1 className="mt-5 text-6xl font-semibold leading-[0.92] tracking-[-0.055em] text-[#112e1d] sm:text-7xl lg:text-8xl">
                 Student
@@ -51,17 +51,6 @@ export default function StudentProjectsPage() {
                 its design files, decisions, test evidence, versions and
                 learning story remain visible.
               </p>
-            </div>
-            <div className="relative min-h-[330px] overflow-hidden rounded-[2.2rem] bg-[#173f28] p-8 text-white sm:min-h-[390px] sm:p-10">
-              <div className="absolute -right-20 -top-24 h-72 w-72 rounded-full border-[44px] border-[#d7f43c]/80" />
-              <div className="absolute -bottom-28 -left-20 h-72 w-72 rotate-12 bg-[#5ab66b]/55" />
-              <div className="relative flex h-full min-h-[270px] flex-col justify-between">
-                <span className="text-xs font-bold uppercase tracking-[0.2em] text-[#bfd8c3]">A growing directory</span>
-                <p className="max-w-sm text-4xl font-semibold leading-tight tracking-[-0.04em] sm:text-5xl">
-                  One real project today.
-                  <span className="block text-[#d7f43c]">More student work tomorrow.</span>
-                </p>
-              </div>
             </div>
           </div>
         </section>

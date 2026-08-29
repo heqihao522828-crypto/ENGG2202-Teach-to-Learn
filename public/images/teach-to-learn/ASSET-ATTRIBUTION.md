@@ -27,5 +27,8 @@ Logos, trademarks and third-party communication assets retain their own terms.
 - `mastery-learn.png`, `mastery-apply.png`, `mastery-explain.png`,
   `mastery-teach.png` and `mastery-contribute.png` are original, text-free
   line illustrations generated as one visual family for this microsite.
+- `stage-improve-iteration.png` is an original, text-free line illustration
+  generated in the same family to show the test, diagnose, modify and retest
+  loop used in Stage 5.
 - `green-technology-hero.png` and `green-technology-products.png` are original
   project visuals created for this microsite in earlier design iterations.

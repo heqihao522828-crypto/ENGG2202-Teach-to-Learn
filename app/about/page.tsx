@@ -105,33 +105,6 @@ export default function AboutPage() {
           </div>
         </section>
 
-        <section className="mx-auto grid max-w-[90rem] gap-9 px-5 py-16 sm:px-8 lg:grid-cols-[1.05fr_0.95fr] lg:items-center lg:px-10 lg:py-24">
-          <div className="overflow-hidden rounded-[2rem] border border-[#d5e2d7] bg-white p-6">
-            <Image
-              src={imagePath("/images/teach-to-learn/sdg-17-goals.gif")}
-              alt="Animated sequence of the United Nations Sustainable Development Goal icons"
-              width={1200}
-              height={675}
-              unoptimized
-              className="h-auto w-full rounded-[1.4rem]"
-            />
-          </div>
-          <div>
-            <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#57745e]">Current ENGG2202 theme</p>
-            <h2 className="mt-4 text-4xl font-semibold tracking-[-0.04em] text-[#143421] sm:text-5xl">Green Technology gives the projects a shared direction—not a single prescribed solution.</h2>
-            <p className="mt-6 text-base leading-8 text-[#506656]">
-              Students use sustainability challenges and relevant SDG targets
-              to locate a meaningful context. They still need to validate the
-              stakeholder, problem, trade-offs and real impact; a green label
-              is not evidence by itself.
-            </p>
-            <Link href="/sdgs" className="mt-7 inline-flex items-center gap-2 text-sm font-bold text-[#27643a] underline decoration-[#9abb9e] underline-offset-4">
-              Explore Green Technology & all 17 SDGs
-              <ArrowIcon />
-            </Link>
-          </div>
-        </section>
-
         <section className="bg-[#153f27] px-5 py-16 text-white sm:px-8 lg:px-10">
           <div className="mx-auto flex max-w-[90rem] flex-col gap-7 lg:flex-row lg:items-center lg:justify-between">
             <div className="max-w-3xl">

@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import SiteShell from "../components/site-shell";
 import StageArtwork from "../components/stage-artwork";
 
@@ -168,42 +167,21 @@ export default function StudentGuidePage() {
           </div>
         </section>
 
-        <section className="mx-auto grid max-w-[90rem] gap-6 px-5 py-16 sm:px-8 lg:grid-cols-3 lg:px-10 lg:py-24">
-          <article className="rounded-[2rem] border border-[#d3e0d5] bg-white p-7 lg:col-span-2">
-            <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#57745e]">Student guide · Notion</p>
-            <h2 className="mt-4 text-3xl font-semibold tracking-[-0.035em] text-[#153522]">The working manual for the current Gate.</h2>
-            <p className="mt-4 max-w-2xl text-sm leading-7 text-[#506656]">
-              Use it during independent work and bring questions, uncertainty
-              and evidence back to Tuesday Studio. Reading the page is not the
-              active learning; using it to make, test and revise a decision is.
-            </p>
+        <section className="mx-auto max-w-[90rem] px-5 py-14 sm:px-8 lg:px-10 lg:py-18">
+          <div className="flex flex-col gap-5 rounded-[2rem] bg-[#173f28] p-7 text-white sm:flex-row sm:items-center sm:justify-between sm:p-9">
+            <div className="max-w-3xl">
+              <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#b8d8bf]">Current working material</p>
+              <p className="mt-3 text-xl font-semibold">Open the released Gate in Notion, use it during independent work, and bring your evidence and questions to Tuesday Studio.</p>
+            </div>
             <a
               href={notionGuideUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-7 inline-flex items-center gap-2 rounded-full bg-[#173f28] px-5 py-3 text-sm font-bold text-white transition hover:bg-[#245d38]"
+              className="inline-flex shrink-0 items-center justify-center gap-2 rounded-full bg-[#d7f43c] px-5 py-3 text-sm font-bold text-[#17351f] transition hover:bg-[#e7fa76]"
             >
               Open Notion Student Guide
               <ArrowIcon />
             </a>
-          </article>
-
-          <article className="rounded-[2rem] bg-[#d7f43c] p-7 text-[#17351f]">
-            <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#42601f]">Tool index</p>
-            <h2 className="mt-4 text-3xl font-semibold tracking-[-0.035em]">A simple directory, not another syllabus.</h2>
-            <p className="mt-4 text-sm leading-7 text-[#3f5526]">Browse tools by name, link and main purpose. Use the Gate guide for context and recommended methods.</p>
-            <p className="mt-7 text-xs font-bold uppercase tracking-[0.1em] text-[#52662f]">Added progressively beside each released Gate</p>
-          </article>
-
-          <div className="lg:col-span-3 flex flex-col gap-5 rounded-[2rem] border border-[#d6e3d7] bg-[#f0f6ef] p-7 sm:flex-row sm:items-center sm:justify-between">
-            <div>
-              <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#627a67]">Need the full map?</p>
-              <p className="mt-2 text-lg font-semibold text-[#23442e]">Return to the six-stage journey at any time.</p>
-            </div>
-            <Link href="/engg2202" className="inline-flex items-center gap-2 text-sm font-bold text-[#29643b]">
-              View Project Journey
-              <ArrowIcon />
-            </Link>
           </div>
         </section>
       </main>

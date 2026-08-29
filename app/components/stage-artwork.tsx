@@ -18,8 +18,8 @@ const stageVisuals: Record<
     alt: "Line illustration of hands integrating a component into a green technology prototype",
   },
   "05": {
-    image: "/images/teach-to-learn/weather-station-test-preview.svg",
-    alt: "Illustrated test evidence dashboard for an engineering prototype",
+    image: "/images/teach-to-learn/stage-improve-iteration.png",
+    alt: "Line illustration of an environmental sensing prototype being tested, adjusted and retested",
   },
   "06": {
     image: "/images/teach-to-learn/mastery-teach.png",
