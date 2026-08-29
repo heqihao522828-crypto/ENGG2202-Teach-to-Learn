@@ -43,7 +43,7 @@ export default function AboutPage() {
                 fill
                 priority
                 sizes="(min-width: 1024px) 54vw, 100vw"
-                className="object-cover"
+                className="object-cover object-top"
               />
               <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#102e1d]/95 via-[#102e1d]/55 to-transparent p-7 pt-24 text-white sm:p-9 sm:pt-28">
                 <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#d7f43c]">Green Technology studio</p>
@@ -84,15 +84,15 @@ export default function AboutPage() {
             </div>
             <div className="grid grid-cols-2 gap-3 sm:grid-cols-5 lg:grid-cols-1 xl:grid-cols-5">
               {[
-                ["Learn", "Find and understand a useful idea.", "/images/teach-to-learn/green-technology-hero.png"],
-                ["Apply", "Use it in a real project decision.", "/images/teach-to-learn/green-technology-products.png"],
-                ["Explain", "Make the reasoning visible.", "/images/teach-to-learn/weather-station-test-preview.svg"],
-                ["Teach", "Help another person use it.", "/images/teach-to-learn/kyle-green-technology-studio.png"],
-                ["Contribute", "Leave something others can build on.", "/images/teach-to-learn/six-stage-green-journey.png"],
+                ["Learn", "Find and understand a useful idea.", "/images/teach-to-learn/mastery-learn.png"],
+                ["Apply", "Use it in a real project decision.", "/images/teach-to-learn/mastery-apply.png"],
+                ["Explain", "Make the reasoning visible.", "/images/teach-to-learn/mastery-explain.png"],
+                ["Teach", "Help another person use it.", "/images/teach-to-learn/mastery-teach.png"],
+                ["Contribute", "Leave something others can build on.", "/images/teach-to-learn/mastery-contribute.png"],
               ].map(([item, copy, image], index) => (
                 <article key={item} className={`group overflow-hidden rounded-2xl border ${index === 4 ? "border-[#b9d42c] bg-[#d7f43c] text-[#193820]" : "border-[#d4e1d6] bg-[#edf4ed] text-[#335b3f]"}`}>
                   <div className="relative aspect-[4/3] overflow-hidden bg-[#dfeade]">
-                    <Image src={imagePath(image)} alt="" fill sizes="(min-width: 1280px) 12vw, 45vw" className="object-cover transition duration-700 group-hover:scale-[1.04]" />
+                    <Image src={imagePath(image)} alt="" fill sizes="(min-width: 1280px) 12vw, 45vw" className="object-cover transition duration-700 group-hover:scale-[1.035]" />
                     <span className="absolute left-3 top-3 rounded-full bg-white/88 px-2.5 py-1 text-[0.65rem] font-bold tracking-[0.12em] text-[#30563a] backdrop-blur">0{index + 1}</span>
                   </div>
                   <div className="p-4">

@@ -19,7 +19,10 @@
 
 - Editorial white space with deep forest green, bright leaf green, warm yellow, and blue accents.
 - Real engineering/student imagery; no cartoon robots or mascots with faces.
-- The Student Guide uses a winding green-technology landscape to make the six-stage progression visible without looking like a game.
+- The Student Guide uses a clean, curved dashed route linking six illustrated stage stops. It must not rely on a photographic landscape background.
+- Learn, Apply, Explain, Teach and Contribute use one consistent text-free line-illustration family.
+- Wherever an SDG is named visually, use the official UN goal icon rather than a home-made number badge.
+- Stage summaries use restrained, meaningful Green Technology artwork rather than empty white cards or flat colour blocks.
 - Large, direct headlines and compact supporting copy.
 - Clear numbered stages and strong navigation; avoid dashboard-like density.
 - Motion is limited to purposeful reveals and gentle hover feedback.

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import SiteShell from "../components/site-shell";
+import StageArtwork from "../components/stage-artwork";
 
 export const metadata: Metadata = {
   title: "Project Journey",
@@ -128,6 +129,9 @@ const releaseFormats = [
   ["Contribute", "Public repository, community resource or startup validation", "Release something useful with attribution, safety, privacy and claims checked."],
 ];
 
+const notionGuideUrl =
+  "https://app.notion.com/p/3cb402ed073681a4aef4eaf93f3dd67d?pvs=204";
+
 function ArrowIcon() {
   return (
     <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.8" className="h-4 w-4" aria-hidden="true">
@@ -161,9 +165,15 @@ export default function ProjectJourneyPage() {
                   How staged guides work
                   <ArrowIcon />
                 </Link>
-                <span className="inline-flex items-center justify-center gap-2 rounded-full border border-[#a9c0ae] bg-white px-5 py-3 text-sm font-bold text-[#56705d]">
-                  Stage 1 guide · preparing for release
-                </span>
+                <a
+                  href={notionGuideUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-2 rounded-full border border-[#a9c0ae] bg-white px-5 py-3 text-sm font-bold text-[#31573c] transition hover:border-[#2c7140]"
+                >
+                  Open Notion Student Guide
+                  <ArrowIcon />
+                </a>
               </div>
             </div>
           </div>
@@ -188,11 +198,21 @@ export default function ProjectJourneyPage() {
             {stages.map((stage) => (
               <article id={`stage-${stage.number}`} key={stage.number} className="scroll-mt-28 overflow-hidden rounded-[2rem] border border-[#d2e0d4] bg-white shadow-[0_24px_72px_-54px_rgba(15,60,32,0.35)]">
                 <div className="grid lg:grid-cols-[0.38fr_0.62fr]">
-                  <div className="relative p-7 text-white sm:p-9" style={{ backgroundColor: stage.color }}>
-                    <p className="text-xs font-bold uppercase tracking-[0.18em] text-white/70">Gate {stage.number}</p>
-                    <p className="mt-8 text-5xl font-semibold tracking-[-0.05em]">{stage.verb}</p>
-                    <h2 className="mt-3 text-xl font-semibold text-white/92">{stage.title}</h2>
-                    <p className="mt-8 border-t border-white/25 pt-6 text-base leading-7 text-white/85">{stage.question}</p>
+                  <div className="relative flex min-h-[410px] flex-col overflow-hidden text-white" style={{ backgroundColor: stage.color }}>
+                    <StageArtwork
+                      stage={stage.number}
+                      className="h-44 w-full shrink-0 border-b border-white/20 sm:h-52"
+                      sizes="(min-width: 1024px) 38vw, 100vw"
+                    />
+                    <div className="relative flex flex-1 flex-col p-7 sm:p-9">
+                      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(255,255,255,0.16),transparent_52%)]" />
+                      <div className="relative">
+                        <p className="text-xs font-bold uppercase tracking-[0.18em] text-white/72">Gate {stage.number}</p>
+                        <p className="mt-5 text-5xl font-semibold tracking-[-0.05em]">{stage.verb}</p>
+                        <h2 className="mt-3 text-xl font-semibold text-white/92">{stage.title}</h2>
+                        <p className="mt-6 border-t border-white/25 pt-5 text-base leading-7 text-white/88">{stage.question}</p>
+                      </div>
+                    </div>
                   </div>
 
                   <div className="p-7 sm:p-9 lg:p-10">
@@ -269,10 +289,10 @@ export default function ProjectJourneyPage() {
               <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#bad7c0]">Detailed guidance is released one Gate at a time</p>
               <h2 className="mt-3 text-3xl font-semibold tracking-[-0.035em] sm:text-4xl">See the whole journey here. Work on the current stage in Notion.</h2>
             </div>
-            <Link href="/guide" className="inline-flex shrink-0 items-center justify-center gap-2 rounded-full bg-[#d7f43c] px-6 py-3.5 text-sm font-bold text-[#17351f] transition hover:bg-[#e8fa7e]">
-              See how staged release works
+            <a href={notionGuideUrl} target="_blank" rel="noopener noreferrer" className="inline-flex shrink-0 items-center justify-center gap-2 rounded-full bg-[#d7f43c] px-6 py-3.5 text-sm font-bold text-[#17351f] transition hover:bg-[#e8fa7e]">
+              Open Notion Student Guide
               <ArrowIcon />
-            </Link>
+            </a>
           </div>
         </section>
       </main>

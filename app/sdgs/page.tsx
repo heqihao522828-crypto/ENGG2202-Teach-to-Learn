@@ -34,12 +34,12 @@ const projectFlow = [
 ];
 
 const focusGoals = [
-  ["06", "Clean water & sanitation"],
-  ["07", "Affordable & clean energy"],
-  ["09", "Industry, innovation & infrastructure"],
-  ["11", "Sustainable cities & communities"],
-  ["12", "Responsible consumption & production"],
-  ["13", "Climate action"],
+  { number: "06", label: "Clean water & sanitation" },
+  { number: "07", label: "Affordable & clean energy" },
+  { number: "09", label: "Industry, innovation & infrastructure" },
+  { number: "11", label: "Sustainable cities & communities" },
+  { number: "12", label: "Responsible consumption & production" },
+  { number: "13", label: "Climate action" },
 ];
 
 function ArrowIcon() {
@@ -136,10 +136,18 @@ export default function SustainableDevelopmentGoalsPage() {
               </p>
             </div>
             <div className="mt-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-              {focusGoals.map(([number, label]) => (
-                <div key={number} className="flex items-center gap-4 rounded-2xl bg-white p-4 shadow-[0_18px_50px_-45px_rgba(15,60,32,0.4)]">
-                  <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[#173f28] text-sm font-bold text-[#d7f43c]">{number}</span>
-                  <p className="text-sm font-semibold text-[#31523b]">{label}</p>
+              {focusGoals.map((goal) => (
+                <div key={goal.number} className="flex items-center gap-4 rounded-2xl bg-white p-4 shadow-[0_18px_50px_-45px_rgba(15,60,32,0.4)]">
+                  <div className="relative h-16 w-16 shrink-0 overflow-hidden rounded-xl bg-white shadow-sm">
+                    <Image
+                      src={imagePath(`/images/teach-to-learn/sdg/goal-${goal.number}.png`)}
+                      alt={`SDG ${goal.number}: ${goal.label}`}
+                      fill
+                      sizes="64px"
+                      className="object-cover"
+                    />
+                  </div>
+                  <p className="text-sm font-semibold text-[#31523b]">{goal.label}</p>
                 </div>
               ))}
             </div>

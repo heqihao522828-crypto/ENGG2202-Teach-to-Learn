@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import SiteShell from "./components/site-shell";
+import StageArtwork from "./components/stage-artwork";
 import { imagePath } from "./lib/image-path";
 
 const stages = [
@@ -120,21 +121,27 @@ export default function Home() {
             </p>
           </motion.div>
 
-          <div className="mt-12 grid overflow-hidden rounded-[2rem] border border-[#cfe0d2] bg-white shadow-[0_24px_70px_-48px_rgba(15,60,32,0.34)] sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-12 grid overflow-hidden rounded-[2rem] border border-[#cfe0d2] bg-[#eaf3e8] shadow-[0_24px_70px_-48px_rgba(15,60,32,0.34)] sm:grid-cols-2 lg:grid-cols-3">
             {stages.map((stage, index) => (
               <Link
                 key={stage.number}
                 href={`/engg2202#stage-${stage.number}`}
-                className={`group min-h-48 border-[#dbe8dd] p-6 transition hover:bg-[#f1f8f1] sm:p-7 ${index % 3 !== 2 ? "lg:border-r" : ""} ${index < 3 ? "border-b" : ""} ${index % 2 === 0 ? "sm:border-r lg:border-r" : "sm:border-r-0"}`}
+                className={`group overflow-hidden border-[#dbe8dd] bg-white transition hover:bg-[#f1f8f1] ${index % 3 !== 2 ? "lg:border-r" : ""} ${index < 3 ? "border-b" : ""} ${index % 2 === 0 ? "sm:border-r lg:border-r" : "sm:border-r-0"}`}
               >
-                <div className="flex items-start justify-between">
-                  <span className="text-xs font-bold tracking-[0.16em] text-[#72907a]">{stage.number}</span>
-                  <span className="flex h-9 w-9 items-center justify-center rounded-full border border-[#c9dcca] text-[#346444] transition group-hover:bg-[#173f28] group-hover:text-white">
-                    <ArrowIcon />
-                  </span>
+                <StageArtwork stage={stage.number} className="h-32 w-full border-b border-[#d8e5da] sm:h-36" sizes="(min-width: 1024px) 30vw, (min-width: 640px) 50vw, 100vw" />
+                <div className="relative min-h-44 p-6 sm:p-7">
+                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_right,rgba(90,182,107,0.1),transparent_52%)]" />
+                  <div className="relative flex items-start justify-between">
+                    <span className="text-xs font-bold tracking-[0.16em] text-[#72907a]">{stage.number}</span>
+                    <span className="flex h-9 w-9 items-center justify-center rounded-full border border-[#c9dcca] text-[#346444] transition group-hover:bg-[#173f28] group-hover:text-white">
+                      <ArrowIcon />
+                    </span>
+                  </div>
+                  <div className="relative">
+                    <p className="mt-7 text-2xl font-semibold tracking-[-0.025em] text-[#143620]">{stage.short}</p>
+                    <p className="mt-2 text-sm leading-6 text-[#5b7161]">{stage.label}</p>
+                  </div>
                 </div>
-                <p className="mt-8 text-2xl font-semibold tracking-[-0.025em] text-[#143620]">{stage.short}</p>
-                <p className="mt-2 text-sm leading-6 text-[#5b7161]">{stage.label}</p>
               </Link>
             ))}
           </div>

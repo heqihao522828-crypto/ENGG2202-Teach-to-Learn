@@ -9,8 +9,9 @@ Logos, trademarks and third-party communication assets retain their own terms.
 - Source: United Nations Sustainable Development communications materials
 - Source page: <https://www.un.org/sustainabledevelopment/news/communications-material/>
 - Original archive: `SDG-Poster-with-UN-Emblem-1.zip`
-- Individual web icons used for project cards: `sdg-07.png`, `sdg-09.png`
-  and `sdg-13.png`, from the official `E-SDG-Icons-WEB.zip` archive.
+- Complete individual web icon set: `sdg/goal-01.png` through
+  `sdg/goal-17.png`, from the official `E-SDG-Icons-WEB.zip` archive. These
+  icons are used on the SDG page, project cards and Challenge Focus visuals.
 - Use should follow the UN SDG logo, colour wheel and icon guidelines linked on
   the source page. Inclusion here does not imply United Nations endorsement.
 
@@ -20,7 +21,11 @@ Logos, trademarks and third-party communication assets retain their own terms.
   instructor image supplied by the project owner, replacing the robotic-arm
   emphasis with Green Technology learning, sensing, solar and environmental
   engineering elements.
-- `six-stage-green-journey.png` was generated for this site as an original,
-  text-free background for the six-stage project path.
+- `six-stage-green-journey.png` was generated for an earlier route concept and
+  is retained in the repository for design history; the live Student Guide now
+  uses a clean code-rendered route without a photographic background.
+- `mastery-learn.png`, `mastery-apply.png`, `mastery-explain.png`,
+  `mastery-teach.png` and `mastery-contribute.png` are original, text-free
+  line illustrations generated as one visual family for this microsite.
 - `green-technology-hero.png` and `green-technology-products.png` are original
   project visuals created for this microsite in earlier design iterations.

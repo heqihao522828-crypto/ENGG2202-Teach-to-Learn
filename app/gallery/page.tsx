@@ -19,9 +19,9 @@ const projects = [
     href: "https://github.com/heqihao522828-crypto/solar-weather-station",
     tags: ["Sensing", "IoT", "Solar power", "Field testing"],
     sdgs: [
-      { number: "07", title: "Affordable and Clean Energy", image: "/images/teach-to-learn/sdg-07.png" },
-      { number: "09", title: "Industry, Innovation and Infrastructure", image: "/images/teach-to-learn/sdg-09.png" },
-      { number: "13", title: "Climate Action", image: "/images/teach-to-learn/sdg-13.png" },
+      { number: "07", title: "Affordable and Clean Energy", image: "/images/teach-to-learn/sdg/goal-07.png" },
+      { number: "09", title: "Industry, Innovation and Infrastructure", image: "/images/teach-to-learn/sdg/goal-09.png" },
+      { number: "13", title: "Climate Action", image: "/images/teach-to-learn/sdg/goal-13.png" },
     ],
   },
 ];
