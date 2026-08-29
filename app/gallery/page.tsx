@@ -12,13 +12,17 @@ export const metadata: Metadata = {
 const projects = [
   {
     title: "Solar Weather Station",
-    theme: "Green Technology",
     status: "Instructor exemplar · in development",
     description:
       "A modular, solar-powered environmental sensing prototype used to show how an engineering project develops through open-source study, testing, iteration and responsible release.",
     image: "/images/teach-to-learn/green-technology-products.png",
     href: "https://github.com/heqihao522828-crypto/solar-weather-station",
     tags: ["Sensing", "IoT", "Solar power", "Field testing"],
+    sdgs: [
+      { number: "07", title: "Affordable and Clean Energy", image: "/images/teach-to-learn/sdg-07.png" },
+      { number: "09", title: "Industry, Innovation and Infrastructure", image: "/images/teach-to-learn/sdg-09.png" },
+      { number: "13", title: "Climate Action", image: "/images/teach-to-learn/sdg-13.png" },
+    ],
   },
 ];
 
@@ -82,7 +86,13 @@ export default function StudentProjectsPage() {
               >
                 <div className="relative aspect-[4/3] overflow-hidden bg-[#dce9dc]">
                   <Image src={imagePath(project.image)} alt="Solar weather station and related green technology engineering systems" fill sizes="(min-width: 1280px) 30vw, (min-width: 768px) 48vw, 100vw" className="object-cover object-left transition duration-700 group-hover:scale-[1.035]" />
-                  <span className="absolute left-5 top-5 rounded-full bg-[#d7f43c] px-3 py-2 text-[0.66rem] font-bold uppercase tracking-[0.12em] text-[#17351f]">{project.theme}</span>
+                  <div className="absolute left-5 top-5 flex gap-2" aria-label="Related Sustainable Development Goals">
+                    {project.sdgs.map((sdg) => (
+                      <div key={sdg.number} className="relative h-14 w-14 overflow-hidden rounded-xl border-2 border-white bg-white shadow-[0_10px_28px_-12px_rgba(0,0,0,0.65)] sm:h-16 sm:w-16" title={`SDG ${sdg.number}: ${sdg.title}`}>
+                        <Image src={imagePath(sdg.image)} alt={`SDG ${sdg.number}: ${sdg.title}`} fill sizes="64px" className="object-cover" />
+                      </div>
+                    ))}
+                  </div>
                 </div>
                 <div className="flex flex-1 flex-col p-6 sm:p-7">
                   <p className="text-xs font-bold uppercase tracking-[0.12em] text-[#69806e]">{project.status}</p>
@@ -93,6 +103,7 @@ export default function StudentProjectsPage() {
                       <span key={tag} className="rounded-full bg-[#edf4ed] px-3 py-1.5 text-xs font-semibold text-[#41614a]">{tag}</span>
                     ))}
                   </div>
+                  <p className="mt-5 text-xs leading-5 text-[#718176]">Related SDGs indicate the project context. The repository must still justify the target connection and any impact claim.</p>
                   <span className="mt-8 inline-flex items-center gap-2 text-sm font-bold text-[#226439]">
                     View project repository
                     <ArrowIcon />
@@ -104,13 +115,42 @@ export default function StudentProjectsPage() {
             <div className="flex min-h-[31rem] flex-col justify-between rounded-[1.8rem] border border-dashed border-[#acc2b0] bg-[#edf4ed] p-7 text-[#34543e]">
               <div>
                 <span className="flex h-11 w-11 items-center justify-center rounded-full border border-[#afc6b3] bg-white text-xl">+</span>
-                <h3 className="mt-8 text-2xl font-semibold tracking-[-0.03em] text-[#173823]">Future student work lives here.</h3>
+                <h3 className="mt-8 text-2xl font-semibold tracking-[-0.03em] text-[#173823]">More project stories are coming.</h3>
                 <p className="mt-4 text-sm leading-7 text-[#526a58]">
-                  Projects are added after evidence, attribution, consent,
-                  safety and public-release checks are complete.
+                  As ENGG2202 teams complete evidence, attribution, consent,
+                  safety and public-release checks, selected work will join this collection.
                 </p>
               </div>
-              <p className="border-t border-[#ceddcf] pt-5 text-xs font-bold uppercase tracking-[0.14em] text-[#667b6a]">Gallery structure ready to expand</p>
+              <p className="border-t border-[#ceddcf] pt-5 text-xs font-bold uppercase tracking-[0.14em] text-[#667b6a]">Your project could become part of this collection</p>
+            </div>
+          </div>
+        </section>
+
+        <section className="bg-[#173f28] px-5 py-16 text-white sm:px-8 lg:px-10">
+          <div className="mx-auto grid max-w-[90rem] gap-8 lg:grid-cols-[0.72fr_1.28fr] lg:items-center">
+            <div>
+              <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#b8d8bf]">A project story can move</p>
+              <h2 className="mt-4 text-4xl font-semibold tracking-[-0.04em]">A video is also an engineering learning output.</h2>
+            </div>
+            <div className="grid gap-4 sm:grid-cols-[0.85fr_1.15fr]">
+              <div className="relative min-h-[230px] overflow-hidden rounded-[1.8rem] bg-[#0d2f1b] p-6">
+                <div className="absolute -right-8 -top-8 h-36 w-36 rounded-full border-[26px] border-[#d7f43c]/75" />
+                <div className="relative flex h-full flex-col justify-between">
+                  <span className="flex h-12 w-12 items-center justify-center rounded-full bg-white text-[#173f28]" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="currentColor" className="h-5 w-5"><path d="m9 7 8 5-8 5V7Z" /></svg>
+                  </span>
+                  <p className="max-w-xs text-2xl font-semibold tracking-[-0.03em]">Project film · video essay · short documentary · social cut</p>
+                </div>
+              </div>
+              <div className="rounded-[1.8rem] bg-white/8 p-6 sm:p-7">
+                <p className="text-sm leading-7 text-white/80">
+                  Students may document the journey in a YouTube-style project
+                  film or a shorter Instagram-friendly story. The form is flexible;
+                  the evidence is not. A useful video should show the challenge,
+                  decisions, making, failures, testing, revision and what the team learned.
+                </p>
+                <p className="mt-5 border-t border-white/15 pt-5 text-xs font-bold uppercase tracking-[0.13em] text-[#d7f43c]">Not only a highlight reel · teach an audience something they can use</p>
+              </div>
             </div>
           </div>
         </section>
@@ -122,7 +162,7 @@ export default function StudentProjectsPage() {
               <h2 className="mt-3 text-3xl font-semibold tracking-[-0.035em] text-[#153321]">Responsible release is part of the engineering.</h2>
             </div>
             <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-              {['Useful evidence remains', 'Licence and sources are clear', 'Privacy and location are checked', 'Safety claims are proportionate', 'Stakeholder consent is respected', 'Another person can understand it'].map((item) => (
+              {['Useful evidence remains', 'Relevant SDG target and rationale are stated', 'Licence and sources are clear', 'Privacy and location are checked', 'Safety claims are proportionate', 'Stakeholder consent is respected', 'Another person can understand it'].map((item) => (
                 <div key={item} className="rounded-2xl border border-[#d7e3d9] bg-[#f8fbf8] p-4 text-sm font-semibold leading-6 text-[#3d5945]">{item}</div>
               ))}
             </div>

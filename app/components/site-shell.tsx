@@ -9,6 +9,7 @@ import { imagePath } from "../lib/image-path";
 const navigation = [
   { label: "Home", href: "/" },
   { label: "Project Journey", href: "/engg2202" },
+  { label: "Green Technology", href: "/sdgs" },
   { label: "Student Projects", href: "/gallery" },
   { label: "Student Guide", href: "/guide" },
   { label: "About", href: "/about" },
@@ -76,7 +77,7 @@ export default function SiteShell({ children }: { children: ReactNode }) {
           </nav>
 
           <a
-            href="https://activelearning.tech/"
+            href="https://activelearning.engg.hku.hk/"
             target="_blank"
             rel="noopener noreferrer"
             className="ml-auto hidden items-center gap-1.5 rounded-full border border-[#b9cfbf] px-4 py-2.5 text-xs font-bold uppercase tracking-[0.08em] text-[#214b31] transition hover:border-[#1f6d3b] hover:bg-white lg:ml-3 xl:inline-flex"
@@ -117,7 +118,7 @@ export default function SiteShell({ children }: { children: ReactNode }) {
                   </li>
                 ))}
                 <li className="mt-2 border-t border-[#dce8df] pt-3">
-                  <a href="https://activelearning.tech/" target="_blank" rel="noopener noreferrer" className="flex items-center justify-between rounded-xl px-3 py-3 text-xs font-bold uppercase tracking-[0.08em] text-[#526c5a] hover:bg-[#e9f3ea]">
+                  <a href="https://activelearning.engg.hku.hk/" target="_blank" rel="noopener noreferrer" className="flex items-center justify-between rounded-xl px-3 py-3 text-xs font-bold uppercase tracking-[0.08em] text-[#526c5a] hover:bg-[#e9f3ea]">
                     Active Learning Hub
                     <ExternalArrow />
                   </a>

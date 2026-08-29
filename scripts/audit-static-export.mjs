@@ -9,6 +9,7 @@ const exportRoot = join(projectRoot, "out");
 const requiredPages = [
   "index.html",
   "engg2202/index.html",
+  "sdgs/index.html",
   "gallery/index.html",
   "guide/index.html",
   "about/index.html",

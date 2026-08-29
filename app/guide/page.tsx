@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import SiteShell from "../components/site-shell";
+import { imagePath } from "../lib/image-path";
 
 export const metadata: Metadata = {
   title: "Student Guide",
@@ -8,18 +10,13 @@ export const metadata: Metadata = {
     "How ENGG2202 project guidance, tools and checkpoint materials are released one project Gate at a time.",
 };
 
-const notionGuideUrl =
-  "https://app.notion.com/p/3cb402ed073681a4aef4eaf93f3dd67d?pvs=204";
-const toolIndexUrl =
-  "https://app.notion.com/p/f856f88c758849cfa9581fd96fdb2d72";
-
 const gateNames = [
-  "Challenge Focus",
-  "Problem Validation",
-  "Proposal & Plan",
-  "First Working Version",
-  "Test & Iteration",
-  "Share, Teach & Release",
+  { title: "Challenge Focus", note: "Choose a meaningful direction", left: "11%", top: "65%" },
+  { title: "Problem Validation", note: "Find stakeholder evidence", left: "24%", top: "35%" },
+  { title: "Proposal & Plan", note: "Justify a responsible route", left: "40%", top: "66%" },
+  { title: "First Working Version", note: "Learn, adapt and make", left: "57%", top: "34%" },
+  { title: "Test & Iteration", note: "Use evidence to improve", left: "72%", top: "62%" },
+  { title: "Share, Teach & Release", note: "Create value for an audience", left: "87%", top: "25%" },
 ];
 
 function ArrowIcon() {
@@ -49,16 +46,16 @@ export default function StudentGuidePage() {
                 provides the detailed instructions, methods, tools and
                 checkpoint template for the Gate currently released by the instructor.
               </p>
-              <a href={notionGuideUrl} target="_blank" rel="noopener noreferrer" className="mt-7 inline-flex items-center gap-2 rounded-full bg-[#d7f43c] px-6 py-3.5 text-sm font-bold text-[#17351f] transition hover:bg-[#e8fa7e]">
-                Open the current Notion guide
-                <ArrowIcon />
-              </a>
+              <div className="mt-7 inline-flex items-center gap-3 rounded-full bg-[#d7f43c] px-5 py-3 text-sm font-bold text-[#17351f]">
+                <span className="h-2.5 w-2.5 rounded-full bg-[#347344]" aria-hidden="true" />
+                Stage 1 guide · preparing for release
+              </div>
             </div>
           </div>
         </section>
 
         <section className="mx-auto max-w-[90rem] px-5 py-16 sm:px-8 lg:px-10 lg:py-24">
-          <div className="grid gap-8 lg:grid-cols-[0.72fr_1.28fr]">
+          <div className="grid gap-8 lg:grid-cols-[0.7fr_1.3fr] lg:items-start">
             <div>
               <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#57745e]">How release works</p>
               <h2 className="mt-4 text-4xl font-semibold tracking-[-0.04em] text-[#143421]">You can see the destination without receiving every instruction at once.</h2>
@@ -68,17 +65,52 @@ export default function StudentGuidePage() {
                 remains clear and the instructor can improve later stages before use.
               </p>
             </div>
-            <ol className="grid gap-3 sm:grid-cols-2">
-              {gateNames.map((gate, index) => (
-                <li key={gate} className="flex items-center gap-4 rounded-2xl border border-[#d4e1d6] bg-white p-4">
-                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#e9f3e9] text-xs font-bold text-[#2d6740]">{String(index + 1).padStart(2, '0')}</span>
-                  <div>
-                    <p className="text-sm font-semibold text-[#23422d]">{gate}</p>
-                    <p className="mt-1 text-xs text-[#748579]">Released by the instructor when ready</p>
-                  </div>
-                </li>
-              ))}
-            </ol>
+            <div>
+              <div className="relative hidden min-h-[690px] overflow-hidden rounded-[2.2rem] border border-[#ccddcf] bg-[#dcebdd] shadow-[0_32px_90px_-58px_rgba(15,60,32,0.5)] lg:block">
+                <Image
+                  src={imagePath("/images/teach-to-learn/six-stage-green-journey.png")}
+                  alt="A winding path through a Green Technology landscape with six project-stage stops"
+                  fill
+                  sizes="64vw"
+                  className="object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0c2e1a]/30 via-transparent to-white/12" />
+                <ol>
+                  {gateNames.map((gate, index) => (
+                    <li
+                      key={gate.title}
+                      className="absolute w-[10.5rem] -translate-x-1/2 -translate-y-1/2 rounded-2xl border border-white/70 bg-white/92 p-3 shadow-[0_15px_40px_-24px_rgba(7,40,20,0.7)] backdrop-blur"
+                      style={{ left: gate.left, top: gate.top }}
+                    >
+                      <div className="flex items-start gap-2.5">
+                        <span className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full text-[0.68rem] font-bold ${index === 5 ? "bg-[#d7f43c] text-[#17351f]" : "bg-[#173f28] text-white"}`}>
+                          {String(index + 1).padStart(2, "0")}
+                        </span>
+                        <div>
+                          <p className="text-xs font-bold leading-4 text-[#21452d]">{gate.title}</p>
+                          <p className="mt-1 text-[0.64rem] leading-4 text-[#627568]">{gate.note}</p>
+                        </div>
+                      </div>
+                    </li>
+                  ))}
+                </ol>
+                <div className="absolute bottom-5 left-5 rounded-full bg-[#133c25]/90 px-4 py-2 text-[0.68rem] font-bold uppercase tracking-[0.13em] text-white backdrop-blur">
+                  The route can loop back when evidence changes the decision
+                </div>
+              </div>
+
+              <ol className="grid gap-3 sm:grid-cols-2 lg:hidden">
+                {gateNames.map((gate, index) => (
+                  <li key={gate.title} className="flex items-center gap-4 rounded-2xl border border-[#d4e1d6] bg-white p-4">
+                    <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#e9f3e9] text-xs font-bold text-[#2d6740]">{String(index + 1).padStart(2, "0")}</span>
+                    <div>
+                      <p className="text-sm font-semibold text-[#23422d]">{gate.title}</p>
+                      <p className="mt-1 text-xs text-[#748579]">{gate.note}</p>
+                    </div>
+                  </li>
+                ))}
+              </ol>
+            </div>
           </div>
         </section>
 
@@ -114,20 +146,16 @@ export default function StudentGuidePage() {
               and evidence back to Tuesday Studio. Reading the page is not the
               active learning; using it to make, test and revise a decision is.
             </p>
-            <a href={notionGuideUrl} target="_blank" rel="noopener noreferrer" className="mt-7 inline-flex items-center gap-2 text-sm font-bold text-[#26633a] underline decoration-[#9bbb9f] underline-offset-4">
-              Open current guide
-              <ArrowIcon />
-            </a>
+            <p className="mt-7 inline-flex items-center gap-2 rounded-full bg-[#edf4ed] px-4 py-2 text-xs font-bold uppercase tracking-[0.1em] text-[#4f6b56]">
+              No student Gate has been publicly released yet
+            </p>
           </article>
 
           <article className="rounded-[2rem] bg-[#d7f43c] p-7 text-[#17351f]">
             <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#42601f]">Tool index</p>
             <h2 className="mt-4 text-3xl font-semibold tracking-[-0.035em]">A simple directory, not another syllabus.</h2>
             <p className="mt-4 text-sm leading-7 text-[#3f5526]">Browse tools by name, link and main purpose. Use the Gate guide for context and recommended methods.</p>
-            <a href={toolIndexUrl} target="_blank" rel="noopener noreferrer" className="mt-7 inline-flex items-center gap-2 text-sm font-bold underline decoration-[#738530] underline-offset-4">
-              Open tool index
-              <ArrowIcon />
-            </a>
+            <p className="mt-7 text-xs font-bold uppercase tracking-[0.1em] text-[#52662f]">Added progressively beside each released Gate</p>
           </article>
 
           <div className="lg:col-span-3 flex flex-col gap-5 rounded-[2rem] border border-[#d6e3d7] bg-[#f0f6ef] p-7 sm:flex-row sm:items-center sm:justify-between">

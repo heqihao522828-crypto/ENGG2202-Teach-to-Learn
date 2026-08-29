@@ -19,6 +19,7 @@ Formal class dates, assessment submissions and grades remain on the official HKU
 
 - `/` — Teach-to-Learn overview
 - `/engg2202` — six-stage Project Journey
+- `/sdgs` — Green Technology and the complete UN SDG overview
 - `/guide` — how the staged Notion guide works
 - `/gallery` — student project directory
 - `/about` — scope and relationship to the wider Active Learning initiative
@@ -32,6 +33,17 @@ Project cards are currently defined in `app/gallery/page.tsx`. A published card 
 - privacy, location and stakeholder consent;
 - safety and reliability claims;
 - responsible public-release readiness.
+
+Every project in this gallery already sits within the course Green Technology
+theme, so cards do not repeat a generic Green Technology label. Instead, each
+card displays one or more official SDG icons selected for that project. Before a
+new project is added:
+
+- name the relevant SDG goal **and target**, where possible;
+- explain the connection in the project repository;
+- keep evidence for any environmental or social impact claim;
+- do not treat an SDG icon, a solar panel or a sustainability label as proof of impact;
+- use official UN icons and follow the UN communication guidelines.
 
 ## Local development
 
@@ -58,4 +70,3 @@ This repository is adapted from [`hkuenggal/activelearning-web`](https://github.
 ## Licence status
 
 The parent repository currently does not include a licence file. A new open-source licence should only be added after the Active Learning team confirms that the inherited code and assets may be relicensed. Until then, contributions and reuse require explicit permission from the rights holders.
-

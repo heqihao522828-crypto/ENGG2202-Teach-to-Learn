@@ -22,20 +22,34 @@ export default function AboutPage() {
   return (
     <SiteShell>
       <main>
-        <section className="border-b border-[#d8e4d9] bg-[#eef6ec] px-5 py-20 sm:px-8 lg:px-10 lg:py-28">
-          <div className="mx-auto grid max-w-[90rem] gap-10 lg:grid-cols-[0.82fr_1.18fr] lg:items-end">
+        <section className="overflow-hidden border-b border-[#d8e4d9] bg-[#eef6ec] px-5 py-16 sm:px-8 lg:px-10 lg:py-22">
+          <div className="mx-auto grid max-w-[90rem] gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
             <div>
               <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#52765c]">About this microsite</p>
               <h1 className="mt-5 text-5xl font-semibold leading-[0.98] tracking-[-0.05em] text-[#11301d] sm:text-6xl lg:text-7xl">
                 A focused part of a wider
                 <span className="block text-[#318248]">Active Learning community.</span>
               </h1>
+              <p className="mt-7 max-w-xl text-lg leading-9 text-[#48604f]">
+                This ENGG2202 site develops the Teach-to-Learn strand: helping
+                students turn project experience into engineering knowledge that
+                other people can understand, question and use.
+              </p>
             </div>
-            <p className="max-w-2xl text-lg leading-9 text-[#48604f] lg:justify-self-end">
-              This ENGG2202 site develops the Teach-to-Learn strand: helping
-              students turn project experience into engineering knowledge that
-              other people can understand, question and use.
-            </p>
+            <div className="relative min-h-[420px] overflow-hidden rounded-[2.2rem] bg-[#173f28] shadow-[0_36px_100px_-62px_rgba(15,60,32,0.55)] sm:min-h-[520px]">
+              <Image
+                src={imagePath("/images/teach-to-learn/kyle-green-technology-studio.png")}
+                alt="ENGG2202 instructor in a Green Technology project studio with students, solar sensing and prototype systems"
+                fill
+                priority
+                sizes="(min-width: 1024px) 54vw, 100vw"
+                className="object-cover"
+              />
+              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#102e1d]/95 via-[#102e1d]/55 to-transparent p-7 pt-24 text-white sm:p-9 sm:pt-28">
+                <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#d7f43c]">Green Technology studio</p>
+                <p className="mt-2 max-w-lg text-lg font-semibold leading-7">Teachers provide useful tools, feedback and routes around obstacles; students remain responsible for the engineering decisions.</p>
+              </div>
+            </div>
           </div>
         </section>
 
@@ -69,11 +83,23 @@ export default function AboutPage() {
               </p>
             </div>
             <div className="grid grid-cols-2 gap-3 sm:grid-cols-5 lg:grid-cols-1 xl:grid-cols-5">
-              {['Learn', 'Apply', 'Explain', 'Teach', 'Contribute'].map((item, index) => (
-                <div key={item} className={`rounded-2xl p-5 ${index === 4 ? "bg-[#d7f43c] text-[#193820]" : "bg-[#edf4ed] text-[#335b3f]"}`}>
-                  <p className="text-xs font-bold text-current/60">0{index + 1}</p>
-                  <p className="mt-8 text-lg font-semibold">{item}</p>
-                </div>
+              {[
+                ["Learn", "Find and understand a useful idea.", "/images/teach-to-learn/green-technology-hero.png"],
+                ["Apply", "Use it in a real project decision.", "/images/teach-to-learn/green-technology-products.png"],
+                ["Explain", "Make the reasoning visible.", "/images/teach-to-learn/weather-station-test-preview.svg"],
+                ["Teach", "Help another person use it.", "/images/teach-to-learn/kyle-green-technology-studio.png"],
+                ["Contribute", "Leave something others can build on.", "/images/teach-to-learn/six-stage-green-journey.png"],
+              ].map(([item, copy, image], index) => (
+                <article key={item} className={`group overflow-hidden rounded-2xl border ${index === 4 ? "border-[#b9d42c] bg-[#d7f43c] text-[#193820]" : "border-[#d4e1d6] bg-[#edf4ed] text-[#335b3f]"}`}>
+                  <div className="relative aspect-[4/3] overflow-hidden bg-[#dfeade]">
+                    <Image src={imagePath(image)} alt="" fill sizes="(min-width: 1280px) 12vw, 45vw" className="object-cover transition duration-700 group-hover:scale-[1.04]" />
+                    <span className="absolute left-3 top-3 rounded-full bg-white/88 px-2.5 py-1 text-[0.65rem] font-bold tracking-[0.12em] text-[#30563a] backdrop-blur">0{index + 1}</span>
+                  </div>
+                  <div className="p-4">
+                    <p className="text-lg font-semibold">{item}</p>
+                    <p className="mt-2 text-xs leading-5 text-current/72">{copy}</p>
+                  </div>
+                </article>
               ))}
             </div>
           </div>
@@ -99,10 +125,10 @@ export default function AboutPage() {
               stakeholder, problem, trade-offs and real impact; a green label
               is not evidence by itself.
             </p>
-            <a href="https://sdgs.un.org/goals" target="_blank" rel="noopener noreferrer" className="mt-7 inline-flex items-center gap-2 text-sm font-bold text-[#27643a] underline decoration-[#9abb9e] underline-offset-4">
-              Explore the UN Sustainable Development Goals
+            <Link href="/sdgs" className="mt-7 inline-flex items-center gap-2 text-sm font-bold text-[#27643a] underline decoration-[#9abb9e] underline-offset-4">
+              Explore Green Technology & all 17 SDGs
               <ArrowIcon />
-            </a>
+            </Link>
           </div>
         </section>
 
@@ -113,7 +139,7 @@ export default function AboutPage() {
               <h2 className="mt-3 text-3xl font-semibold tracking-[-0.035em]">Class times, formal deadlines, grades and submissions stay on the official course platforms.</h2>
             </div>
             <div className="flex flex-col gap-3 sm:flex-row">
-              <a href="https://activelearning.tech/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-bold text-[#173b25]">
+              <a href="https://activelearning.engg.hku.hk/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-bold text-[#173b25]">
                 Visit Active Learning Hub
                 <ArrowIcon />
               </a>

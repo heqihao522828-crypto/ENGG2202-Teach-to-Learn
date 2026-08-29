@@ -8,9 +8,6 @@ export const metadata: Metadata = {
     "The six-stage ENGG2202 project journey from challenge focus to responsible teaching and release.",
 };
 
-const notionGuideUrl =
-  "https://app.notion.com/p/3cb402ed073681a4aef4eaf93f3dd67d?pvs=204";
-
 const stages = [
   {
     number: "01",
@@ -114,12 +111,21 @@ const stages = [
     evidence:
       "Outcome, audience response, revised material, repository, attribution, reflection and release decision.",
     methods:
-      "Workshop, report, poster, demo, competition, stakeholder implementation, tutorial and public repository.",
+      "Workshop, report, poster, demo, competition, project film, short documentary, stakeholder implementation, tutorial and public repository.",
     discussion:
       "What can another person use? What must be redacted? Which claim is still too strong?",
     example:
       "Release the weather station as an educational prototype unless evidence supports stronger claims.",
   },
+];
+
+const releaseFormats = [
+  ["Build", "Functional prototype or open-source system", "Show how it works, how it was tested and what another team would need to continue."],
+  ["Teach", "Workshop, tutorial or teaching kit", "Observe learners using the material, then revise it from their questions and difficulty."],
+  ["Communicate", "Presentation, report, poster or conference-style paper", "Make the evidence, trade-offs and limits understandable to a defined audience."],
+  ["Film", "Project video, video essay or short documentary", "Record the journey, decisions, failures, testing and learning—not only the final result."],
+  ["Showcase", "Competition entry or stakeholder demonstration", "Use external questions and feedback to test the project under real judgement."],
+  ["Contribute", "Public repository, community resource or startup validation", "Release something useful with attribution, safety, privacy and claims checked."],
 ];
 
 function ArrowIcon() {
@@ -155,10 +161,9 @@ export default function ProjectJourneyPage() {
                   How staged guides work
                   <ArrowIcon />
                 </Link>
-                <a href={notionGuideUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 rounded-full border border-[#a9c0ae] bg-white px-5 py-3 text-sm font-bold text-[#214a2f] transition hover:border-[#2c7140]">
-                  Open current Notion guide
-                  <ArrowIcon />
-                </a>
+                <span className="inline-flex items-center justify-center gap-2 rounded-full border border-[#a9c0ae] bg-white px-5 py-3 text-sm font-bold text-[#56705d]">
+                  Stage 1 guide · preparing for release
+                </span>
               </div>
             </div>
           </div>
@@ -233,6 +238,29 @@ export default function ProjectJourneyPage() {
               </article>
             ))}
           </div>
+
+          <section className="mt-16 rounded-[2.2rem] border border-[#d1dfd3] bg-[#eef6ec] p-7 sm:p-9 lg:p-11">
+            <div className="grid gap-7 lg:grid-cols-[0.7fr_1.3fr] lg:items-end">
+              <div>
+                <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#57745e]">Gate 06 · output menu</p>
+                <h2 className="mt-4 text-4xl font-semibold tracking-[-0.04em] text-[#143421]">Different forms. The same evidence standard.</h2>
+              </div>
+              <p className="max-w-2xl text-sm leading-7 text-[#506656] lg:justify-self-end">
+                Teams may combine formats. The final choice should fit the
+                audience and the value created, while making the learning
+                process, evidence, feedback and revision visible.
+              </p>
+            </div>
+            <div className="mt-9 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+              {releaseFormats.map(([label, title, copy], index) => (
+                <article key={label} className={`rounded-[1.6rem] p-6 ${index === 3 ? "bg-[#173f28] text-white" : "bg-white text-[#183822]"}`}>
+                  <p className={`text-xs font-bold uppercase tracking-[0.14em] ${index === 3 ? "text-[#d7f43c]" : "text-[#628069]"}`}>{label}</p>
+                  <h3 className="mt-7 text-xl font-semibold tracking-[-0.025em]">{title}</h3>
+                  <p className={`mt-3 text-sm leading-7 ${index === 3 ? "text-white/76" : "text-[#526858]"}`}>{copy}</p>
+                </article>
+              ))}
+            </div>
+          </section>
         </section>
 
         <section className="bg-[#173f28] px-5 py-16 text-white sm:px-8 lg:px-10">
@@ -241,10 +269,10 @@ export default function ProjectJourneyPage() {
               <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#bad7c0]">Detailed guidance is released one Gate at a time</p>
               <h2 className="mt-3 text-3xl font-semibold tracking-[-0.035em] sm:text-4xl">See the whole journey here. Work on the current stage in Notion.</h2>
             </div>
-            <a href={notionGuideUrl} target="_blank" rel="noopener noreferrer" className="inline-flex shrink-0 items-center justify-center gap-2 rounded-full bg-[#d7f43c] px-6 py-3.5 text-sm font-bold text-[#17351f] transition hover:bg-[#e8fa7e]">
-              Open student guide
+            <Link href="/guide" className="inline-flex shrink-0 items-center justify-center gap-2 rounded-full bg-[#d7f43c] px-6 py-3.5 text-sm font-bold text-[#17351f] transition hover:bg-[#e8fa7e]">
+              See how staged release works
               <ArrowIcon />
-            </a>
+            </Link>
           </div>
         </section>
       </main>
