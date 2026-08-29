@@ -3,10 +3,10 @@ import { siteBasePath } from "./site-paths.mjs";
 
 const nextConfig: NextConfig = {
   output: "export",
-  // GitHub Pages redirects this repository to activelearning.engg.hku.hk,
-  // where the export is served from the domain root. Set
-  // NEXT_PUBLIC_BASE_PATH only when deploying the export under a subpath.
+  // GitHub Pages supplies the repository base path during deployment.
   basePath: siteBasePath,
+  // Folder-style routes keep copied links reliable with or without a final slash.
+  trailingSlash: true,
   turbopack: {
     root: process.cwd(),
   },

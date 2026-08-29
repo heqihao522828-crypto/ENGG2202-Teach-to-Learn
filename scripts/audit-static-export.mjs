@@ -8,10 +8,10 @@ const projectRoot = resolve(fileURLToPath(new URL("..", import.meta.url)));
 const exportRoot = join(projectRoot, "out");
 const requiredPages = [
   "index.html",
-  "engg2202.html",
-  "gallery.html",
-  "guide.html",
-  "about.html",
+  "engg2202/index.html",
+  "gallery/index.html",
+  "guide/index.html",
+  "about/index.html",
 ];
 
 const errors = [];
