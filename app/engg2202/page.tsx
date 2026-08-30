@@ -8,7 +8,7 @@ import { imagePath } from "../lib/image-path";
 export const metadata: Metadata = {
   title: "Project Journey",
   description:
-    "The six-stage ENGG2202 project journey from challenge focus to responsible teaching and release.",
+    "The six-stage ENGG2202 project journey from challenge focus to a responsible, reusable contribution.",
 };
 
 const stages = [
@@ -89,8 +89,8 @@ const stages = [
   },
   {
     number: "06",
-    title: "Share, Teach & Release",
-    verb: "Teach",
+    title: "Teach, Share & Release",
+    verb: "Contribute",
     color: "#7d3fa0",
     question:
       "Who should receive this work, in what form, and what is safe and ready to release?",
@@ -114,15 +114,15 @@ const releaseFormats = [
 ];
 
 const evidenceSteps = [
-  { number: "01", label: "Act", position: "left-1/2 top-0 -translate-x-1/2" },
-  { number: "02", label: "Keep evidence", position: "right-0 top-[27%]" },
-  { number: "03", label: "Get feedback", position: "right-[8%] bottom-[4%]" },
-  { number: "04", label: "Revise", position: "left-[8%] bottom-[4%]" },
-  { number: "05", label: "Transfer", position: "left-0 top-[27%]" },
+  { number: "01", label: "Act", copy: "Try the next useful move", symbol: "↗", position: "left-1/2 top-0 -translate-x-1/2" },
+  { number: "02", label: "Keep evidence", copy: "Record result and context", symbol: "◎", position: "right-0 top-[24%]" },
+  { number: "03", label: "Get feedback", copy: "Invite another view", symbol: "↔", position: "right-[4%] bottom-[2%]" },
+  { number: "04", label: "Revise", copy: "Change the next attempt", symbol: "↻", position: "left-[4%] bottom-[2%]" },
+  { number: "05", label: "Transfer", copy: "Use it in a new context", symbol: "⇢", position: "left-0 top-[24%]" },
 ] as const;
 
 const notionGuideUrl =
-  "https://app.notion.com/p/3cb402ed073681a4aef4eaf93f3dd67d?pvs=204";
+  "https://tasty-vicuna-87f.notion.site/ENGG2202-Teach-to-Learn-Student-Guide-3cb402ed073681a4aef4eaf93f3dd67d";
 
 function ArrowIcon() {
   return (
@@ -168,22 +168,26 @@ function EvidenceLoop() {
           <p className="mt-4 text-sm font-semibold leading-6 text-[#b9d9bf]">This is a working rhythm inside every stage, not a seventh stage.</p>
         </div>
 
-        <div className="relative mx-auto aspect-square w-full max-w-[26rem]" role="img" aria-label="Active-learning loop: act, keep evidence, get feedback, revise and transfer">
+        <div className="relative mx-auto aspect-square w-full max-w-[30rem]" role="img" aria-label="Active-learning loop: act, keep evidence, get feedback, revise and transfer">
+          <div className="evidence-loop-orbit absolute inset-[13%] rounded-full border border-white/12 bg-[radial-gradient(circle,#2b6540_0%,#1b4b2f_44%,rgba(18,61,36,0)_70%)]" />
           <svg viewBox="0 0 420 420" className="absolute inset-0 h-full w-full" aria-hidden="true">
             <defs>
               <marker id="loop-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
                 <path d="M0 0 10 5 0 10Z" fill="#d7f43c" />
               </marker>
             </defs>
-            <path d="M210 54a156 156 0 1 1-2 0" fill="none" stroke="#d7f43c" strokeWidth="5" strokeLinecap="round" strokeDasharray="5 14" markerEnd="url(#loop-arrow)" />
+            <path d="M210 54a156 156 0 1 1-2 0" fill="none" stroke="rgba(215,244,60,.26)" strokeWidth="20" />
+            <path className="evidence-loop-track" d="M210 54a156 156 0 1 1-2 0" fill="none" stroke="#d7f43c" strokeWidth="4" strokeLinecap="round" strokeDasharray="4 14" markerEnd="url(#loop-arrow)" />
           </svg>
-          <div className="absolute left-1/2 top-1/2 flex h-24 w-24 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-white/16 bg-white/8 p-3 text-center shadow-[0_20px_55px_-30px_rgba(0,0,0,0.7)] backdrop-blur-sm sm:h-32 sm:w-32 sm:p-5">
-            <p className="text-[0.68rem] font-semibold leading-4 text-[#eff8ec] sm:text-sm sm:leading-5">Evidence changes the next action.</p>
+          <div className="absolute left-1/2 top-1/2 flex h-28 w-28 -translate-x-1/2 -translate-y-1/2 flex-col items-center justify-center rounded-full border border-[#d7f43c]/35 bg-[#0c2f1b]/88 p-3 text-center shadow-[0_22px_70px_-24px_rgba(0,0,0,0.88)] backdrop-blur-md sm:h-40 sm:w-40 sm:p-5">
+            <span className="evidence-loop-beacon mb-2 h-3 w-3 rounded-full bg-[#d7f43c] shadow-[0_0_24px_rgba(215,244,60,.9)]" />
+            <p className="text-[0.7rem] font-semibold leading-4 text-[#eff8ec] sm:text-sm sm:leading-5">Evidence changes<br />the next action.</p>
           </div>
           {evidenceSteps.map((step) => (
-            <div key={step.number} className={`absolute flex h-[4.2rem] w-20 flex-col items-center justify-center rounded-xl border border-white/14 bg-[#245b38] px-1.5 text-center shadow-[0_18px_45px_-30px_rgba(0,0,0,0.85)] sm:h-[4.8rem] sm:w-[6.5rem] sm:rounded-2xl sm:px-2 ${step.position}`}>
-              <span className="text-[0.6rem] font-bold tracking-[0.15em] text-[#b9d8bf]">{step.number}</span>
-              <span className="mt-1 text-xs font-bold leading-4 text-white">{step.label}</span>
+            <div key={step.number} className={`absolute flex h-[5rem] w-[6.2rem] flex-col justify-center rounded-2xl border border-white/16 bg-[#245b38]/95 px-3 shadow-[0_20px_48px_-28px_rgba(0,0,0,0.9)] backdrop-blur sm:h-[6rem] sm:w-[8.3rem] sm:px-4 ${step.position}`}>
+              <div className="flex items-center justify-between"><span className="text-[0.58rem] font-bold tracking-[0.15em] text-[#b9d8bf]">{step.number}</span><span className="text-base text-[#d7f43c]">{step.symbol}</span></div>
+              <span className="mt-1 text-xs font-bold leading-4 text-white sm:text-sm">{step.label}</span>
+              <span className="mt-1 hidden text-[0.58rem] leading-3 text-white/58 sm:block">{step.copy}</span>
             </div>
           ))}
         </div>
@@ -214,7 +218,7 @@ export default function ProjectJourneyPage() {
               </p>
               <div className="mt-7 flex flex-col gap-3 sm:flex-row">
                 <Link href="/guide" className="inline-flex items-center justify-center gap-2 rounded-full bg-[#173f28] px-5 py-3 text-sm font-bold text-white transition hover:bg-[#245d38]">
-                  How staged guides work
+                  Use the Student Guide
                   <ArrowIcon />
                 </Link>
                 <a
@@ -332,8 +336,8 @@ export default function ProjectJourneyPage() {
         <section className="bg-[#173f28] px-5 py-16 text-white sm:px-8 lg:px-10">
           <div className="mx-auto flex max-w-[90rem] flex-col gap-7 lg:flex-row lg:items-center lg:justify-between">
             <div className="max-w-3xl">
-              <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#bad7c0]">Detailed guidance is released one Gate at a time</p>
-              <h2 className="mt-3 text-3xl font-semibold tracking-[-0.035em] sm:text-4xl">See the whole journey here. Work on the current stage in Notion.</h2>
+              <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#bad7c0]">A working guide for every Gate</p>
+              <h2 className="mt-3 text-3xl font-semibold tracking-[-0.035em] sm:text-4xl">Use the map here, then open the detailed methods, resources and checkpoints in Notion.</h2>
             </div>
             <a href={notionGuideUrl} target="_blank" rel="noopener noreferrer" className="inline-flex shrink-0 items-center justify-center gap-2 rounded-full bg-[#d7f43c] px-6 py-3.5 text-sm font-bold text-[#17351f] transition hover:bg-[#e8fa7e]">
               Open Notion Student Guide

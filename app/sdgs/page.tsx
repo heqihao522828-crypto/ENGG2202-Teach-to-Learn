@@ -15,21 +15,25 @@ const projectFlow = [
     number: "01",
     title: "Choose a goal and target",
     copy: "Start with a sustainability direction, then read the relevant target rather than relying on the icon alone.",
+    image: "/images/teach-to-learn/un-sdg-17-goals-poster.png",
   },
   {
     number: "02",
     title: "Locate a real context",
     copy: "Name a place, community, system or practice where the challenge can be observed and investigated.",
+    image: "/images/teach-to-learn/stage-define-stakeholder.webp",
   },
   {
     number: "03",
     title: "Validate the problem",
     copy: "Identify a stakeholder, baseline and decision that could be improved. Keep evidence and uncertainty visible.",
+    image: "/images/teach-to-learn/stage-improve-test.webp",
   },
   {
     number: "04",
     title: "Judge the contribution",
     copy: "Test whether the proposed technology creates useful value without making sustainability claims the evidence cannot support.",
+    image: "/images/teach-to-learn/stage-contribute-release.webp",
   },
 ];
 
@@ -112,10 +116,14 @@ export default function SustainableDevelopmentGoalsPage() {
             </div>
             <ol className="grid gap-4 sm:grid-cols-2">
               {projectFlow.map((item) => (
-                <li key={item.number} className="rounded-[1.7rem] border border-[#d4e1d6] bg-white p-6">
-                  <p className="text-xs font-bold tracking-[0.16em] text-[#6b8270]">{item.number}</p>
-                  <h3 className="mt-8 text-xl font-semibold tracking-[-0.025em] text-[#173823]">{item.title}</h3>
-                  <p className="mt-3 text-sm leading-7 text-[#526858]">{item.copy}</p>
+                <li key={item.number} className="group relative min-h-[15.5rem] overflow-hidden rounded-[1.7rem] border border-[#d4e1d6] bg-white p-6">
+                  <Image src={imagePath(item.image)} alt="" fill sizes="(min-width: 640px) 40vw, 100vw" className="object-cover opacity-[0.16] saturate-[0.7] transition duration-700 group-hover:scale-[1.035] group-hover:opacity-[0.22]" aria-hidden="true" />
+                  <div className="absolute inset-0 bg-gradient-to-r from-white via-white/90 to-white/45" />
+                  <div className="relative max-w-[24rem]">
+                    <p className="text-xs font-bold tracking-[0.16em] text-[#6b8270]">{item.number}</p>
+                    <h3 className="mt-12 text-xl font-semibold tracking-[-0.025em] text-[#173823]">{item.title}</h3>
+                    <p className="mt-3 text-sm leading-7 text-[#526858]">{item.copy}</p>
+                  </div>
                 </li>
               ))}
             </ol>

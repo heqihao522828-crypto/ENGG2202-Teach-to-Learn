@@ -79,6 +79,28 @@ html {
   will-change: transform;
 }
 
+@keyframes evidence-loop-spin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes evidence-loop-beacon {
+  0%, 100% { opacity: .55; transform: scale(.82); }
+  50% { opacity: 1; transform: scale(1.18); }
+}
+
+.evidence-loop-track {
+  transform-origin: 210px 210px;
+  animation: evidence-loop-spin 28s linear infinite;
+}
+
+.evidence-loop-orbit {
+  box-shadow: inset 0 0 60px rgba(215, 244, 60, .07), 0 0 70px rgba(0, 0, 0, .2);
+}
+
+.evidence-loop-beacon {
+  animation: evidence-loop-beacon 2.4s ease-in-out infinite;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .hero-motion {
     animation: none;
@@ -96,6 +118,11 @@ html {
   .output-card-motion {
     animation: none;
     transform: none;
+  }
+
+  .evidence-loop-track,
+  .evidence-loop-beacon {
+    animation: none;
   }
 }
 

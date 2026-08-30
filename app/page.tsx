@@ -21,7 +21,7 @@ const stages = [
   { number: "03", short: "Plan", label: "Proposal & Plan" },
   { number: "04", short: "Learn", label: "First Working Version" },
   { number: "05", short: "Improve", label: "Test & Iteration" },
-  { number: "06", short: "Teach", label: "Share, Teach & Release" },
+  { number: "06", short: "Contribute", label: "Teach, Share & Release" },
 ];
 
 const mastery = ["Learn", "Apply", "Explain", "Teach", "Contribute"];
@@ -171,7 +171,7 @@ export default function Home() {
         <footer className="border-t border-[#d7e4d9] bg-[#f7faf6] px-5 py-9 sm:px-8 lg:px-10">
           <div className="mx-auto flex max-w-[90rem] flex-col gap-4 text-sm text-[#5d7463] sm:flex-row sm:items-center sm:justify-between">
             <p>ENGG2202 · Teach to Learn · HKU Engineering</p>
-            <p>Learn it. Use it. Explain it. Teach it forward.</p>
+            <p>Learn it. Use it. Explain it. Leave something others can build on.</p>
           </div>
         </footer>
       </main>

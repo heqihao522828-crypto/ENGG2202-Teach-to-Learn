@@ -35,6 +35,16 @@ function ArrowIcon() {
   );
 }
 
+function ReleaseIcon({ type }: { type: "understand" | "reuse" | "trust" }) {
+  if (type === "understand") {
+    return <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" className="h-7 w-7" aria-hidden="true"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v16H6.5A2.5 2.5 0 0 0 4 21.5v-16Z" /><path d="M4 18.5A2.5 2.5 0 0 1 6.5 16H20M8 7h8M8 11h6" /></svg>;
+  }
+  if (type === "reuse") {
+    return <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" className="h-7 w-7" aria-hidden="true"><path d="M8 7H5a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2-2v-3" /><path d="M10 14 21 3M15 3h6v6" /></svg>;
+  }
+  return <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" className="h-7 w-7" aria-hidden="true"><path d="M12 3 20 6v5c0 5.2-3.5 8.5-8 10-4.5-1.5-8-4.8-8-10V6l8-3Z" /><path d="m8.5 12 2.2 2.2 4.8-5" /></svg>;
+}
+
 export default function StudentProjectsPage() {
   return (
     <SiteShell>
@@ -48,9 +58,10 @@ export default function StudentProjectsPage() {
                 <span className="block text-[#318248]">Projects.</span>
               </h1>
               <p className="mt-7 max-w-xl text-lg leading-9 text-[#48614f]">
-                Each card opens the project’s own repository: the place where
-                its design files, decisions, test evidence, versions and
-                learning story remain visible.
+                Each card opens a public GitHub repository. Students share the
+                files, decisions, test evidence, versions and learning that
+                others need to understand the work, reuse it responsibly and
+                improve it further.
               </p>
             </div>
             <SdgMosaic />
@@ -76,7 +87,7 @@ export default function StudentProjectsPage() {
                 className="group flex min-h-full flex-col overflow-hidden rounded-[1.8rem] border border-[#cfddcf] bg-white shadow-[0_24px_70px_-52px_rgba(15,60,32,0.42)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_28px_80px_-48px_rgba(15,60,32,0.48)]"
               >
                 <div className="relative aspect-[4/3] overflow-hidden bg-[#dce9dc]">
-                  <Image src={imagePath(project.image)} alt="Solar weather station and related green technology engineering systems" fill sizes="(min-width: 1280px) 30vw, (min-width: 768px) 48vw, 100vw" className="object-cover object-left transition duration-700 group-hover:scale-[1.035]" />
+                  <Image src={imagePath(project.image)} alt="Solar weather station and related green technology engineering systems" fill preload sizes="(min-width: 1280px) 30vw, (min-width: 768px) 48vw, 100vw" className="object-cover object-left transition duration-700 group-hover:scale-[1.035]" />
                   <div className="absolute left-5 top-5 flex gap-2" aria-label="Related Sustainable Development Goals">
                     {project.sdgs.map((sdg) => (
                       <div key={sdg.number} className="relative h-14 w-14 overflow-hidden rounded-xl border-2 border-white bg-white shadow-[0_10px_28px_-12px_rgba(0,0,0,0.65)] sm:h-16 sm:w-16" title={`SDG ${sdg.number}: ${sdg.title}`}>
@@ -96,7 +107,7 @@ export default function StudentProjectsPage() {
                   </div>
                   <p className="mt-5 text-xs leading-5 text-[#718176]">Related SDGs indicate the project context. The repository must still justify the target connection and any impact claim.</p>
                   <span className="mt-8 inline-flex items-center gap-2 text-sm font-bold text-[#226439]">
-                    View project repository
+                    View GitHub repository
                     <ArrowIcon />
                   </span>
                 </div>
@@ -106,30 +117,49 @@ export default function StudentProjectsPage() {
             <div className="flex min-h-[24rem] flex-col justify-between rounded-[1.8rem] border border-dashed border-[#acc2b0] bg-[#edf4ed] p-7 text-[#34543e] sm:min-h-[31rem]">
               <div>
                 <span className="flex h-11 w-11 items-center justify-center rounded-full border border-[#afc6b3] bg-white text-xl">+</span>
-                <h3 className="mt-8 text-2xl font-semibold tracking-[-0.03em] text-[#173823]">More project stories are coming.</h3>
+                <p className="mt-8 text-xs font-bold uppercase tracking-[0.15em] text-[#67806d]">From active learning to contribution</p>
+                <h3 className="mt-3 text-2xl font-semibold tracking-[-0.03em] text-[#173823]">More project stories will grow here.</h3>
                 <p className="mt-4 text-sm leading-7 text-[#526a58]">
-                  As ENGG2202 teams complete evidence, attribution, consent,
-                  safety and public-release checks, selected work will join this collection.
+                  Each team turns its active learning into a traceable
+                  contribution: the decisions made, evidence collected,
+                  revisions tested and materials that can be shared
+                  responsibly. Preserved in an open GitHub repository, that
+                  learning becomes a starting point for the next team—not only
+                  a final display.
                 </p>
+                <div className="mt-7 grid grid-cols-2 gap-2 text-center text-[0.68rem] font-bold uppercase tracking-[0.1em] text-[#41614a] sm:grid-cols-4">
+                  {['Evidence', 'Explain', 'Release', 'Build on'].map((item, index) => (
+                    <div key={item} className="rounded-full bg-white px-2 py-2.5 shadow-sm"><span className="mr-1 text-[#2d7c43]">0{index + 1}</span>{item}</div>
+                  ))}
+                </div>
               </div>
-              <p className="border-t border-[#ceddcf] pt-5 text-xs font-bold uppercase tracking-[0.14em] text-[#667b6a]">Your project could become part of this collection</p>
+              <p className="border-t border-[#ceddcf] pt-5 text-xs font-bold uppercase tracking-[0.14em] text-[#667b6a]">Leave something the next team can use</p>
             </div>
           </div>
         </section>
 
         <section className="border-y border-[#d8e4d9] bg-white px-5 py-16 sm:px-8 lg:px-10">
-          <div className="mx-auto grid max-w-[90rem] gap-8 lg:grid-cols-[0.7fr_1.3fr] lg:items-start">
+          <div className="mx-auto max-w-[90rem]">
             <div>
-              <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#57735e]">Before a project appears here</p>
-              <h2 className="mt-3 text-3xl font-semibold tracking-[-0.035em] text-[#153321]">Responsible release is part of the engineering.</h2>
+              <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#57735e]">A public repository is part of the engineering outcome</p>
+              <h2 className="mt-3 max-w-3xl text-3xl font-semibold tracking-[-0.035em] text-[#153321]">Open source should be understandable, reusable and trustworthy.</h2>
+              <p className="mt-4 max-w-3xl text-sm leading-7 text-[#526858]">Publishing is not the same as uploading every file. Teams organise the evidence, provide what another person needs, and check what is safe and appropriate to share.</p>
             </div>
-            <div className="grid gap-3 sm:grid-cols-3">
+            <div className="mt-9 grid gap-4 sm:grid-cols-3">
               {[
-                'Evidence, revisions and enough guidance for another person to understand or continue the work',
-                'SDG rationale, sources, licence and stakeholder consent are clear',
-                'Safety, privacy, location and claims have been checked before publication',
+                { type: 'understand' as const, number: '01', title: 'Make it understandable', copy: 'Show the question, decisions, setup, evidence, versions and limits—not only the polished result.' },
+                { type: 'reuse' as const, number: '02', title: 'Make it reusable', copy: 'Provide a clear README, source files, instructions, licence and attribution so another team can continue responsibly.' },
+                { type: 'trust' as const, number: '03', title: 'Make it trustworthy', copy: 'Check safety, privacy, consent, sensitive locations and sustainability claims before public release.' },
               ].map((item) => (
-                <div key={item} className="rounded-2xl border border-[#d7e3d9] bg-[#f8fbf8] p-4 text-sm font-semibold leading-6 text-[#3d5945]">{item}</div>
+                <article key={item.number} className="relative overflow-hidden rounded-[1.7rem] border border-[#d7e3d9] bg-[#f8fbf8] p-6 text-[#3d5945]">
+                  <div className="absolute -right-8 -top-8 h-28 w-28 rounded-full bg-[#dff0df]" />
+                  <div className="relative flex items-center justify-between">
+                    <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#173f28] text-white"><ReleaseIcon type={item.type} /></span>
+                    <span className="text-xs font-bold tracking-[0.16em] text-[#78907d]">{item.number}</span>
+                  </div>
+                  <h3 className="relative mt-8 text-xl font-semibold tracking-[-0.025em] text-[#173823]">{item.title}</h3>
+                  <p className="relative mt-3 text-sm leading-7 text-[#526858]">{item.copy}</p>
+                </article>
               ))}
             </div>
           </div>

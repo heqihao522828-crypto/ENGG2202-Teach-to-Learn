@@ -2,13 +2,13 @@
 
 An HKU Engineering Active Learning microsite for helping students move from project experience to evidence, explanation, teaching and contribution.
 
-> **Learn it. Use it. Explain it. Teach it forward.**
+> **Learn it. Use it. Explain it. Leave something others can build on.**
 
 ## What this website contains
 
 - a six-stage ENGG2202 project journey;
 - an explanation of the Teach-to-Learn mastery progression;
-- links to the staged student guide in Notion;
+- a visible six-Gate Student Guide route with detailed Notion resources;
 - Green Technology and SDG context for the current course theme;
 - a growing directory of student project repositories;
 - the Solar Weather Station as the first instructor exemplar.
@@ -20,13 +20,13 @@ Formal class dates, assessment submissions and grades remain on the official HKU
 - `/` — Teach-to-Learn overview
 - `/engg2202` — six-stage Project Journey
 - `/sdgs` — Green Technology and the complete UN SDG overview
-- `/guide` — how the staged Notion guide works
+- `/guide` — the six-Gate route and detailed Notion Student Guide
 - `/gallery` — student project directory
 - `/about` — scope and relationship to the wider Active Learning initiative
 
 ## Adding a student project
 
-Project cards are currently defined in `app/gallery/page.tsx`. A published card should link to the project’s own repository and should only be added after checking:
+Project cards are currently defined in `app/gallery/page.tsx`. A published card should link to the project’s public GitHub repository and should only be added after checking:
 
 - evidence and documentation;
 - third-party sources and licence status;

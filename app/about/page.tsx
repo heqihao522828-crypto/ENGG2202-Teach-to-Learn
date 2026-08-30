@@ -81,6 +81,9 @@ export default function AboutPage() {
                 what they learned in a new context. Teach to Learn raises the
                 bar again by asking whether someone else can now use that knowledge.
               </p>
+              <div className="mt-7 rounded-2xl border border-[#d4e1d6] bg-[#f5faf4] p-5">
+                <p className="text-sm font-semibold leading-6 text-[#2f583a]">Teach tests whether another person can use the learning now. Contribute preserves and releases it so people beyond that moment can reuse, question and extend it.</p>
+              </div>
             </div>
             <div className="grid grid-cols-2 gap-3 sm:grid-cols-5 lg:grid-cols-2 xl:grid-cols-5">
               {[
@@ -101,6 +104,27 @@ export default function AboutPage() {
                   </div>
                 </article>
               ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="border-t border-[#d8e4d9] bg-[#eef6ec] px-5 py-14 sm:px-8 lg:px-10">
+          <div className="mx-auto grid max-w-[90rem] gap-6 lg:grid-cols-[0.72fr_1.28fr] lg:items-center">
+            <div>
+              <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#57745e]">Teach is a method. Contribute is the lasting outcome.</p>
+              <h2 className="mt-3 text-3xl font-semibold tracking-[-0.035em] text-[#143421]">A useful contribution survives beyond the class.</h2>
+            </div>
+            <div className="grid gap-3 sm:grid-cols-2">
+              <article className="rounded-[1.5rem] border border-[#d4e1d6] bg-white p-6">
+                <p className="text-xs font-bold uppercase tracking-[0.14em] text-[#6d8673]">Teach</p>
+                <p className="mt-4 text-lg font-semibold text-[#173823]">Help a real audience understand or use the work.</p>
+                <p className="mt-3 text-sm leading-7 text-[#526858]">A workshop, tutorial, demonstration or guided handover reveals where the explanation still fails.</p>
+              </article>
+              <article className="rounded-[1.5rem] bg-[#173f28] p-6 text-white">
+                <p className="text-xs font-bold uppercase tracking-[0.14em] text-[#d7f43c]">Contribute</p>
+                <p className="mt-4 text-lg font-semibold">Leave a durable, responsible starting point for others.</p>
+                <p className="mt-3 text-sm leading-7 text-white/72">Teaching may be part of it; the lasting contribution is the open repository, evidence, documentation, licence and limits that others can build on.</p>
+              </article>
             </div>
           </div>
         </section>

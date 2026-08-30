@@ -6,24 +6,24 @@ const stageVisuals: Record<
   { image: string; alt: string; objectPosition?: string }
 > = {
   "02": {
-    image: "/images/teach-to-learn/stage-define-stakeholder.jpg",
-    alt: "Three-dimensional illustration of stakeholder research, discussion and evidence review",
+    image: "/images/teach-to-learn/stage-define-stakeholder.webp",
+    alt: "Students listening to a stakeholder and recording evidence in a Green Technology context",
   },
   "03": {
-    image: "/images/teach-to-learn/stage-plan-proposal.jpg",
-    alt: "Three-dimensional illustration of an engineering proposal, plan and design decisions",
+    image: "/images/teach-to-learn/stage-plan-proposal.webp",
+    alt: "Students comparing Green Technology concepts, trade-offs and a project plan",
   },
   "04": {
-    image: "/images/teach-to-learn/stage-learn-prototype.jpg",
-    alt: "Three-dimensional illustration of a solar environmental sensing prototype and its components",
+    image: "/images/teach-to-learn/stage-learn-prototype.webp",
+    alt: "Students assembling and debugging a first working Green Technology prototype",
   },
   "05": {
-    image: "/images/teach-to-learn/stage-improve-test.jpg",
-    alt: "Three-dimensional illustration of prototype testing, evidence review and iterative improvement",
+    image: "/images/teach-to-learn/stage-improve-test.webp",
+    alt: "Students comparing test conditions, evidence and an improved prototype",
   },
   "06": {
-    image: "/images/teach-to-learn/stage-teach-share.jpg",
-    alt: "Three-dimensional illustration of students teaching and sharing an open green technology project",
+    image: "/images/teach-to-learn/stage-contribute-release.webp",
+    alt: "Students teaching, documenting and handing over an open Green Technology project",
   },
 };
 
@@ -94,7 +94,7 @@ export default function StageArtwork({
           alt=""
           fill
           sizes={sizes}
-          className="scale-110 object-cover opacity-25 mix-blend-multiply blur-2xl"
+          className="scale-110 object-cover opacity-20 blur-2xl"
           aria-hidden="true"
         />
       ) : null}
@@ -103,7 +103,7 @@ export default function StageArtwork({
         alt={visual.alt}
         fill
         sizes={sizes}
-        className={compact ? "object-contain p-1 mix-blend-multiply" : "object-cover mix-blend-multiply"}
+        className="object-cover"
         style={{ objectPosition: visual.objectPosition ?? "center" }}
       />
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#123d24]/6 via-transparent to-white/8" />
