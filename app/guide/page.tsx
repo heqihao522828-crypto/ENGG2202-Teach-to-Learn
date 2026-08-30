@@ -148,7 +148,7 @@ export default function StudentGuidePage() {
           <div className="flex flex-col gap-5 rounded-[2rem] bg-[#173f28] p-7 text-white sm:flex-row sm:items-center sm:justify-between sm:p-9">
             <div className="max-w-3xl">
               <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#b8d8bf]">Current working material</p>
-              <p className="mt-3 text-xl font-semibold">Open the released Gate in Notion, use it during independent work, and bring your evidence and questions to Tuesday Studio.</p>
+              <p className="mt-3 text-xl font-semibold">Open the released Gate in Notion, use it during independent work, and bring your evidence and unresolved questions to the next class discussion.</p>
             </div>
             <a
               href={notionGuideUrl}

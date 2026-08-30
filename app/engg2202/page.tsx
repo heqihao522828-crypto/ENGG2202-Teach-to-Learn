@@ -208,9 +208,9 @@ export default function ProjectJourneyPage() {
             <div className="max-w-2xl lg:justify-self-end">
               <p className="text-lg leading-9 text-[#465f4d]">
                 The gates make progress visible without forcing every team into
-                the same weekly sequence. Move forward with evidence, return
-                when assumptions fail, and use Tuesday Studio to discuss the
-                decision—not simply report activity.
+                the same weekly sequence. Move forward when evidence supports
+                the decision, and return when assumptions fail. Each stage ends
+                with a short decision check—not an activity report.
               </p>
               <div className="mt-7 flex flex-col gap-3 sm:flex-row">
                 <Link href="/guide" className="inline-flex items-center justify-center gap-2 rounded-full bg-[#173f28] px-5 py-3 text-sm font-bold text-white transition hover:bg-[#245d38]">
@@ -285,7 +285,7 @@ export default function ProjectJourneyPage() {
 
                     <div className="mt-7 border-t border-[#dde7df] pt-7">
                       <div className="rounded-2xl bg-[#f7f4e8] p-5">
-                        <p className="text-xs font-bold uppercase tracking-[0.14em] text-[#776a3a]">Tuesday Studio prompt</p>
+                        <p className="text-xs font-bold uppercase tracking-[0.14em] text-[#776a3a]">Before moving on</p>
                         <p className="mt-2 text-sm leading-6 text-[#554e34]">{stage.discussion}</p>
                       </div>
                     </div>
