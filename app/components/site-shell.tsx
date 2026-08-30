@@ -42,6 +42,13 @@ export default function SiteShell({ children }: { children: ReactNode }) {
               className="h-7 w-[124px] shrink-0 object-contain sm:h-9 sm:w-[160px]"
               preload
             />
+            <Image
+              src={imagePath("/images/Logo/active-learning-ug-team.png")}
+              alt="Active Learning UG Teaching Team"
+              width={92}
+              height={44}
+              className="hidden h-8 w-[74px] shrink-0 object-contain sm:block sm:h-9 sm:w-[92px]"
+            />
             <span className="min-w-0 sm:hidden">
               <span className="block truncate text-[0.55rem] font-bold uppercase tracking-[0.13em] text-[#607667]">
                 ENGG2202
