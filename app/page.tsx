@@ -42,7 +42,7 @@ export default function Home() {
             fill
             priority
             sizes="100vw"
-            className="object-cover object-center"
+            className="hero-motion object-cover object-center"
           />
           <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(8,33,19,0.97)_0%,rgba(8,33,19,0.84)_38%,rgba(8,33,19,0.24)_74%,rgba(8,33,19,0.08)_100%)]" />
           <div className="absolute inset-0 bg-[linear-gradient(0deg,rgba(8,33,19,0.72)_0%,transparent_48%)]" />

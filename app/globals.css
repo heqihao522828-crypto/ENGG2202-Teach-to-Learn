@@ -27,6 +27,27 @@ html {
   scroll-padding-top: 6.5rem;
 }
 
+@keyframes hero-drift {
+  0%, 100% {
+    transform: scale(1.02) translate3d(0, 0, 0);
+  }
+  50% {
+    transform: scale(1.08) translate3d(-1.2%, -0.8%, 0);
+  }
+}
+
+.hero-motion {
+  animation: hero-drift 18s ease-in-out infinite alternate;
+  will-change: transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-motion {
+    animation: none;
+    transform: none;
+  }
+}
+
 @media (max-width: 640px) {
   .schedule-table thead {
     position: absolute;
