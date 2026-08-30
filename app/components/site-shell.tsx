@@ -33,16 +33,23 @@ export default function SiteShell({ children }: { children: ReactNode }) {
     <div className="min-h-screen bg-[#f7faf6] text-[#102319]">
       <header className="sticky top-0 z-50 border-b border-[#dce8df] bg-[#fbfdfb]/95 backdrop-blur-xl">
         <div className="mx-auto flex max-w-[90rem] items-center gap-5 px-5 py-3 sm:px-8 lg:px-10">
-          <Link href="/" className="flex min-w-0 items-center gap-3" aria-label="ENGG2202 Teach to Learn home">
+          <Link href="/" className="flex min-w-0 items-center gap-2 sm:gap-3" aria-label="ENGG2202 Teach to Learn home">
             <Image
               src={imagePath("/images/Logo/hkuengglogo.png")}
               alt="HKU Engineering"
               width={160}
               height={36}
-              style={{ width: "auto" }}
-              className="h-8 w-auto shrink-0 object-contain sm:h-9"
+              className="h-7 w-[124px] shrink-0 object-contain sm:h-9 sm:w-[160px]"
               preload
             />
+            <span className="min-w-0 sm:hidden">
+              <span className="block truncate text-[0.55rem] font-bold uppercase tracking-[0.13em] text-[#607667]">
+                ENGG2202
+              </span>
+              <span className="block truncate text-xs font-semibold tracking-tight text-[#153c25]">
+                Teach to Learn
+              </span>
+            </span>
             <span className="hidden h-7 w-px bg-[#ccd9cf] sm:block" aria-hidden="true" />
             <span className="hidden min-w-0 sm:block">
               <span className="block truncate text-[0.66rem] font-bold uppercase tracking-[0.18em] text-[#52705d]">
@@ -54,7 +61,7 @@ export default function SiteShell({ children }: { children: ReactNode }) {
             </span>
           </Link>
 
-          <nav className="ml-auto hidden items-center lg:flex" aria-label="Primary navigation">
+          <nav className="ml-auto hidden items-center xl:flex" aria-label="Primary navigation">
             <ul className="flex items-center gap-1 text-sm font-semibold">
               {navigation.map((item) => {
                 const isActive = item.href === "/" ? pathname === "/" : pathname.startsWith(item.href);
@@ -81,7 +88,7 @@ export default function SiteShell({ children }: { children: ReactNode }) {
             href="https://activelearning.engg.hku.hk/"
             target="_blank"
             rel="noopener noreferrer"
-            className="ml-auto hidden items-center gap-1.5 rounded-full border border-[#b9cfbf] px-4 py-2.5 text-xs font-bold uppercase tracking-[0.08em] text-[#214b31] transition hover:border-[#1f6d3b] hover:bg-white lg:ml-3 xl:inline-flex"
+            className="ml-auto hidden items-center gap-1.5 rounded-full border border-[#b9cfbf] px-4 py-2.5 text-xs font-bold uppercase tracking-[0.08em] text-[#214b31] transition hover:border-[#1f6d3b] hover:bg-white xl:ml-3 xl:inline-flex"
           >
             Active Learning Hub
             <ExternalArrow />
@@ -90,7 +97,7 @@ export default function SiteShell({ children }: { children: ReactNode }) {
           <button
             type="button"
             onClick={() => setIsMobileMenuOpen((open) => !open)}
-            className="ml-auto inline-flex h-10 w-10 items-center justify-center rounded-full border border-[#b9cfbf] text-[#214b31] transition hover:bg-white lg:hidden"
+            className="ml-auto inline-flex h-10 w-10 items-center justify-center rounded-full border border-[#b9cfbf] text-[#214b31] transition hover:bg-white xl:hidden"
             aria-expanded={isMobileMenuOpen}
             aria-controls="mobile-nav-menu"
             aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
@@ -108,7 +115,7 @@ export default function SiteShell({ children }: { children: ReactNode }) {
         </div>
 
         {isMobileMenuOpen ? (
-          <div id="mobile-nav-menu" className="border-t border-[#dce8df] bg-[#fbfdfb] px-5 py-4 sm:px-8 lg:hidden">
+          <div id="mobile-nav-menu" className="border-t border-[#dce8df] bg-[#fbfdfb] px-5 py-4 sm:px-8 xl:hidden">
             <nav aria-label="Mobile navigation">
               <ul className="grid gap-1">
                 {navigation.map((item) => (

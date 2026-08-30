@@ -35,3 +35,18 @@ panels.
 
 No additional three-direction exploration is required because this is an
 existing-site revision after the visual direction has already been selected.
+
+Latest refinement from the user:
+
+> “主页就不需要放这个 example 了，因为已经在 Student Project 那边可以有了。”
+
+> “把原来的替换成新的这五张。”
+
+> “Gate 6……加上一些视觉效果，让大家能够知道说，大概是什么东西。”
+
+> “把第四张截图这里……没有必要再重复这个位置了。”
+
+This remains an iteration of the approved direction. Stage 2–6 now use the
+owner-supplied 3D Green Technology artwork, Gate 6 output choices become the
+single visual home for all delivery formats (including film), and duplicate
+example or explanatory sections are removed to reduce mobile page length.

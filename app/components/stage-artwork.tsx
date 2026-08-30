@@ -6,24 +6,24 @@ const stageVisuals: Record<
   { image: string; alt: string; objectPosition?: string }
 > = {
   "02": {
-    image: "/images/teach-to-learn/mastery-learn.png",
-    alt: "Line illustration of research, investigation and a developing idea",
+    image: "/images/teach-to-learn/stage-define-stakeholder.jpg",
+    alt: "Three-dimensional illustration of stakeholder research, discussion and evidence review",
   },
   "03": {
-    image: "/images/teach-to-learn/mastery-explain.png",
-    alt: "Line illustration translating complex engineering reasoning into a clear plan",
+    image: "/images/teach-to-learn/stage-plan-proposal.jpg",
+    alt: "Three-dimensional illustration of an engineering proposal, plan and design decisions",
   },
   "04": {
-    image: "/images/teach-to-learn/mastery-apply.png",
-    alt: "Line illustration of hands integrating a component into a green technology prototype",
+    image: "/images/teach-to-learn/stage-learn-prototype.jpg",
+    alt: "Three-dimensional illustration of a solar environmental sensing prototype and its components",
   },
   "05": {
-    image: "/images/teach-to-learn/stage-improve-iteration.png",
-    alt: "Line illustration of an environmental sensing prototype being tested, adjusted and retested",
+    image: "/images/teach-to-learn/stage-improve-test.jpg",
+    alt: "Three-dimensional illustration of prototype testing, evidence review and iterative improvement",
   },
   "06": {
-    image: "/images/teach-to-learn/mastery-teach.png",
-    alt: "Line illustration of one learner helping another use an engineering prototype",
+    image: "/images/teach-to-learn/stage-teach-share.jpg",
+    alt: "Three-dimensional illustration of students teaching and sharing an open green technology project",
   },
 };
 
@@ -51,7 +51,7 @@ export default function StageArtwork({
             alt="SDG 13: Climate Action"
             fill
             sizes={sizes}
-            className="object-cover"
+            className="object-contain p-1"
           />
         </div>
       );
@@ -90,15 +90,25 @@ export default function StageArtwork({
 
   return (
     <div className={`relative overflow-hidden bg-[#eef5ed] ${className}`}>
+      {!compact ? (
+        <Image
+          src={imagePath(visual.image)}
+          alt=""
+          fill
+          sizes={sizes}
+          className="scale-110 object-cover opacity-25 blur-2xl"
+          aria-hidden="true"
+        />
+      ) : null}
       <Image
         src={imagePath(visual.image)}
         alt={visual.alt}
         fill
         sizes={sizes}
-        className="object-cover"
+        className={compact ? "object-contain p-1" : "object-contain p-2 sm:p-3"}
         style={{ objectPosition: visual.objectPosition ?? "center" }}
       />
-      <div className="absolute inset-0 bg-gradient-to-t from-[#123d24]/8 via-transparent to-white/12" />
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#123d24]/6 via-transparent to-white/8" />
     </div>
   );
 }

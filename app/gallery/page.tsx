@@ -15,7 +15,7 @@ const projects = [
     status: "Instructor exemplar · in development",
     description:
       "A modular, solar-powered environmental sensing prototype used to show how an engineering project develops through open-source study, testing, iteration and responsible release.",
-    image: "/images/teach-to-learn/green-technology-products.png",
+    image: "/images/teach-to-learn/green-technology-products.webp",
     href: "https://github.com/heqihao522828-crypto/solar-weather-station",
     tags: ["Sensing", "IoT", "Solar power", "Field testing"],
     sdgs: [
@@ -64,7 +64,7 @@ export default function StudentProjectsPage() {
             <p className="text-sm text-[#607566]">{projects.length} published project</p>
           </div>
 
-          <div className="mt-10 grid gap-7 md:grid-cols-2 xl:grid-cols-3">
+          <div className="mt-10 grid gap-7 md:grid-cols-2">
             {projects.map((project) => (
               <a
                 key={project.title}
@@ -101,7 +101,7 @@ export default function StudentProjectsPage() {
               </a>
             ))}
 
-            <div className="flex min-h-[31rem] flex-col justify-between rounded-[1.8rem] border border-dashed border-[#acc2b0] bg-[#edf4ed] p-7 text-[#34543e]">
+            <div className="flex min-h-[24rem] flex-col justify-between rounded-[1.8rem] border border-dashed border-[#acc2b0] bg-[#edf4ed] p-7 text-[#34543e] sm:min-h-[31rem]">
               <div>
                 <span className="flex h-11 w-11 items-center justify-center rounded-full border border-[#afc6b3] bg-white text-xl">+</span>
                 <h3 className="mt-8 text-2xl font-semibold tracking-[-0.03em] text-[#173823]">More project stories are coming.</h3>
@@ -115,43 +115,18 @@ export default function StudentProjectsPage() {
           </div>
         </section>
 
-        <section className="bg-[#173f28] px-5 py-16 text-white sm:px-8 lg:px-10">
-          <div className="mx-auto grid max-w-[90rem] gap-8 lg:grid-cols-[0.72fr_1.28fr] lg:items-center">
-            <div>
-              <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#b8d8bf]">A project story can move</p>
-              <h2 className="mt-4 text-4xl font-semibold tracking-[-0.04em]">A video is also an engineering learning output.</h2>
-            </div>
-            <div className="grid gap-4 sm:grid-cols-[0.85fr_1.15fr]">
-              <div className="relative min-h-[230px] overflow-hidden rounded-[1.8rem] bg-[#0d2f1b] p-6">
-                <div className="absolute -right-8 -top-8 h-36 w-36 rounded-full border-[26px] border-[#d7f43c]/75" />
-                <div className="relative flex h-full flex-col justify-between">
-                  <span className="flex h-12 w-12 items-center justify-center rounded-full bg-white text-[#173f28]" aria-hidden="true">
-                    <svg viewBox="0 0 24 24" fill="currentColor" className="h-5 w-5"><path d="m9 7 8 5-8 5V7Z" /></svg>
-                  </span>
-                  <p className="max-w-xs text-2xl font-semibold tracking-[-0.03em]">Project film · video essay · short documentary · social cut</p>
-                </div>
-              </div>
-              <div className="rounded-[1.8rem] bg-white/8 p-6 sm:p-7">
-                <p className="text-sm leading-7 text-white/80">
-                  Students may document the journey in a YouTube-style project
-                  film or a shorter Instagram-friendly story. The form is flexible;
-                  the evidence is not. A useful video should show the challenge,
-                  decisions, making, failures, testing, revision and what the team learned.
-                </p>
-                <p className="mt-5 border-t border-white/15 pt-5 text-xs font-bold uppercase tracking-[0.13em] text-[#d7f43c]">Not only a highlight reel · teach an audience something they can use</p>
-              </div>
-            </div>
-          </div>
-        </section>
-
         <section className="border-y border-[#d8e4d9] bg-white px-5 py-16 sm:px-8 lg:px-10">
           <div className="mx-auto grid max-w-[90rem] gap-8 lg:grid-cols-[0.7fr_1.3fr] lg:items-start">
             <div>
               <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#57735e]">Before a project appears here</p>
               <h2 className="mt-3 text-3xl font-semibold tracking-[-0.035em] text-[#153321]">Responsible release is part of the engineering.</h2>
             </div>
-            <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-              {['Useful evidence remains', 'Relevant SDG target and rationale are stated', 'Licence and sources are clear', 'Privacy and location are checked', 'Safety claims are proportionate', 'Stakeholder consent is respected', 'Another person can understand it'].map((item) => (
+            <div className="grid gap-3 sm:grid-cols-3">
+              {[
+                'Evidence, revisions and enough guidance for another person to understand or continue the work',
+                'SDG rationale, sources, licence and stakeholder consent are clear',
+                'Safety, privacy, location and claims have been checked before publication',
+              ].map((item) => (
                 <div key={item} className="rounded-2xl border border-[#d7e3d9] bg-[#f8fbf8] p-4 text-sm font-semibold leading-6 text-[#3d5945]">{item}</div>
               ))}
             </div>

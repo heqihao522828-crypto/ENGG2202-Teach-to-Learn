@@ -37,7 +37,7 @@ export default function Home() {
       <main>
         <section className="relative overflow-hidden bg-[#0d2f1c] text-white">
           <Image
-            src={imagePath("/images/teach-to-learn/green-technology-hero.png")}
+            src={imagePath("/images/teach-to-learn/green-technology-hero.webp")}
             alt="Engineering students developing green technology prototypes in Hong Kong"
             fill
             priority
@@ -144,42 +144,6 @@ export default function Home() {
                 </div>
               </Link>
             ))}
-          </div>
-        </section>
-
-        <section className="bg-[#eaf3e8] px-5 py-20 sm:px-8 lg:px-10 lg:py-24">
-          <div className="mx-auto grid max-w-[90rem] gap-10 overflow-hidden rounded-[2.25rem] bg-[#123d24] text-white shadow-[0_30px_90px_-55px_rgba(7,42,20,0.65)] lg:grid-cols-[1.05fr_0.95fr]">
-            <div className="p-8 sm:p-11 lg:p-14">
-              <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#b9d9bf]">First project example</p>
-              <h2 className="mt-5 text-4xl font-semibold leading-tight tracking-[-0.04em] sm:text-5xl">Solar Weather Station</h2>
-              <p className="mt-5 max-w-xl text-base leading-8 text-white/78">
-                An open engineering example showing how a project moves from a
-                sustainability challenge to reference study, prototyping,
-                field evidence, revision and responsible release.
-              </p>
-              <div className="mt-7 flex flex-wrap gap-2 text-xs font-bold text-[#183922]">
-                {['Environmental sensing', 'Low-power systems', 'Field validation'].map((tag) => (
-                  <span key={tag} className="rounded-full bg-[#d9efcf] px-3 py-2">{tag}</span>
-                ))}
-              </div>
-              <a href="https://github.com/heqihao522828-crypto/solar-weather-station" target="_blank" rel="noopener noreferrer" className="mt-9 inline-flex items-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-bold text-[#143c24] transition hover:-translate-y-0.5 hover:bg-[#eaf7e5]">
-                Open project repository
-                <ArrowIcon />
-              </a>
-            </div>
-            <a href="https://github.com/heqihao522828-crypto/solar-weather-station" target="_blank" rel="noopener noreferrer" className="group relative min-h-[380px] overflow-hidden bg-[#d8e8d8] lg:min-h-full">
-              <Image
-                src={imagePath("/images/teach-to-learn/green-technology-products.png")}
-                alt="Green technology product concepts including environmental sensing and solar systems"
-                fill
-                sizes="(min-width: 1024px) 46vw, 100vw"
-                className="object-cover transition duration-700 group-hover:scale-[1.025]"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0d2f1c]/45 via-transparent to-transparent" />
-              <span className="absolute bottom-6 right-6 flex h-12 w-12 items-center justify-center rounded-full bg-white text-[#143c24] shadow-lg">
-                <ArrowIcon />
-              </span>
-            </a>
           </div>
         </section>
 

@@ -56,7 +56,7 @@ export default function SustainableDevelopmentGoalsPage() {
       <main>
         <section className="overflow-hidden border-b border-[#d8e4d9] bg-white px-5 py-18 sm:px-8 lg:px-10 lg:py-24">
           <div className="mx-auto grid max-w-[90rem] gap-10 lg:grid-cols-[1.08fr_0.92fr] lg:items-center">
-            <div className="relative overflow-hidden rounded-[2.2rem] border border-[#d4e1d6] bg-[#f7faf6] p-5 shadow-[0_30px_90px_-62px_rgba(15,60,32,0.45)] sm:p-7">
+            <div className="relative order-2 overflow-hidden rounded-[2.2rem] border border-[#d4e1d6] bg-[#f7faf6] p-5 shadow-[0_30px_90px_-62px_rgba(15,60,32,0.45)] sm:p-7 lg:order-1">
               <Image
                 src={imagePath("/images/teach-to-learn/un-sdg-17-goals-poster.png")}
                 alt="Official United Nations poster showing all 17 Sustainable Development Goals"
@@ -71,7 +71,7 @@ export default function SustainableDevelopmentGoalsPage() {
               </p>
             </div>
 
-            <div className="max-w-2xl">
+            <div className="order-1 max-w-2xl lg:order-2">
               <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#52765c]">Green Technology theme</p>
               <h1 className="mt-5 text-5xl font-semibold leading-[0.96] tracking-[-0.05em] text-[#11301d] sm:text-6xl lg:text-7xl">
                 From a global goal

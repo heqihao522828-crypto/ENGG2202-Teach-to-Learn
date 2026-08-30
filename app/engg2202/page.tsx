@@ -21,12 +21,9 @@ const stages = [
     actions: ["Form the team", "Explore challenge areas", "Separate facts from assumptions"],
     evidence:
       "Directions considered, initial context, possible stakeholder, theme link and unanswered questions.",
-    methods:
-      "SDG target scan, context map, team capability map, challenge-source review and assumption log.",
+    starters: ["SDG target scan", "Context map", "Assumption log"],
     discussion:
       "Why this direction? What evidence might make the team change it?",
-    example:
-      "“Build a weather station” is only a response area. The problem and stakeholder still need evidence.",
   },
   {
     number: "02",
@@ -39,12 +36,9 @@ const stages = [
     actions: ["Observe and ask", "Map existing solutions", "Define scope and success"],
     evidence:
       "Stakeholder evidence, baseline, sourced landscape, problem statement, scope and success criteria.",
-    methods:
-      "Interview, observation, measurement, literature and patent search, open-source landscape and baseline analysis.",
+    starters: ["Interview or observation", "Baseline", "Existing-solution scan"],
     discussion:
       "Which claim is strongest? Which remains an assumption? Could buy or borrow be better?",
-    example:
-      "Who needs local data, at what site, and for what decision? Teaching and operational-data goals are different.",
   },
   {
     number: "03",
@@ -57,12 +51,9 @@ const stages = [
     actions: ["Compare buy, borrow, adapt and build", "Set requirements", "Plan learning and risk"],
     evidence:
       "Alternatives, selection rationale, architecture, BOM, budget, risks, schedule and learning plan.",
-    methods:
-      "Decision matrix, requirements table, system map, risk register, budget estimate and project schedule.",
+    starters: ["Decision matrix", "Budget & BOM", "Risk & schedule"],
     discussion:
       "Which criterion changed the decision? What is the cheapest useful experiment?",
-    example:
-      "A hybrid route can use a commercial reference while preserving the student-built learning platform.",
   },
   {
     number: "04",
@@ -75,12 +66,9 @@ const stages = [
     actions: ["Study and reproduce relevant work", "Build the smallest useful version", "Record source and licence"],
     evidence:
       "Build instructions, files, photos or logs, failures, limitations and another person’s reproduction attempt.",
-    methods:
-      "Open-source review, Git branches and pull requests, rapid prototyping, interface tests and handover tests.",
+    starters: ["Open-source review", "Rapid prototype", "Reproduction test"],
     discussion:
       "What failed? Could another person repeat it? What must be proven before real-world use?",
-    example:
-      "A bench demo can show sensing and logging, but does not yet justify outdoor deployment.",
   },
   {
     number: "05",
@@ -93,12 +81,9 @@ const stages = [
     actions: ["Define acceptance and stop conditions", "Collect evidence and anomalies", "Revise and retest"],
     evidence:
       "Method, raw data, observations, uncertainty, feedback, revision and a justified next-step decision.",
-    methods:
-      "Test matrix, reference comparison, failure analysis, log review, safety checklist and decision table.",
+    starters: ["Test matrix", "Failure analysis", "Decision log"],
     discussion:
       "Which observation would change the decision? Is the result repeatable and safe?",
-    example:
-      "A 72-hour first field test can support the next stage; it cannot certify long-term reliability.",
   },
   {
     number: "06",
@@ -111,23 +96,28 @@ const stages = [
     actions: ["Choose a real audience", "Teach and observe difficulty", "Complete a release review"],
     evidence:
       "Outcome, audience response, revised material, repository, attribution, reflection and release decision.",
-    methods:
-      "Workshop, report, poster, demo, competition, project film, short documentary, stakeholder implementation, tutorial and public repository.",
+    starters: ["Audience map", "Teaching test", "Release review"],
     discussion:
       "What can another person use? What must be redacted? Which claim is still too strong?",
-    example:
-      "Release the weather station as an educational prototype unless evidence supports stronger claims.",
   },
 ];
 
 const releaseFormats = [
-  ["Build", "Functional prototype or open-source system", "Show how it works, how it was tested and what another team would need to continue."],
-  ["Teach", "Workshop, tutorial or teaching kit", "Observe learners using the material, then revise it from their questions and difficulty."],
-  ["Communicate", "Presentation, report, poster or conference-style paper", "Make the evidence, trade-offs and limits understandable to a defined audience."],
-  ["Film", "Project video, video essay or short documentary", "Record the journey, decisions, failures, testing and learning—not only the final result."],
-  ["Showcase", "Competition entry or stakeholder demonstration", "Use external questions and feedback to test the project under real judgement."],
-  ["Contribute", "Public repository, community resource or startup validation", "Release something useful with attribution, safety, privacy and claims checked."],
+  { type: "build", label: "Build", title: "Functional prototype or open-source system", copy: "Show how it works, how it was tested and what another team would need to continue.", visualClass: "bg-[#dfeede] text-[#17452b]", dark: false },
+  { type: "teach", label: "Teach", title: "Workshop, tutorial or teaching kit", copy: "Observe learners using the material, then revise it from their questions and difficulty.", visualClass: "bg-[#173f28] text-white", dark: true },
+  { type: "communicate", label: "Communicate", title: "Presentation, report, poster or conference paper", copy: "Make the evidence, trade-offs and limits understandable to a defined audience.", visualClass: "bg-[#f2ebcf] text-[#51491f]", dark: false },
+  { type: "film", label: "Film", title: "Project film, video essay or short documentary", copy: "Record decisions, failures, testing and learning—not only the final result or a highlight reel.", visualClass: "bg-[#0f3521] text-white", dark: true },
+  { type: "showcase", label: "Showcase", title: "Competition entry or stakeholder demonstration", copy: "Use external questions and feedback to test the project under real judgement.", visualClass: "bg-[#dcecf0] text-[#164b58]", dark: false },
+  { type: "contribute", label: "Contribute", title: "Public repository, community resource or startup validation", copy: "Release something useful with attribution, safety, privacy and claims checked.", visualClass: "bg-[#d7f43c] text-[#17351f]", dark: false },
 ];
+
+const evidenceSteps = [
+  { number: "01", label: "Act", position: "left-1/2 top-0 -translate-x-1/2" },
+  { number: "02", label: "Keep evidence", position: "right-0 top-[27%]" },
+  { number: "03", label: "Get feedback", position: "right-[8%] bottom-[4%]" },
+  { number: "04", label: "Revise", position: "left-[8%] bottom-[4%]" },
+  { number: "05", label: "Transfer", position: "left-0 top-[27%]" },
+] as const;
 
 const notionGuideUrl =
   "https://app.notion.com/p/3cb402ed073681a4aef4eaf93f3dd67d?pvs=204";
@@ -137,6 +127,65 @@ function ArrowIcon() {
     <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.8" className="h-4 w-4" aria-hidden="true">
       <path d="M4 10h12M11 5l5 5-5 5" />
     </svg>
+  );
+}
+
+function OutputIcon({ type }: { type: string }) {
+  const common = "h-10 w-10";
+
+  if (type === "build") {
+    return <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinejoin="round" className={common} aria-hidden="true"><path d="m12 3 8 4.5v9L12 21l-8-4.5v-9L12 3Z" /><path d="m4.5 7.7 7.5 4.2 7.5-4.2M12 12v9" /></svg>;
+  }
+  if (type === "teach") {
+    return <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" className={common} aria-hidden="true"><rect x="3" y="3" width="18" height="12" rx="2" /><path d="m8 10 2.2-2.2L13 10.6l3-3M8 21v-1.2a3 3 0 0 1 6 0V21M11 17.2a2 2 0 1 0 0-4" /></svg>;
+  }
+  if (type === "communicate") {
+    return <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" className={common} aria-hidden="true"><path d="M6 3h8l4 4v14H6V3Z" /><path d="M14 3v5h5M9 12h6M9 16h6" /></svg>;
+  }
+  if (type === "film") {
+    return <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" className={common} aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="3" /><path d="m10 9 5 3-5 3V9Z" /></svg>;
+  }
+  if (type === "showcase") {
+    return <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" className={common} aria-hidden="true"><path d="M8 4h8v4a4 4 0 0 1-8 0V4ZM9 20h6M12 12v8" /><path d="M8 6H4v1a4 4 0 0 0 4 4M16 6h4v1a4 4 0 0 1-4 4" /></svg>;
+  }
+  return <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" className={common} aria-hidden="true"><circle cx="6" cy="12" r="2.2" /><circle cx="18" cy="6" r="2.2" /><circle cx="18" cy="18" r="2.2" /><path d="m8 11 7.8-4M8 13l7.8 4" /></svg>;
+}
+
+function EvidenceLoop() {
+  return (
+    <div className="mb-12 overflow-hidden rounded-[2.2rem] bg-[#123d24] p-7 text-white sm:p-9 lg:p-11">
+      <div className="grid gap-10 lg:grid-cols-[0.78fr_1.22fr] lg:items-center">
+        <div className="max-w-xl">
+          <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#b9d9bf]">Active-learning evidence loop</p>
+          <h2 className="mt-4 text-4xl font-semibold leading-tight tracking-[-0.04em] sm:text-5xl">Do more than complete an activity.</h2>
+          <p className="mt-5 text-base leading-8 text-white/76">
+            An experience becomes learning when evidence and feedback change
+            the next attempt—and when the team can use that learning again in
+            a new context.
+          </p>
+        </div>
+
+        <div className="relative mx-auto aspect-square w-full max-w-[26rem]" role="img" aria-label="Active-learning loop: act, keep evidence, get feedback, revise and transfer">
+          <svg viewBox="0 0 420 420" className="absolute inset-0 h-full w-full" aria-hidden="true">
+            <defs>
+              <marker id="loop-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                <path d="M0 0 10 5 0 10Z" fill="#d7f43c" />
+              </marker>
+            </defs>
+            <path d="M210 54a156 156 0 1 1-2 0" fill="none" stroke="#d7f43c" strokeWidth="5" strokeLinecap="round" strokeDasharray="5 14" markerEnd="url(#loop-arrow)" />
+          </svg>
+          <div className="absolute left-1/2 top-1/2 flex h-24 w-24 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-white/16 bg-white/8 p-3 text-center shadow-[0_20px_55px_-30px_rgba(0,0,0,0.7)] backdrop-blur-sm sm:h-32 sm:w-32 sm:p-5">
+            <p className="text-[0.68rem] font-semibold leading-4 text-[#eff8ec] sm:text-sm sm:leading-5">Evidence changes the next action.</p>
+          </div>
+          {evidenceSteps.map((step) => (
+            <div key={step.number} className={`absolute flex h-[4.2rem] w-20 flex-col items-center justify-center rounded-xl border border-white/14 bg-[#245b38] px-1.5 text-center shadow-[0_18px_45px_-30px_rgba(0,0,0,0.85)] sm:h-[4.8rem] sm:w-[6.5rem] sm:rounded-2xl sm:px-2 ${step.position}`}>
+              <span className="text-[0.6rem] font-bold tracking-[0.15em] text-[#b9d8bf]">{step.number}</span>
+              <span className="mt-1 text-xs font-bold leading-4 text-white">{step.label}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
   );
 }
 
@@ -180,19 +229,7 @@ export default function ProjectJourneyPage() {
         </section>
 
         <section className="mx-auto max-w-[90rem] px-5 py-16 sm:px-8 lg:px-10 lg:py-24">
-          <div className="mb-12 grid gap-5 rounded-[2rem] bg-[#123d24] p-7 text-white sm:p-9 lg:grid-cols-[0.8fr_1.2fr] lg:items-center">
-            <div>
-              <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#b9d9bf]">Active-learning evidence loop</p>
-              <h2 className="mt-3 text-3xl font-semibold tracking-[-0.035em]">Do more than complete an activity.</h2>
-            </div>
-            <div className="grid grid-cols-2 gap-2 text-center text-xs font-bold sm:grid-cols-5">
-              {['Act', 'Keep evidence', 'Get feedback', 'Revise', 'Transfer'].map((item, index) => (
-                <div key={item} className={`rounded-xl px-3 py-4 ${index === 4 ? "bg-[#d7f43c] text-[#183620]" : "bg-white/9 text-white"}`}>
-                  {item}
-                </div>
-              ))}
-            </div>
-          </div>
+          <EvidenceLoop />
 
           <div className="space-y-8">
             {stages.map((stage) => (
@@ -216,7 +253,7 @@ export default function ProjectJourneyPage() {
                   </div>
 
                   <div className="p-7 sm:p-9 lg:p-10">
-                    <div className="grid gap-6 sm:grid-cols-2">
+                    <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
                       <div>
                         <h3 className="text-xs font-bold uppercase tracking-[0.15em] text-[#54715c]">Why this matters</h3>
                         <p className="mt-3 text-sm leading-7 text-[#435b4b]">{stage.why}</p>
@@ -234,25 +271,21 @@ export default function ProjectJourneyPage() {
                         <p className="mt-3 text-sm leading-7 text-[#435b4b]">{stage.evidence}</p>
                       </div>
                       <div>
-                        <h3 className="text-xs font-bold uppercase tracking-[0.15em] text-[#54715c]">Methods & tools</h3>
-                        <p className="mt-3 text-sm leading-7 text-[#435b4b]">{stage.methods}</p>
+                        <h3 className="text-xs font-bold uppercase tracking-[0.15em] text-[#54715c]">Useful starting points</h3>
+                        <div className="mt-3 flex flex-wrap gap-2">
+                          {stage.starters.map((item) => (
+                            <span key={item} className="rounded-full bg-[#edf4ed] px-3 py-2 text-xs font-semibold text-[#41614a]">{item}</span>
+                          ))}
+                        </div>
                       </div>
                     </div>
 
-                    <div className="mt-7 grid gap-3 border-t border-[#dde7df] pt-7 lg:grid-cols-2">
-                      <div className="rounded-2xl bg-[#f0f6ef] p-5">
-                        <p className="text-xs font-bold uppercase tracking-[0.14em] text-[#57715d]">Weather station example</p>
-                        <p className="mt-2 text-sm leading-6 text-[#415747]">{stage.example}</p>
-                      </div>
+                    <div className="mt-7 border-t border-[#dde7df] pt-7">
                       <div className="rounded-2xl bg-[#f7f4e8] p-5">
-                        <p className="text-xs font-bold uppercase tracking-[0.14em] text-[#776a3a]">Discuss on Tuesday</p>
+                        <p className="text-xs font-bold uppercase tracking-[0.14em] text-[#776a3a]">Tuesday Studio prompt</p>
                         <p className="mt-2 text-sm leading-6 text-[#554e34]">{stage.discussion}</p>
                       </div>
                     </div>
-
-                    <p className="mt-6 text-sm font-semibold text-[#54705c]">
-                      The detailed instructions and checkpoint template are released inside the current Notion guide.
-                    </p>
                   </div>
                 </div>
               </article>
@@ -271,12 +304,21 @@ export default function ProjectJourneyPage() {
                 process, evidence, feedback and revision visible.
               </p>
             </div>
-            <div className="mt-9 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-              {releaseFormats.map(([label, title, copy], index) => (
-                <article key={label} className={`rounded-[1.6rem] p-6 ${index === 3 ? "bg-[#173f28] text-white" : "bg-white text-[#183822]"}`}>
-                  <p className={`text-xs font-bold uppercase tracking-[0.14em] ${index === 3 ? "text-[#d7f43c]" : "text-[#628069]"}`}>{label}</p>
-                  <h3 className="mt-7 text-xl font-semibold tracking-[-0.025em]">{title}</h3>
-                  <p className={`mt-3 text-sm leading-7 ${index === 3 ? "text-white/76" : "text-[#526858]"}`}>{copy}</p>
+            <div className="mt-9 grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-3">
+              {releaseFormats.map((format, index) => (
+                <article key={format.label} className="group overflow-hidden rounded-[1.7rem] border border-[#cfddcf] bg-white text-[#183822] shadow-[0_20px_55px_-44px_rgba(15,60,32,0.55)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_24px_65px_-40px_rgba(15,60,32,0.58)]">
+                  <div className={`relative flex h-24 items-center justify-center overflow-hidden sm:h-36 ${format.visualClass}`}>
+                    <div className="absolute -right-8 -top-10 h-32 w-32 rounded-full border-[22px] border-current opacity-10" />
+                    <span className={`relative flex h-14 w-14 items-center justify-center rounded-2xl border border-current/12 sm:h-20 sm:w-20 sm:rounded-[1.4rem] ${format.dark ? "bg-white/10" : "bg-white/70"}`}>
+                      <OutputIcon type={format.type} />
+                    </span>
+                    <span className={`absolute left-3 top-3 rounded-full px-2 py-1 text-[0.58rem] font-bold tracking-[0.12em] sm:left-5 sm:top-5 sm:px-2.5 sm:text-[0.62rem] sm:tracking-[0.14em] ${format.dark ? "bg-white/12 text-white" : "bg-white/78 text-current"}`}>0{index + 1}</span>
+                  </div>
+                  <div className="p-4 sm:p-6">
+                    <p className="text-xs font-bold uppercase tracking-[0.14em] text-[#628069]">{format.label}</p>
+                    <h3 className="mt-3 text-base font-semibold leading-6 tracking-[-0.02em] sm:mt-5 sm:text-xl">{format.title}</h3>
+                    <p className="mt-3 hidden text-sm leading-7 text-[#526858] sm:block">{format.copy}</p>
+                  </div>
                 </article>
               ))}
             </div>

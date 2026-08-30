@@ -38,7 +38,7 @@ export default function AboutPage() {
             </div>
             <div className="relative min-h-[420px] overflow-hidden rounded-[2.2rem] bg-[#173f28] shadow-[0_36px_100px_-62px_rgba(15,60,32,0.55)] sm:min-h-[520px]">
               <Image
-                src={imagePath("/images/teach-to-learn/kyle-green-technology-studio.png")}
+                src={imagePath("/images/teach-to-learn/kyle-green-technology-studio.webp")}
                 alt="ENGG2202 instructor in a Green Technology project studio with students, solar sensing and prototype systems"
                 fill
                 priority
@@ -82,13 +82,13 @@ export default function AboutPage() {
                 bar again by asking whether someone else can now use that knowledge.
               </p>
             </div>
-            <div className="grid grid-cols-2 gap-3 sm:grid-cols-5 lg:grid-cols-1 xl:grid-cols-5">
+            <div className="grid grid-cols-2 gap-3 sm:grid-cols-5 lg:grid-cols-2 xl:grid-cols-5">
               {[
-                ["Learn", "Find and understand a useful idea.", "/images/teach-to-learn/mastery-learn.png"],
-                ["Apply", "Use it in a real project decision.", "/images/teach-to-learn/mastery-apply.png"],
-                ["Explain", "Make the reasoning visible.", "/images/teach-to-learn/mastery-explain.png"],
-                ["Teach", "Help another person use it.", "/images/teach-to-learn/mastery-teach.png"],
-                ["Contribute", "Leave something others can build on.", "/images/teach-to-learn/mastery-contribute.png"],
+                ["Learn", "Find and understand a useful idea.", "/images/teach-to-learn/mastery-learn.webp"],
+                ["Apply", "Use it in a real project decision.", "/images/teach-to-learn/mastery-apply.webp"],
+                ["Explain", "Make the reasoning visible.", "/images/teach-to-learn/mastery-explain.webp"],
+                ["Teach", "Help another person use it.", "/images/teach-to-learn/mastery-teach.webp"],
+                ["Contribute", "Leave something others can build on.", "/images/teach-to-learn/mastery-contribute.webp"],
               ].map(([item, copy, image], index) => (
                 <article key={item} className={`group overflow-hidden rounded-2xl border ${index === 4 ? "border-[#b9d42c] bg-[#d7f43c] text-[#193820]" : "border-[#d4e1d6] bg-[#edf4ed] text-[#335b3f]"}`}>
                   <div className="relative aspect-[4/3] overflow-hidden bg-[#dfeade]">

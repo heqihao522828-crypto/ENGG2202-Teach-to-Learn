@@ -9,12 +9,12 @@ export const metadata: Metadata = {
 };
 
 const gateNames = [
-  { title: "Challenge Focus", note: "Choose a meaningful direction", left: "10%", top: "70%" },
+  { title: "Challenge Focus", note: "Choose a meaningful direction", left: "14%", top: "70%" },
   { title: "Problem Validation", note: "Find stakeholder evidence", left: "26%", top: "34%" },
   { title: "Proposal & Plan", note: "Justify a responsible route", left: "42%", top: "68%" },
   { title: "First Working Version", note: "Learn, adapt and make", left: "58%", top: "31%" },
   { title: "Test & Iteration", note: "Use evidence to improve", left: "74%", top: "64%" },
-  { title: "Share, Teach & Release", note: "Create value for an audience", left: "90%", top: "25%" },
+  { title: "Share, Teach & Release", note: "Create value for an audience", left: "86%", top: "25%" },
 ];
 
 const notionGuideUrl =
@@ -144,30 +144,7 @@ export default function StudentGuidePage() {
           </div>
         </section>
 
-        <section className="border-y border-[#d7e4d9] bg-white px-5 py-16 sm:px-8 lg:px-10">
-          <div className="mx-auto max-w-[90rem]">
-            <div className="max-w-3xl">
-              <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#57745e]">Inside each released Gate</p>
-              <h2 className="mt-4 text-4xl font-semibold tracking-[-0.04em] text-[#143421]">Resources appear beside the decision that needs them.</h2>
-            </div>
-            <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-              {[
-                ["01", "Decision", "What engineering judgement is the team making now?"],
-                ["02", "Action", "What should the team investigate, build or test?"],
-                ["03", "Support", "Which method, tool, example or AI workflow can remove an obstacle?"],
-                ["04", "Evidence", "What must remain for feedback, revision and the checkpoint?"],
-              ].map(([number, title, copy]) => (
-                <article key={number} className="rounded-[1.7rem] bg-[#eef5ed] p-6">
-                  <p className="text-xs font-bold tracking-[0.15em] text-[#6e8673]">{number}</p>
-                  <h3 className="mt-7 text-xl font-semibold text-[#173923]">{title}</h3>
-                  <p className="mt-3 text-sm leading-7 text-[#526858]">{copy}</p>
-                </article>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        <section className="mx-auto max-w-[90rem] px-5 py-14 sm:px-8 lg:px-10 lg:py-18">
+        <section className="border-t border-[#d7e4d9] bg-white px-5 py-14 sm:px-8 lg:px-10 lg:py-18">
           <div className="flex flex-col gap-5 rounded-[2rem] bg-[#173f28] p-7 text-white sm:flex-row sm:items-center sm:justify-between sm:p-9">
             <div className="max-w-3xl">
               <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#b8d8bf]">Current working material</p>
