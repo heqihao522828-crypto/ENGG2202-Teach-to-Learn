@@ -165,6 +165,7 @@ function EvidenceLoop() {
             the next attempt—and when the team can use that learning again in
             a new context.
           </p>
+          <p className="mt-4 text-sm font-semibold leading-6 text-[#b9d9bf]">This is a working rhythm inside every stage, not a seventh stage.</p>
         </div>
 
         <div className="relative mx-auto aspect-square w-full max-w-[26rem]" role="img" aria-label="Active-learning loop: act, keep evidence, get feedback, revise and transfer">

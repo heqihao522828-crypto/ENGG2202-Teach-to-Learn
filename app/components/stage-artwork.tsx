@@ -27,7 +27,7 @@ const stageVisuals: Record<
   },
 };
 
-const focusSdgs = ["06", "07", "11", "13"];
+const focusSdgs = ["06", "07", "09", "11", "12", "13"];
 
 type StageArtworkProps = {
   stage: string;
@@ -45,14 +45,14 @@ export default function StageArtwork({
   if (stage === "01") {
     if (compact) {
       return (
-        <div className={`relative overflow-hidden bg-white ${className}`}>
-          <Image
-            src={imagePath("/images/teach-to-learn/sdg/goal-13.png")}
-            alt="SDG 13: Climate Action"
-            fill
-            sizes={sizes}
-            className="object-contain p-1"
-          />
+        <div className={`relative overflow-hidden bg-[radial-gradient(circle_at_top_left,#ffffff_0%,#e7f3e7_45%,#cfdfd1_100%)] ${className}`} role="img" aria-label="Six Sustainable Development Goal icons representing Green Technology challenge directions">
+          <div className="absolute inset-0 grid grid-cols-6 items-center gap-1 p-3">
+            {focusSdgs.map((goal) => (
+              <div key={goal} className="relative aspect-square overflow-hidden rounded-md border border-white/80 bg-white shadow-sm">
+                <Image src={imagePath(`/images/teach-to-learn/sdg/goal-${goal}.png`)} alt={`SDG ${goal}`} fill sizes="56px" className="object-cover" />
+              </div>
+            ))}
+          </div>
         </div>
       );
     }
@@ -64,13 +64,11 @@ export default function StageArtwork({
         aria-label="Official Sustainable Development Goal icons representing possible Green Technology challenge directions"
       >
         <div className="absolute -right-10 -top-12 h-36 w-36 rounded-full border-[24px] border-[#d7f43c]/38" />
-        <div className="absolute inset-0 grid grid-cols-4 items-center gap-2 p-4 sm:gap-3 sm:p-5">
+        <div className="absolute inset-0 grid grid-cols-6 items-center gap-2 p-4 sm:gap-3 sm:p-5">
           {focusSdgs.map((goal, index) => (
             <div
               key={goal}
-              className={`relative aspect-square overflow-hidden rounded-xl border-2 border-white bg-white shadow-[0_12px_30px_-18px_rgba(14,53,29,0.7)] ${
-                index % 2 === 0 ? "-translate-y-2" : "translate-y-2"
-              }`}
+              className={`relative aspect-square overflow-hidden rounded-xl border-2 border-white bg-white shadow-[0_12px_30px_-18px_rgba(14,53,29,0.7)] ${index % 2 === 0 ? "-translate-y-1" : "translate-y-1"}`}
             >
               <Image
                 src={imagePath(`/images/teach-to-learn/sdg/goal-${goal}.png`)}
