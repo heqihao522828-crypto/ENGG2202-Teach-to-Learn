@@ -41,6 +41,13 @@ html {
   will-change: transform;
 }
 
+@keyframes sdg-float {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-7px) scale(1.035); }
+}
+
+.sdg-float { animation: sdg-float 3.8s ease-in-out infinite; will-change: transform; }
+
 @keyframes hero-zoom-in {
   from { transform: scale(1); }
   to { transform: scale(1.1); }
@@ -76,6 +83,8 @@ html {
     animation: none;
     transform: none;
   }
+
+  .sdg-float { animation: none; }
 
   .hero-zoom-in,
   .hero-zoom-out {
