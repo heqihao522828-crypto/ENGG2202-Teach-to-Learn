@@ -10,7 +10,7 @@ export default function SdgMosaic() {
       <p className="absolute left-7 top-7 z-10 text-xs font-bold uppercase tracking-[0.18em] text-[#67816c]">Green technology focus</p>
       <div className="absolute inset-x-7 bottom-8 top-20 grid grid-cols-6 grid-rows-3 items-center justify-items-center gap-2 sm:gap-3">
         {goals.map((goal, index) => (
-          <div key={goal} className="sdg-float relative aspect-square w-[54px] sm:w-[66px]" style={{ animationDelay: `${index * 120}ms` }}>
+          <div key={goal} className="sdg-flip-card relative aspect-square w-[54px] sm:w-[66px]" style={{ animationDelay: `${index * 420 + (index % 2 ? 210 : 0)}ms` }}>
             <Image src={imagePath(`/images/teach-to-learn/sdg/goal-${goal}.png`)} alt={`SDG ${goal}`} fill sizes="72px" className="rounded-lg object-cover shadow-[0_12px_24px_-14px_rgba(18,61,36,0.58)]" />
           </div>
         ))}

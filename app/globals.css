@@ -41,12 +41,19 @@ html {
   will-change: transform;
 }
 
-@keyframes sdg-float {
-  0%, 100% { transform: translateY(0) scale(1); }
-  50% { transform: translateY(-7px) scale(1.035); }
+@keyframes sdg-flip {
+  0%, 4% { opacity: 0; transform: perspective(600px) rotateY(90deg) scale(.82); }
+  12%, 58% { opacity: 1; transform: perspective(600px) rotateY(0deg) scale(1); }
+  66%, 72% { opacity: 0; transform: perspective(600px) rotateY(-90deg) scale(.82); }
+  100% { opacity: 0; transform: perspective(600px) rotateY(-90deg) scale(.82); }
 }
 
-.sdg-float { animation: sdg-float 3.8s ease-in-out infinite; will-change: transform; }
+.sdg-flip-card {
+  animation: sdg-flip 14s ease-in-out infinite;
+  transform-style: preserve-3d;
+  will-change: transform, opacity;
+}
+
 
 @keyframes hero-zoom-in {
   from { transform: scale(1); }
@@ -84,7 +91,7 @@ html {
     transform: none;
   }
 
-  .sdg-float { animation: none; }
+  .sdg-flip-card { animation: none; opacity: 1; transform: none; }
 
   .hero-zoom-in,
   .hero-zoom-out {
