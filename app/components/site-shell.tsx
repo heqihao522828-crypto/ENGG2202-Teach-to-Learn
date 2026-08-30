@@ -33,7 +33,7 @@ export default function SiteShell({ children }: { children: ReactNode }) {
     <div className="min-h-screen bg-[#f7faf6] text-[#102319]">
       <header className="sticky top-0 z-50 border-b border-[#dce8df] bg-[#fbfdfb]/95 backdrop-blur-xl">
         <div className="mx-auto flex max-w-[90rem] items-center gap-5 px-5 py-3 sm:px-8 lg:px-10">
-          <Link href="/" className="flex min-w-0 items-center gap-2 sm:gap-3" aria-label="ENGG2202 Teach to Learn home">
+          <Link href="/" className="flex min-w-0 items-center gap-1.5 sm:gap-2" aria-label="ENGG2202 Teach to Learn home">
             <Image
               src={imagePath("/images/Logo/hkuengglogo.png")}
               alt="HKU Engineering"
@@ -47,7 +47,7 @@ export default function SiteShell({ children }: { children: ReactNode }) {
               alt="Active Learning UG Teaching Team"
               width={92}
               height={44}
-              className="hidden h-8 w-[74px] shrink-0 object-contain sm:block sm:h-9 sm:w-[92px]"
+              className="hidden h-8 w-[68px] shrink-0 object-contain sm:block sm:h-9 sm:w-[78px]"
             />
             <span className="min-w-0 sm:hidden">
               <span className="block truncate text-[0.55rem] font-bold uppercase tracking-[0.13em] text-[#607667]">
