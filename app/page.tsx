@@ -1,11 +1,18 @@
 "use client";
 
+import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import SiteShell from "./components/site-shell";
 import StageArtwork from "./components/stage-artwork";
 import { imagePath } from "./lib/image-path";
+
+const heroImages = [
+  "/images/teach-to-learn/green-technology-hero.webp",
+  "/images/teach-to-learn/home-hero-1.png",
+  "/images/teach-to-learn/home-hero-2.png",
+];
 
 const stages = [
   { number: "01", short: "Focus", label: "Challenge Focus" },
@@ -32,18 +39,31 @@ function ArrowIcon() {
 }
 
 export default function Home() {
+  const [heroIndex, setHeroIndex] = React.useState(0);
+
+  React.useEffect(() => {
+    const timer = window.setInterval(() => {
+      setHeroIndex((current) => (current + 1) % heroImages.length);
+    }, 9000);
+    return () => window.clearInterval(timer);
+  }, []);
+
   return (
     <SiteShell>
       <main>
         <section className="relative overflow-hidden bg-[#0d2f1c] text-white">
-          <Image
-            src={imagePath("/images/teach-to-learn/green-technology-hero.webp")}
-            alt="Engineering students developing green technology prototypes in Hong Kong"
-            fill
-            priority
-            sizes="100vw"
-            className="hero-motion object-cover object-center"
-          />
+          {heroImages.map((source, index) => (
+            <Image
+              key={source}
+              src={imagePath(source)}
+              alt={index === 0 ? "Engineering students developing green technology prototypes in Hong Kong" : ""}
+              fill
+              priority={index === 0}
+              sizes="100vw"
+              className={`absolute inset-0 object-cover object-center transition-opacity duration-[1400ms] ease-in-out ${index === heroIndex ? "opacity-100" : "opacity-0"} ${index === heroIndex ? "hero-motion" : ""}`}
+              aria-hidden={index !== 0}
+            />
+          ))}
           <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(8,33,19,0.97)_0%,rgba(8,33,19,0.84)_38%,rgba(8,33,19,0.24)_74%,rgba(8,33,19,0.08)_100%)]" />
           <div className="absolute inset-0 bg-[linear-gradient(0deg,rgba(8,33,19,0.72)_0%,transparent_48%)]" />
 
