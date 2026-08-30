@@ -9,9 +9,10 @@ import StageArtwork from "./components/stage-artwork";
 import { imagePath } from "./lib/image-path";
 
 const heroImages = [
-  "/images/teach-to-learn/green-technology-hero.webp",
   "/images/teach-to-learn/home-hero-1.png",
   "/images/teach-to-learn/home-hero-2.png",
+  "/images/teach-to-learn/home-hero-3.png",
+  "/images/teach-to-learn/home-hero-4.png",
 ];
 
 const stages = [
@@ -60,7 +61,7 @@ export default function Home() {
               fill
               priority={index === 0}
               sizes="100vw"
-              className={`absolute inset-0 object-cover object-center transition-opacity duration-[1400ms] ease-in-out ${index === heroIndex ? "opacity-100" : "opacity-0"} ${index === heroIndex ? "hero-motion" : ""}`}
+              className={`absolute inset-0 object-cover object-center transition-opacity duration-[1400ms] ease-in-out ${index === heroIndex ? "opacity-100" : "opacity-0"} ${index === heroIndex ? (index % 2 === 0 ? "hero-zoom-in" : "hero-zoom-out") : ""}`}
               aria-hidden={index !== 0}
             />
           ))}

@@ -41,6 +41,26 @@ html {
   will-change: transform;
 }
 
+@keyframes hero-zoom-in {
+  from { transform: scale(1); }
+  to { transform: scale(1.1); }
+}
+
+@keyframes hero-zoom-out {
+  from { transform: scale(1.1); }
+  to { transform: scale(1); }
+}
+
+.hero-zoom-in,
+.hero-zoom-out {
+  animation-duration: 9s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+.hero-zoom-in { animation-name: hero-zoom-in; }
+.hero-zoom-out { animation-name: hero-zoom-out; }
+
 @keyframes output-card-drift {
   0%, 100% { transform: scale(1.04) translate3d(0, 0, 0); }
   50% { transform: scale(1.1) translate3d(-1.5%, -1%, 0); }
@@ -53,6 +73,12 @@ html {
 
 @media (prefers-reduced-motion: reduce) {
   .hero-motion {
+    animation: none;
+    transform: none;
+  }
+
+  .hero-zoom-in,
+  .hero-zoom-out {
     animation: none;
     transform: none;
   }
