@@ -96,7 +96,7 @@ export default function StageArtwork({
           alt=""
           fill
           sizes={sizes}
-          className="scale-110 object-cover opacity-25 blur-2xl"
+          className="scale-110 object-cover opacity-25 mix-blend-multiply blur-2xl"
           aria-hidden="true"
         />
       ) : null}
@@ -105,7 +105,7 @@ export default function StageArtwork({
         alt={visual.alt}
         fill
         sizes={sizes}
-        className={compact ? "object-contain p-1" : "object-contain p-2 sm:p-3"}
+        className={compact ? "object-contain p-1 mix-blend-multiply" : "object-contain p-2 mix-blend-multiply sm:p-3"}
         style={{ objectPosition: visual.objectPosition ?? "center" }}
       />
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#123d24]/6 via-transparent to-white/8" />
