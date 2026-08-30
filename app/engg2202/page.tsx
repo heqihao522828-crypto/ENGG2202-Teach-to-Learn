@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import SiteShell from "../components/site-shell";
 import StageArtwork from "../components/stage-artwork";
+import { imagePath } from "../lib/image-path";
 
 export const metadata: Metadata = {
   title: "Project Journey",
@@ -103,12 +105,12 @@ const stages = [
 ];
 
 const releaseFormats = [
-  { type: "build", label: "Build", title: "Functional prototype or open-source system", copy: "Show how it works, how it was tested and what another team would need to continue.", visualClass: "bg-[#dfeede] text-[#17452b]", dark: false },
-  { type: "teach", label: "Teach", title: "Workshop, tutorial or teaching kit", copy: "Observe learners using the material, then revise it from their questions and difficulty.", visualClass: "bg-[#173f28] text-white", dark: true },
-  { type: "communicate", label: "Communicate", title: "Presentation, report, poster or conference paper", copy: "Make the evidence, trade-offs and limits understandable to a defined audience.", visualClass: "bg-[#f2ebcf] text-[#51491f]", dark: false },
-  { type: "film", label: "Film", title: "Project film, video essay or short documentary", copy: "Record decisions, failures, testing and learning—not only the final result or a highlight reel.", visualClass: "bg-[#0f3521] text-white", dark: true },
-  { type: "showcase", label: "Showcase", title: "Competition entry or stakeholder demonstration", copy: "Use external questions and feedback to test the project under real judgement.", visualClass: "bg-[#dcecf0] text-[#164b58]", dark: false },
-  { type: "contribute", label: "Contribute", title: "Public repository, community resource or startup validation", copy: "Release something useful with attribution, safety, privacy and claims checked.", visualClass: "bg-[#d7f43c] text-[#17351f]", dark: false },
+  { type: "build", label: "Build", title: "Functional prototype or open-source system", copy: "Show how it works, how it was tested and what another team would need to continue.", image: "/images/teach-to-learn/outputs/output-build.png", visualClass: "text-white" },
+  { type: "teach", label: "Teach", title: "Workshop, tutorial or teaching kit", copy: "Observe learners using the material, then revise it from their questions and difficulty.", image: "/images/teach-to-learn/outputs/output-teach.png", visualClass: "text-white" },
+  { type: "communicate", label: "Communicate", title: "Presentation, report, poster or conference paper", copy: "Make the evidence, trade-offs and limits understandable to a defined audience.", image: "/images/teach-to-learn/outputs/output-communicate.png", visualClass: "text-white" },
+  { type: "film", label: "Film", title: "Project film, video essay or short documentary", copy: "Record decisions, failures, testing and learning—not only the final result or a highlight reel.", image: "/images/teach-to-learn/outputs/output-film.png", visualClass: "text-white" },
+  { type: "showcase", label: "Showcase", title: "Competition entry or stakeholder demonstration", copy: "Use external questions and feedback to test the project under real judgement.", image: "/images/teach-to-learn/outputs/output-showcase.png", visualClass: "text-white" },
+  { type: "contribute", label: "Contribute", title: "Public repository, community resource or startup validation", copy: "Release something useful with attribution, safety, privacy and claims checked.", image: "/images/teach-to-learn/outputs/output-contribute.png", visualClass: "text-white" },
 ];
 
 const evidenceSteps = [
@@ -307,12 +309,13 @@ export default function ProjectJourneyPage() {
             <div className="mt-9 grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-3">
               {releaseFormats.map((format, index) => (
                 <article key={format.label} className="group overflow-hidden rounded-[1.7rem] border border-[#cfddcf] bg-white text-[#183822] shadow-[0_20px_55px_-44px_rgba(15,60,32,0.55)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_24px_65px_-40px_rgba(15,60,32,0.58)]">
-                  <div className={`relative flex h-24 items-center justify-center overflow-hidden sm:h-36 ${format.visualClass}`}>
-                    <div className="absolute -right-8 -top-10 h-32 w-32 rounded-full border-[22px] border-current opacity-10" />
-                    <span className={`relative flex h-14 w-14 items-center justify-center rounded-2xl border border-current/12 sm:h-20 sm:w-20 sm:rounded-[1.4rem] ${format.dark ? "bg-white/10" : "bg-white/70"}`}>
+                  <div className={`relative flex h-32 items-center justify-center overflow-hidden sm:h-44 ${format.visualClass}`}>
+                    <Image src={imagePath(format.image)} alt="" fill sizes="(min-width: 1024px) 30vw, 50vw" className="output-card-motion object-cover" aria-hidden="true" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#0b2b19]/75 via-[#0b2b19]/20 to-transparent" />
+                    <span className="relative flex h-14 w-14 items-center justify-center rounded-2xl border border-white/25 bg-[#0b2b19]/35 text-white backdrop-blur-sm sm:h-20 sm:w-20 sm:rounded-[1.4rem]">
                       <OutputIcon type={format.type} />
                     </span>
-                    <span className={`absolute left-3 top-3 rounded-full px-2 py-1 text-[0.58rem] font-bold tracking-[0.12em] sm:left-5 sm:top-5 sm:px-2.5 sm:text-[0.62rem] sm:tracking-[0.14em] ${format.dark ? "bg-white/12 text-white" : "bg-white/78 text-current"}`}>0{index + 1}</span>
+                    <span className="absolute left-3 top-3 rounded-full bg-[#0b2b19]/55 px-2 py-1 text-[0.58rem] font-bold tracking-[0.12em] text-white backdrop-blur-sm sm:left-5 sm:top-5 sm:px-2.5 sm:text-[0.62rem] sm:tracking-[0.14em]">0{index + 1}</span>
                   </div>
                   <div className="p-4 sm:p-6">
                     <p className="text-xs font-bold uppercase tracking-[0.14em] text-[#628069]">{format.label}</p>
