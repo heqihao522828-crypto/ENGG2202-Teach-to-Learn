@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import SiteShell from "../components/site-shell";
+import SdgMosaic from "../components/sdg-mosaic";
 import { imagePath } from "../lib/image-path";
 
 export const metadata: Metadata = {
@@ -39,7 +40,7 @@ export default function StudentProjectsPage() {
     <SiteShell>
       <main>
         <section className="overflow-hidden border-b border-[#d9e6db] bg-white">
-          <div className="mx-auto max-w-[90rem] px-5 py-20 sm:px-8 lg:px-10 lg:py-24">
+          <div className="mx-auto grid max-w-[90rem] gap-12 px-5 py-20 sm:px-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-center lg:px-10 lg:py-24">
             <div className="max-w-3xl">
               <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#4f765a]">Open engineering in practice</p>
               <h1 className="mt-5 text-6xl font-semibold leading-[0.92] tracking-[-0.055em] text-[#112e1d] sm:text-7xl lg:text-8xl">
@@ -52,6 +53,7 @@ export default function StudentProjectsPage() {
                 learning story remain visible.
               </p>
             </div>
+            <SdgMosaic />
           </div>
         </section>
 
