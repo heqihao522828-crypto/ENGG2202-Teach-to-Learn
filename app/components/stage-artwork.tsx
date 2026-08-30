@@ -6,23 +6,23 @@ const stageVisuals: Record<
   { image: string; alt: string; objectPosition?: string }
 > = {
   "02": {
-    image: "/images/teach-to-learn/stage-define-stakeholder.jpg",
+    image: "/images/teach-to-learn/stage-define-anime.png",
     alt: "Three-dimensional illustration of stakeholder research, discussion and evidence review",
   },
   "03": {
-    image: "/images/teach-to-learn/stage-plan-proposal.jpg",
+    image: "/images/teach-to-learn/stage-plan-anime.png",
     alt: "Three-dimensional illustration of an engineering proposal, plan and design decisions",
   },
   "04": {
-    image: "/images/teach-to-learn/stage-learn-prototype.jpg",
+    image: "/images/teach-to-learn/stage-learn-anime.png",
     alt: "Three-dimensional illustration of a solar environmental sensing prototype and its components",
   },
   "05": {
-    image: "/images/teach-to-learn/stage-improve-test.jpg",
+    image: "/images/teach-to-learn/stage-improve-anime.png",
     alt: "Three-dimensional illustration of prototype testing, evidence review and iterative improvement",
   },
   "06": {
-    image: "/images/teach-to-learn/stage-teach-share.jpg",
+    image: "/images/teach-to-learn/stage-teach-anime.png",
     alt: "Three-dimensional illustration of students teaching and sharing an open green technology project",
   },
 };
