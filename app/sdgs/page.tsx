@@ -21,19 +21,19 @@ const projectFlow = [
     number: "02",
     title: "Locate a real context",
     copy: "Name a place, community, system or practice where the challenge can be observed and investigated.",
-    image: "/images/teach-to-learn/stage-define-stakeholder.webp",
+    image: "/images/teach-to-learn/stage-define-evidence-v2.png",
   },
   {
     number: "03",
     title: "Validate the problem",
     copy: "Identify a stakeholder, baseline and decision that could be improved. Keep evidence and uncertainty visible.",
-    image: "/images/teach-to-learn/stage-improve-test.webp",
+    image: "/images/teach-to-learn/stage-improve-iteration-v2.png",
   },
   {
     number: "04",
     title: "Judge the contribution",
     copy: "Test whether the proposed technology creates useful value without making sustainability claims the evidence cannot support.",
-    image: "/images/teach-to-learn/stage-contribute-release.webp",
+    image: "/images/teach-to-learn/stage-contribute-release-v2.png",
   },
 ];
 

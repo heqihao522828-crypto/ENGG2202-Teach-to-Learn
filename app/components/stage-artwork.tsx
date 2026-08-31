@@ -3,31 +3,33 @@ import { imagePath } from "../lib/image-path";
 
 const stageVisuals: Record<
   string,
-  { image: string; alt: string; objectPosition?: string }
+  { image: string; alt: string }
 > = {
+  "01": {
+    image: "/images/teach-to-learn/stage-focus-site-v2.png",
+    alt: "A dry campus planter, rainwater downpipe and sunlight showing a Green Technology challenge",
+  },
   "02": {
-    image: "/images/teach-to-learn/stage-define-stakeholder.webp",
-    alt: "Students listening to a stakeholder and recording evidence in a Green Technology context",
+    image: "/images/teach-to-learn/stage-define-evidence-v2.png",
+    alt: "A soil-moisture probe, rainwater supply and field notes for problem validation",
   },
   "03": {
-    image: "/images/teach-to-learn/stage-plan-proposal.webp",
-    alt: "Students comparing Green Technology concepts, trade-offs and a project plan",
+    image: "/images/teach-to-learn/stage-plan-options-v2.png",
+    alt: "Rainwater harvesting, storage and solar pump options converging on a project plan",
   },
   "04": {
-    image: "/images/teach-to-learn/stage-learn-prototype.webp",
-    alt: "Students assembling and debugging a first working Green Technology prototype",
+    image: "/images/teach-to-learn/stage-learn-prototype-v2.png",
+    alt: "A first working solar-powered rainwater irrigation prototype for a campus planter",
   },
   "05": {
-    image: "/images/teach-to-learn/stage-improve-test.webp",
-    alt: "Students comparing test conditions, evidence and an improved prototype",
+    image: "/images/teach-to-learn/stage-improve-iteration-v2.png",
+    alt: "Evidence comparing soil moisture and irrigation system revisions",
   },
   "06": {
-    image: "/images/teach-to-learn/stage-contribute-release.webp",
-    alt: "Students teaching, documenting and handing over an open Green Technology project",
+    image: "/images/teach-to-learn/stage-contribute-release-v2.png",
+    alt: "A documented solar-powered rainwater system, handover guide and reusable parts kit",
   },
 };
-
-const focusSdgs = ["06", "07", "09", "11", "12", "13"];
 
 type StageArtworkProps = {
   stage: string;
@@ -40,73 +42,18 @@ export default function StageArtwork({
   stage,
   className = "",
   sizes = "(min-width: 1024px) 30vw, 100vw",
-  compact = false,
 }: StageArtworkProps) {
-  if (stage === "01") {
-    if (compact) {
-      return (
-        <div className={`relative overflow-hidden bg-[radial-gradient(circle_at_top_left,#ffffff_0%,#e7f3e7_45%,#cfdfd1_100%)] ${className}`} role="img" aria-label="Six Sustainable Development Goal icons representing Green Technology challenge directions">
-          <div className="absolute inset-0 grid grid-cols-6 items-center gap-1 p-3">
-            {focusSdgs.map((goal) => (
-              <div key={goal} className="relative aspect-square overflow-hidden rounded-md border border-white/80 bg-white shadow-sm">
-                <Image src={imagePath(`/images/teach-to-learn/sdg/goal-${goal}.png`)} alt={`SDG ${goal}`} fill sizes="56px" className="object-cover" />
-              </div>
-            ))}
-          </div>
-        </div>
-      );
-    }
-
-    return (
-      <div
-        className={`relative overflow-hidden bg-[radial-gradient(circle_at_top_left,#ffffff_0%,#e7f3e7_45%,#cfdfd1_100%)] ${className}`}
-        role="img"
-        aria-label="Official Sustainable Development Goal icons representing possible Green Technology challenge directions"
-      >
-        <div className="absolute -right-10 -top-12 h-36 w-36 rounded-full border-[24px] border-[#d7f43c]/38" />
-        <div className="absolute inset-0 grid grid-cols-6 items-center gap-2 p-4 sm:gap-3 sm:p-5">
-          {focusSdgs.map((goal, index) => (
-            <div
-              key={goal}
-              className={`relative aspect-square overflow-hidden rounded-xl border-2 border-white bg-white shadow-[0_12px_30px_-18px_rgba(14,53,29,0.7)] ${index % 2 === 0 ? "-translate-y-1" : "translate-y-1"}`}
-            >
-              <Image
-                src={imagePath(`/images/teach-to-learn/sdg/goal-${goal}.png`)}
-                alt=""
-                fill
-                sizes="96px"
-                className="object-cover"
-              />
-            </div>
-          ))}
-        </div>
-      </div>
-    );
-  }
-
-  const visual = stageVisuals[stage] ?? stageVisuals["02"];
+  const visual = stageVisuals[stage] ?? stageVisuals["01"];
 
   return (
-    <div className={`relative overflow-hidden bg-[#eef5ed] ${className}`}>
-      {!compact ? (
-        <Image
-          src={imagePath(visual.image)}
-          alt=""
-          fill
-          sizes={sizes}
-          className="scale-110 object-cover opacity-20 blur-2xl"
-          aria-hidden="true"
-        />
-      ) : null}
+    <div className={`relative overflow-hidden bg-[#f7f3e8] ${className}`}>
       <Image
         src={imagePath(visual.image)}
         alt={visual.alt}
         fill
         sizes={sizes}
         className="object-cover"
-        style={{ objectPosition: visual.objectPosition ?? "center" }}
       />
-      <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#123d24]/6 via-transparent to-white/8" />
     </div>
   );
 }
