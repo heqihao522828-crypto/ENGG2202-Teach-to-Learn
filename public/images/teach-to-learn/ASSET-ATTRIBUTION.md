@@ -40,3 +40,9 @@ Logos, trademarks and third-party communication assets retain their own terms.
 - `.webp` versions of the site-owned hero, studio, project and mastery artwork
   are local performance-optimised derivatives of their corresponding `.png`
   source files.
+- `outputs/output-build-v2.webp`, `output-teach-v2.webp`,
+  `output-communicate-v2.webp`, `output-film-v2.webp`,
+  `output-showcase-v2.webp` and `output-contribute-v2.webp` are original,
+  text-free engineering sketch illustrations generated as one visual family
+  for the Gate 06 output menu. They depict six ways of developing and sharing
+  evidence from the same green-technology project.

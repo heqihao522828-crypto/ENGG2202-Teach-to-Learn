@@ -106,12 +106,12 @@ const stages = [
 ];
 
 const releaseFormats = [
-  { type: "build", label: "Build", title: "Functional prototype or open-source system", copy: "Show how it works, how it was tested and what another team would need to continue.", image: "/images/teach-to-learn/outputs/output-build.png", visualClass: "text-white" },
-  { type: "teach", label: "Teach", title: "Workshop, tutorial or teaching kit", copy: "Observe learners using the material, then revise it from their questions and difficulty.", image: "/images/teach-to-learn/outputs/output-teach.png", visualClass: "text-white" },
-  { type: "communicate", label: "Communicate", title: "Presentation, report, poster or conference paper", copy: "Make the evidence, trade-offs and limits understandable to a defined audience.", image: "/images/teach-to-learn/outputs/output-communicate.png", visualClass: "text-white" },
-  { type: "film", label: "Film", title: "Project film, video essay or short documentary", copy: "Show the decisions, failures, tests and learning behind the final result.", image: "/images/teach-to-learn/outputs/output-film.png", visualClass: "text-white" },
-  { type: "showcase", label: "Showcase", title: "Competition entry or stakeholder demonstration", copy: "Use external questions and feedback to test the project under real judgement.", image: "/images/teach-to-learn/outputs/output-showcase.png", visualClass: "text-white" },
-  { type: "contribute", label: "Contribute", title: "Public repository, community resource or startup validation", copy: "Release something useful with attribution, safety, privacy and claims checked.", image: "/images/teach-to-learn/outputs/output-contribute.png", visualClass: "text-white" },
+  { type: "build", label: "Build", title: "Functional prototype or open-source system", copy: "Show how it works, how it was tested and what another team would need to continue.", image: "/images/teach-to-learn/outputs/output-build-v2.webp", visualClass: "text-white" },
+  { type: "teach", label: "Teach", title: "Workshop, tutorial or teaching kit", copy: "Observe learners using the material, then revise it from their questions and difficulty.", image: "/images/teach-to-learn/outputs/output-teach-v2.webp", visualClass: "text-white" },
+  { type: "communicate", label: "Communicate", title: "Presentation, report, poster or conference paper", copy: "Make the evidence, trade-offs and limits understandable to a defined audience.", image: "/images/teach-to-learn/outputs/output-communicate-v2.webp", visualClass: "text-white" },
+  { type: "film", label: "Film", title: "Project film, video essay or short documentary", copy: "Show the decisions, failures, tests and learning behind the final result.", image: "/images/teach-to-learn/outputs/output-film-v2.webp", visualClass: "text-white" },
+  { type: "showcase", label: "Showcase", title: "Competition entry or stakeholder demonstration", copy: "Use external questions and feedback to test the project under real judgement.", image: "/images/teach-to-learn/outputs/output-showcase-v2.webp", visualClass: "text-white" },
+  { type: "contribute", label: "Contribute", title: "Public repository, community resource or startup validation", copy: "Release something useful with attribution, safety, privacy and claims checked.", image: "/images/teach-to-learn/outputs/output-contribute-v2.webp", visualClass: "text-white" },
 ];
 
 const evidenceSteps = [
@@ -340,9 +340,9 @@ export default function ProjectJourneyPage() {
               {releaseFormats.map((format, index) => (
                 <article key={format.label} className="group overflow-hidden rounded-[1.7rem] border border-[#cfddcf] bg-white text-[#183822] shadow-[0_20px_55px_-44px_rgba(15,60,32,0.55)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_24px_65px_-40px_rgba(15,60,32,0.58)]">
                   <div className={`relative flex h-32 items-center justify-center overflow-hidden sm:h-44 ${format.visualClass}`}>
-                    <Image src={imagePath(format.image)} alt="" fill sizes="(min-width: 1024px) 30vw, 50vw" className="output-card-motion object-cover" aria-hidden="true" />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#0b2b19]/75 via-[#0b2b19]/20 to-transparent" />
-                    <span className="relative flex h-14 w-14 items-center justify-center rounded-2xl border border-white/25 bg-[#0b2b19]/35 text-white backdrop-blur-sm sm:h-20 sm:w-20 sm:rounded-[1.4rem]">
+                    <Image src={imagePath(format.image)} alt="" fill sizes="(min-width: 1024px) 30vw, 50vw" className="output-card-motion object-cover object-[center_45%]" aria-hidden="true" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#0b2b19]/45 via-[#0b2b19]/5 to-transparent" />
+                    <span className="relative flex h-14 w-14 items-center justify-center rounded-2xl border border-white/35 bg-[#0b2b19]/70 text-white shadow-lg backdrop-blur-sm sm:h-20 sm:w-20 sm:rounded-[1.4rem]">
                       <OutputIcon type={format.type} />
                     </span>
                     <span className="absolute left-3 top-3 rounded-full bg-[#0b2b19]/55 px-2 py-1 text-[0.58rem] font-bold tracking-[0.12em] text-white backdrop-blur-sm sm:left-5 sm:top-5 sm:px-2.5 sm:text-[0.62rem] sm:tracking-[0.14em]">0{index + 1}</span>
