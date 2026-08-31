@@ -131,8 +131,8 @@ export default function Home() {
             <div>
               <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#4d7459]">One project · six decisions</p>
               <h2 className="mt-4 text-4xl font-semibold leading-tight tracking-[-0.035em] text-[#102d1b] sm:text-5xl">
-                Enough structure to start.
-                <span className="block text-[#318248]">Enough freedom to own it.</span>
+                Use the six Gates to move the project forward.
+                <span className="block text-[#318248]">Your team decides how the project develops.</span>
               </h2>
             </div>
             <p className="max-w-2xl text-base leading-8 text-[#4a6452] lg:justify-self-end">
