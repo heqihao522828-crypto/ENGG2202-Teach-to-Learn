@@ -13,12 +13,10 @@ export const metadata: Metadata = {
 const projects = [
   {
     title: "Solar Weather Station",
-    status: "Instructor exemplar · in development",
     description:
       "A modular, solar-powered environmental sensing prototype used to show how an engineering project develops through open-source study, testing, iteration and responsible release.",
     image: "/images/teach-to-learn/green-technology-products.webp",
     href: "https://github.com/heqihao522828-crypto/solar-weather-station",
-    tags: ["Sensing", "IoT", "Solar power", "Field testing"],
     sdgs: [
       { number: "07", title: "Affordable and Clean Energy", image: "/images/teach-to-learn/sdg/goal-07.png" },
       { number: "09", title: "Industry, Innovation and Infrastructure", image: "/images/teach-to-learn/sdg/goal-09.png" },
@@ -96,17 +94,10 @@ export default function StudentProjectsPage() {
                     ))}
                   </div>
                 </div>
-                <div className="flex flex-1 flex-col p-6 sm:p-7">
-                  <p className="text-xs font-bold uppercase tracking-[0.12em] text-[#69806e]">{project.status}</p>
-                  <h3 className="mt-4 text-2xl font-semibold tracking-[-0.03em] text-[#153321]">{project.title}</h3>
-                  <p className="mt-4 text-sm leading-7 text-[#506456]">{project.description}</p>
-                  <div className="mt-5 flex flex-wrap gap-2">
-                    {project.tags.map((tag) => (
-                      <span key={tag} className="rounded-full bg-[#edf4ed] px-3 py-1.5 text-xs font-semibold text-[#41614a]">{tag}</span>
-                    ))}
-                  </div>
-                  <p className="mt-5 text-xs leading-5 text-[#718176]">Related SDGs indicate the project context. The repository must still justify the target connection and any impact claim.</p>
-                  <span className="mt-8 inline-flex items-center gap-2 text-sm font-bold text-[#226439]">
+                <div className="flex flex-1 flex-col p-7 sm:p-8 lg:p-9">
+                  <h3 className="text-3xl font-semibold tracking-[-0.035em] text-[#153321] sm:text-[2rem]">{project.title}</h3>
+                  <p className="mt-5 max-w-2xl text-base leading-8 text-[#506456]">{project.description}</p>
+                  <span className="mt-auto inline-flex items-center gap-2 pt-9 text-base font-bold text-[#226439]">
                     View GitHub repository
                     <ArrowIcon />
                   </span>
