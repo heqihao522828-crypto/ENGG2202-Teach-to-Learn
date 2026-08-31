@@ -136,9 +136,9 @@ export default function Home() {
               </h2>
             </div>
             <p className="max-w-2xl text-base leading-8 text-[#4a6452] lg:justify-self-end">
-              Every team works through the same engineering decisions, but the
-              problem, technology, pace and final contribution remain theirs.
-              The stages are gates for evidence and discussion—not a rigid weekly checklist.
+              Every team works through the same engineering decisions, but your
+              team chooses the problem, technology, pace and final contribution.
+              The Gates help you decide what to do next. They are not a weekly checklist.
             </p>
           </motion.div>
 

@@ -166,7 +166,7 @@ export default function SustainableDevelopmentGoalsPage() {
           <div className="mx-auto flex max-w-[90rem] flex-col gap-7 lg:flex-row lg:items-center lg:justify-between">
             <div className="max-w-3xl">
               <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#b9d8bf]">A useful Green Technology claim</p>
-              <h2 className="mt-3 text-3xl font-semibold tracking-[-0.035em]">Say what the project has demonstrated—and keep the next question visible.</h2>
+              <h2 className="mt-3 text-3xl font-semibold tracking-[-0.035em]">Say what the project has demonstrated, then state what still needs to be tested.</h2>
             </div>
             <a href="https://www.un.org/sustainabledevelopment/news/communications-material/" target="_blank" rel="noopener noreferrer" className="inline-flex shrink-0 items-center justify-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-bold text-[#173b25]">
               UN SDG materials & guidelines

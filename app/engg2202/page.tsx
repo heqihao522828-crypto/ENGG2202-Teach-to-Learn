@@ -34,7 +34,7 @@ const stages = [
     verb: "Define",
     color: "#187b8e",
     question:
-      "Is this a real, important and bounded problem—and what evidence supports that claim?",
+      "Is this a real, important and bounded problem? What evidence supports that claim?",
     why: "Teams need a stakeholder, context and baseline before judging any solution.",
     actions: ["Observe and ask", "Map existing solutions", "Define scope and success"],
     evidence:
@@ -109,7 +109,7 @@ const releaseFormats = [
   { type: "build", label: "Build", title: "Functional prototype or open-source system", copy: "Show how it works, how it was tested and what another team would need to continue.", image: "/images/teach-to-learn/outputs/output-build.png", visualClass: "text-white" },
   { type: "teach", label: "Teach", title: "Workshop, tutorial or teaching kit", copy: "Observe learners using the material, then revise it from their questions and difficulty.", image: "/images/teach-to-learn/outputs/output-teach.png", visualClass: "text-white" },
   { type: "communicate", label: "Communicate", title: "Presentation, report, poster or conference paper", copy: "Make the evidence, trade-offs and limits understandable to a defined audience.", image: "/images/teach-to-learn/outputs/output-communicate.png", visualClass: "text-white" },
-  { type: "film", label: "Film", title: "Project film, video essay or short documentary", copy: "Record decisions, failures, testing and learning—not only the final result or a highlight reel.", image: "/images/teach-to-learn/outputs/output-film.png", visualClass: "text-white" },
+  { type: "film", label: "Film", title: "Project film, video essay or short documentary", copy: "Show the decisions, failures, tests and learning behind the final result.", image: "/images/teach-to-learn/outputs/output-film.png", visualClass: "text-white" },
   { type: "showcase", label: "Showcase", title: "Competition entry or stakeholder demonstration", copy: "Use external questions and feedback to test the project under real judgement.", image: "/images/teach-to-learn/outputs/output-showcase.png", visualClass: "text-white" },
   { type: "contribute", label: "Contribute", title: "Public repository, community resource or startup validation", copy: "Release something useful with attribution, safety, privacy and claims checked.", image: "/images/teach-to-learn/outputs/output-contribute.png", visualClass: "text-white" },
 ];
@@ -162,11 +162,11 @@ function EvidenceLoop() {
           <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#b9d9bf]">Active-learning evidence loop</p>
           <h2 className="mt-4 text-4xl font-semibold leading-tight tracking-[-0.04em] sm:text-5xl">Do more than complete an activity.</h2>
           <p className="mt-5 text-base leading-8 text-white/76">
-            An experience becomes learning when evidence and feedback change
-            the next attempt—and when the team can use that learning again in
-            a new context.
+            You learn from an activity when its evidence and feedback change
+            what you do next. Transfer happens when your team can use that
+            lesson in a new context.
           </p>
-          <p className="mt-4 text-sm font-semibold leading-6 text-[#b9d9bf]">This is a working rhythm inside every stage, not a seventh stage.</p>
+          <p className="mt-4 text-sm font-semibold leading-6 text-[#b9d9bf]">Use this rhythm inside every Gate. It is not a seventh Gate.</p>
         </div>
 
         <div className="evidence-loop-stage relative mx-auto aspect-square w-full max-w-[30rem]" role="img" aria-label="Active-learning loop: act, keep evidence, get feedback, revise and transfer">
@@ -235,10 +235,11 @@ export default function ProjectJourneyPage() {
             </div>
             <div className="max-w-2xl lg:justify-self-end">
               <p className="text-lg leading-9 text-[#465f4d]">
-                The gates make progress visible without forcing every team into
-                the same weekly sequence. Move forward when evidence supports
-                the decision, and return when assumptions fail. Each stage ends
-                with a short decision check—not an activity report.
+                The Gates show your team what decision comes next without
+                turning the project into a weekly checklist. Move forward when
+                the evidence is strong enough. If an assumption fails, return
+                to an earlier Gate and revise the decision. Each Gate ends with
+                a short decision check, not an activity report.
               </p>
               <div className="mt-7 flex flex-col gap-3 sm:flex-row">
                 <Link href="/guide" className="inline-flex items-center justify-center gap-2 rounded-full bg-[#173f28] px-5 py-3 text-sm font-bold text-white transition hover:bg-[#245d38]">

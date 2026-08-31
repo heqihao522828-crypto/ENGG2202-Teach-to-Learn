@@ -79,7 +79,7 @@ export default function StudentGuidePage() {
                 <div className="absolute inset-0 bg-gradient-to-b from-white/38 via-transparent to-[#123d24]/14" />
                 <div className="absolute left-7 top-7 max-w-sm rounded-2xl border border-white/60 bg-white/78 p-4 shadow-sm backdrop-blur-md">
                   <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#64806b]">Six connected decisions</p>
-                  <p className="mt-2 text-sm leading-6 text-[#54705c]">Follow the path forward. Use evidence to decide when to continue—or when to walk back and revise.</p>
+                  <p className="mt-2 text-sm leading-6 text-[#54705c]">Follow the path forward. Use evidence to decide when to continue and when to return to an earlier Gate.</p>
                 </div>
                 <ol>
                   {gateNames.map((gate, index) => (
@@ -111,7 +111,7 @@ export default function StudentGuidePage() {
           <div className="mx-auto grid max-w-[90rem] gap-8 overflow-hidden rounded-[2rem] border border-[#d2e0d4] bg-[#f5faf4] p-7 sm:p-9 lg:grid-cols-[0.72fr_1.28fr] lg:p-11">
             <div>
               <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#57745e]">Your detailed working guide</p>
-              <h2 className="mt-4 text-3xl font-semibold tracking-[-0.035em] text-[#143421]">Everything needed to start is one click away.</h2>
+              <h2 className="mt-4 text-3xl font-semibold tracking-[-0.035em] text-[#143421]">Open the detailed guide for the Gate you are working on.</h2>
               <p className="mt-5 text-sm leading-7 text-[#506656]">The Notion guide brings together the task, useful links, AI and research tools, templates, examples and the Ed Discussion checkpoint for each Gate.</p>
               <a href={notionGuideUrl} target="_blank" rel="noopener noreferrer" className="mt-7 inline-flex items-center gap-2 rounded-full bg-[#173f28] px-5 py-3 text-sm font-bold text-white transition hover:bg-[#245d38]">Open the full Student Guide <ArrowIcon /></a>
             </div>

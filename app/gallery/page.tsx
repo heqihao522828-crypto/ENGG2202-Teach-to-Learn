@@ -58,10 +58,10 @@ export default function StudentProjectsPage() {
                 <span className="block text-[#318248]">Projects.</span>
               </h1>
               <p className="mt-7 max-w-xl text-lg leading-9 text-[#48614f]">
-                Each card opens a public GitHub repository. Students share the
-                files, decisions, test evidence, versions and learning that
-                others need to understand the work, reuse it responsibly and
-                improve it further.
+                Each card opens a public GitHub repository where students share
+                the files, decisions, tests and versions behind the project.
+                Others can use that record to understand the work, reuse it
+                responsibly and improve it.
               </p>
             </div>
             <SdgMosaic />
@@ -72,7 +72,7 @@ export default function StudentProjectsPage() {
           <div className="flex flex-col gap-4 border-b border-[#d5e2d7] pb-8 sm:flex-row sm:items-end sm:justify-between">
             <div>
               <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#57735e]">Project directory</p>
-              <h2 className="mt-3 text-3xl font-semibold tracking-[-0.035em] text-[#153321]">Explore the evidence, not only the final demo.</h2>
+              <h2 className="mt-3 text-3xl font-semibold tracking-[-0.035em] text-[#153321]">Explore the decisions and evidence behind each project.</h2>
             </div>
             <p className="text-sm text-[#607566]">{projects.length} published project</p>
           </div>
@@ -120,12 +120,10 @@ export default function StudentProjectsPage() {
                 <p className="mt-8 text-xs font-bold uppercase tracking-[0.15em] text-[#67806d]">From active learning to contribution</p>
                 <h3 className="mt-3 text-2xl font-semibold tracking-[-0.03em] text-[#173823]">More project stories will grow here.</h3>
                 <p className="mt-4 text-sm leading-7 text-[#526a58]">
-                  Each team turns its active learning into a traceable
-                  contribution: the decisions made, evidence collected,
-                  revisions tested and materials that can be shared
-                  responsibly. Preserved in an open GitHub repository, that
-                  learning becomes a starting point for the next team—not only
-                  a final display.
+                  Each team leaves a clear record of its decisions, evidence,
+                  revisions and shareable materials. An open GitHub repository
+                  gives the next team something they can study, question and
+                  improve.
                 </p>
                 <div className="mt-7 grid grid-cols-2 gap-2 text-center text-[0.68rem] font-bold uppercase tracking-[0.1em] text-[#41614a] sm:grid-cols-4">
                   {['Evidence', 'Explain', 'Release', 'Build on'].map((item, index) => (
@@ -143,11 +141,11 @@ export default function StudentProjectsPage() {
             <div>
               <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#57735e]">A public repository is part of the engineering outcome</p>
               <h2 className="mt-3 max-w-3xl text-3xl font-semibold tracking-[-0.035em] text-[#153321]">Open source should be understandable, reusable and trustworthy.</h2>
-              <p className="mt-4 max-w-3xl text-sm leading-7 text-[#526858]">Publishing is not the same as uploading every file. Teams organise the evidence, provide what another person needs, and check what is safe and appropriate to share.</p>
+              <p className="mt-4 max-w-3xl text-sm leading-7 text-[#526858]">A public repository should not contain every file by default. Teams organise the evidence, include what another person needs, and check what is safe and appropriate to share.</p>
             </div>
             <div className="mt-9 grid gap-4 sm:grid-cols-3">
               {[
-                { type: 'understand' as const, number: '01', title: 'Make it understandable', copy: 'Show the question, decisions, setup, evidence, versions and limits—not only the polished result.' },
+                { type: 'understand' as const, number: '01', title: 'Make it understandable', copy: 'Show the question, decisions, setup, evidence, versions and limits behind the polished result.' },
                 { type: 'reuse' as const, number: '02', title: 'Make it reusable', copy: 'Provide a clear README, source files, instructions, licence and attribution so another team can continue responsibly.' },
                 { type: 'trust' as const, number: '03', title: 'Make it trustworthy', copy: 'Check safety, privacy, consent, sensitive locations and sustainability claims before public release.' },
               ].map((item) => (

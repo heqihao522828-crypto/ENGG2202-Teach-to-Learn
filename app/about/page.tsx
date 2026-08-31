@@ -31,9 +31,9 @@ export default function AboutPage() {
                 <span className="block text-[#318248]">Active Learning community.</span>
               </h1>
               <p className="mt-7 max-w-xl text-lg leading-9 text-[#48604f]">
-                This ENGG2202 site develops the Teach-to-Learn strand: helping
-                students turn project experience into engineering knowledge that
-                other people can understand, question and use.
+                This is the ENGG2202 Teach-to-Learn space. It helps you turn
+                project experience into engineering knowledge that other people
+                can understand, question and use.
               </p>
             </div>
             <div className="relative min-h-[420px] overflow-hidden rounded-[2.2rem] bg-[#173f28] shadow-[0_36px_100px_-62px_rgba(15,60,32,0.55)] sm:min-h-[520px]">
@@ -47,7 +47,7 @@ export default function AboutPage() {
               />
               <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#102e1d]/95 via-[#102e1d]/55 to-transparent p-7 pt-24 text-white sm:p-9 sm:pt-28">
                 <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#d7f43c]">Green Technology studio</p>
-                <p className="mt-2 max-w-lg text-lg font-semibold leading-7">Teachers provide useful tools, feedback and routes around obstacles; students remain responsible for the engineering decisions.</p>
+                <p className="mt-2 max-w-lg text-lg font-semibold leading-7">Whether you want to explore a Green Technology challenge, turn an idea into a working solution, or contribute something useful to society, this is where your project journey begins.</p>
               </div>
             </div>
           </div>
@@ -56,9 +56,9 @@ export default function AboutPage() {
         <section className="mx-auto max-w-[90rem] px-5 py-16 sm:px-8 lg:px-10 lg:py-24">
           <div className="grid gap-6 lg:grid-cols-3">
             {[
-              ["01", "The main Active Learning site", "Introduces the wider teaching initiative, courses, team and shared activities."],
-              ["02", "This Teach-to-Learn site", "Explains the ENGG2202 project journey, learning evidence and selected student projects."],
-              ["03", "Team project repositories", "Preserve each project’s real files, issues, versions, tests, decisions and release history."],
+              ["01", "The main Active Learning site", "Meet the wider teaching initiative, its courses, team and shared activities."],
+              ["02", "This Teach-to-Learn site", "Follow the ENGG2202 project journey, understand the evidence expected at each Gate and explore student projects."],
+              ["03", "Team project repositories", "See each project’s files, issues, versions, tests, decisions and release history."],
             ].map(([number, title, copy], index) => (
               <article key={number} className={`rounded-[2rem] p-7 ${index === 1 ? "bg-[#153f27] text-white" : "border border-[#d4e1d6] bg-white text-[#183822]"}`}>
                 <p className={`text-xs font-bold tracking-[0.16em] ${index === 1 ? "text-[#b9d8bf]" : "text-[#718776]"}`}>{number}</p>
@@ -73,16 +73,16 @@ export default function AboutPage() {
           <div className="mx-auto grid max-w-[90rem] gap-10 lg:grid-cols-[0.88fr_1.12fr] lg:items-center">
             <div>
               <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#57745e]">The learning proposition</p>
-              <h2 className="mt-4 text-4xl font-semibold tracking-[-0.04em] text-[#143421] sm:text-5xl">Doing creates experience. Evidence and explanation turn it into learning.</h2>
+              <h2 className="mt-4 text-4xl font-semibold tracking-[-0.04em] text-[#143421] sm:text-5xl">Doing gives you experience. Evidence and explanation turn it into learning.</h2>
               <p className="mt-6 text-base leading-8 text-[#506656]">
-                Self-study resources can help a student overcome an obstacle,
-                but the active-learning cycle is larger: students choose,
-                investigate, build, test, receive feedback, revise and apply
-                what they learned in a new context. Teach to Learn raises the
-                bar again by asking whether someone else can now use that knowledge.
+                Self-study resources can help you get past one obstacle. Active
+                learning goes further: you choose, investigate, build, test,
+                receive feedback, revise and apply what you learned in a new
+                context. Teach to Learn asks one more question: can someone else
+                now use that knowledge?
               </p>
               <div className="mt-7 rounded-2xl border border-[#d4e1d6] bg-[#f5faf4] p-5">
-                <p className="text-sm font-semibold leading-6 text-[#2f583a]">Teach tests whether another person can use the learning now. Contribute preserves and releases it so people beyond that moment can reuse, question and extend it.</p>
+                <p className="text-sm font-semibold leading-6 text-[#2f583a]">Teaching shows whether another person can use what you learned. Contributing makes that learning available for others to reuse, question and extend.</p>
               </div>
             </div>
             <div className="grid grid-cols-2 gap-3 sm:grid-cols-5 lg:grid-cols-2 xl:grid-cols-5">
@@ -112,18 +112,18 @@ export default function AboutPage() {
           <div className="mx-auto grid max-w-[90rem] gap-6 lg:grid-cols-[0.72fr_1.28fr] lg:items-center">
             <div>
               <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#57745e]">Teach is a method. Contribute is the lasting outcome.</p>
-              <h2 className="mt-3 text-3xl font-semibold tracking-[-0.035em] text-[#143421]">A useful contribution survives beyond the class.</h2>
+              <h2 className="mt-3 text-3xl font-semibold tracking-[-0.035em] text-[#143421]">A useful contribution remains useful after the class ends.</h2>
             </div>
             <div className="grid gap-3 sm:grid-cols-2">
               <article className="rounded-[1.5rem] border border-[#d4e1d6] bg-white p-6">
                 <p className="text-xs font-bold uppercase tracking-[0.14em] text-[#6d8673]">Teach</p>
                 <p className="mt-4 text-lg font-semibold text-[#173823]">Help a real audience understand or use the work.</p>
-                <p className="mt-3 text-sm leading-7 text-[#526858]">A workshop, tutorial, demonstration or guided handover reveals where the explanation still fails.</p>
+                <p className="mt-3 text-sm leading-7 text-[#526858]">A workshop, tutorial, demonstration or guided handover shows where your explanation still needs work.</p>
               </article>
               <article className="rounded-[1.5rem] bg-[#173f28] p-6 text-white">
                 <p className="text-xs font-bold uppercase tracking-[0.14em] text-[#d7f43c]">Contribute</p>
                 <p className="mt-4 text-lg font-semibold">Leave a durable, responsible starting point for others.</p>
-                <p className="mt-3 text-sm leading-7 text-white/72">Teaching may be part of it; the lasting contribution is the open repository, evidence, documentation, licence and limits that others can build on.</p>
+                <p className="mt-3 text-sm leading-7 text-white/72">Teaching may be part of it. The lasting contribution is the open repository, evidence, documentation, licence and clear limits that others can build on.</p>
               </article>
             </div>
           </div>
@@ -132,7 +132,7 @@ export default function AboutPage() {
         <section className="bg-[#153f27] px-5 py-16 text-white sm:px-8 lg:px-10">
           <div className="mx-auto flex max-w-[90rem] flex-col gap-7 lg:flex-row lg:items-center lg:justify-between">
             <div className="max-w-3xl">
-              <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#b9d8bf]">What is intentionally not here</p>
+              <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#b9d8bf]">Where to find course administration</p>
               <h2 className="mt-3 text-3xl font-semibold tracking-[-0.035em]">Class times, formal deadlines, grades and submissions stay on the official course platforms.</h2>
             </div>
             <div className="flex flex-col gap-3 sm:flex-row">
