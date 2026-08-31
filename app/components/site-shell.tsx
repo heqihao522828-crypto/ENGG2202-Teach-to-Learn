@@ -33,28 +33,30 @@ export default function SiteShell({ children }: { children: ReactNode }) {
     <div className="min-h-screen bg-[#f7faf6] text-[#102319]">
       <header className="sticky top-0 z-50 border-b border-[#dce8df] bg-[#fbfdfb]/95 backdrop-blur-xl">
         <div className="mx-auto flex max-w-[90rem] items-center gap-5 px-5 py-3 sm:px-8 lg:px-10">
-          <Link href="/" className="flex min-w-0 items-center gap-1.5 sm:gap-2" aria-label="ENGG2202 Teach to Learn home">
-            <Image
-              src={imagePath("/images/Logo/hkuengglogo.png")}
-              alt="HKU Engineering"
-              width={160}
-              height={36}
-              className="h-7 w-[124px] shrink-0 object-contain sm:h-9 sm:w-[160px]"
-              preload
-            />
-            <Image
-              src={imagePath("/images/Logo/active-learning-ug-team.png")}
-              alt="Active Learning UG Teaching Team"
-              width={92}
-              height={44}
-              className="hidden h-8 w-[68px] shrink-0 object-contain sm:block sm:h-9 sm:w-[78px]"
-            />
+          <Link href="/" className="flex min-w-0 items-center gap-2" aria-label="ENGG2202 Engineering Challenges II home">
+            <span className="flex shrink-0 items-center gap-1 sm:gap-1.5">
+              <Image
+                src={imagePath("/images/Logo/hkuengglogo.png")}
+                alt="HKU Engineering"
+                width={160}
+                height={36}
+                className="h-7 w-[124px] shrink-0 object-contain sm:h-9 sm:w-[160px]"
+                preload
+              />
+              <Image
+                src={imagePath("/images/Logo/active-learning-ug-team.png")}
+                alt="Active Learning UG Teaching Team"
+                width={58}
+                height={36}
+                className="hidden h-9 w-[58px] shrink-0 object-contain sm:block"
+              />
+            </span>
             <span className="min-w-0 sm:hidden">
               <span className="block truncate text-[0.55rem] font-bold uppercase tracking-[0.13em] text-[#607667]">
                 ENGG2202
               </span>
               <span className="block truncate text-xs font-semibold tracking-tight text-[#153c25]">
-                Teach to Learn
+                Engineering Challenges II
               </span>
             </span>
             <span className="hidden h-7 w-px bg-[#ccd9cf] sm:block" aria-hidden="true" />
@@ -63,7 +65,7 @@ export default function SiteShell({ children }: { children: ReactNode }) {
                 ENGG2202
               </span>
               <span className="block truncate text-sm font-semibold tracking-tight text-[#153c25]">
-                Teach to Learn
+                Engineering Challenges II
               </span>
             </span>
           </Link>
