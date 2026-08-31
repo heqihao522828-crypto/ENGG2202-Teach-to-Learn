@@ -60,18 +60,18 @@ export default function SiteShell({ children }: { children: ReactNode }) {
               </span>
             </span>
             <span className="hidden h-7 w-px bg-[#ccd9cf] sm:block" aria-hidden="true" />
-            <span className="hidden min-w-0 sm:block">
+            <span className="hidden shrink-0 sm:block">
               <span className="block truncate text-[0.66rem] font-bold uppercase tracking-[0.18em] text-[#52705d]">
                 ENGG2202
               </span>
-              <span className="block truncate text-sm font-semibold tracking-tight text-[#153c25]">
+              <span className="block whitespace-nowrap text-[0.82rem] font-semibold tracking-tight text-[#153c25]">
                 Engineering Challenges II
               </span>
             </span>
           </Link>
 
-          <nav className="ml-auto hidden items-center xl:flex" aria-label="Primary navigation">
-            <ul className="flex items-center gap-1 text-sm font-semibold">
+          <nav className="ml-auto hidden items-center 2xl:flex" aria-label="Primary navigation">
+            <ul className="flex items-center gap-1 whitespace-nowrap text-sm font-semibold">
               {navigation.map((item) => {
                 const isActive = item.href === "/" ? pathname === "/" : pathname.startsWith(item.href);
                 return (
@@ -97,7 +97,7 @@ export default function SiteShell({ children }: { children: ReactNode }) {
             href="https://activelearning.engg.hku.hk/"
             target="_blank"
             rel="noopener noreferrer"
-            className="ml-auto hidden items-center gap-1.5 rounded-full border border-[#b9cfbf] px-4 py-2.5 text-xs font-bold uppercase tracking-[0.08em] text-[#214b31] transition hover:border-[#1f6d3b] hover:bg-white xl:ml-3 xl:inline-flex"
+            className="ml-auto hidden whitespace-nowrap items-center gap-1.5 rounded-full border border-[#b9cfbf] px-4 py-2.5 text-xs font-bold uppercase tracking-[0.08em] text-[#214b31] transition hover:border-[#1f6d3b] hover:bg-white 2xl:ml-3 2xl:inline-flex"
           >
             Active Learning Hub
             <ExternalArrow />
@@ -106,7 +106,7 @@ export default function SiteShell({ children }: { children: ReactNode }) {
           <button
             type="button"
             onClick={() => setIsMobileMenuOpen((open) => !open)}
-            className="ml-auto inline-flex h-10 w-10 items-center justify-center rounded-full border border-[#b9cfbf] text-[#214b31] transition hover:bg-white xl:hidden"
+            className="ml-auto inline-flex h-10 w-10 items-center justify-center rounded-full border border-[#b9cfbf] text-[#214b31] transition hover:bg-white 2xl:hidden"
             aria-expanded={isMobileMenuOpen}
             aria-controls="mobile-nav-menu"
             aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
@@ -124,7 +124,7 @@ export default function SiteShell({ children }: { children: ReactNode }) {
         </div>
 
         {isMobileMenuOpen ? (
-          <div id="mobile-nav-menu" className="border-t border-[#dce8df] bg-[#fbfdfb] px-5 py-4 sm:px-8 xl:hidden">
+          <div id="mobile-nav-menu" className="border-t border-[#dce8df] bg-[#fbfdfb] px-5 py-4 sm:px-8 2xl:hidden">
             <nav aria-label="Mobile navigation">
               <ul className="grid gap-1">
                 {navigation.map((item) => (
