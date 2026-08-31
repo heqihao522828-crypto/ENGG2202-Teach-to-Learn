@@ -12,7 +12,6 @@ const navigation = [
   { label: "Green Technology", href: "/sdgs" },
   { label: "Student Projects", href: "/gallery" },
   { label: "Student Guide", href: "/guide" },
-  { label: "Assessment", href: "/assessment" },
   { label: "About", href: "/about" },
 ];
 

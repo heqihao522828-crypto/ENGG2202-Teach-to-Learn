@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import SiteShell from "../components/site-shell";
 import { imagePath } from "../lib/image-path";
+import { AssessmentInformation, SemesterMeetings } from "./course-information";
 
 export const metadata: Metadata = {
   title: "About",
@@ -69,6 +70,10 @@ export default function AboutPage() {
           </div>
         </section>
 
+        <SemesterMeetings />
+
+        <AssessmentInformation />
+
         <section className="bg-white px-5 py-16 sm:px-8 lg:px-10 lg:py-24">
           <div className="mx-auto grid max-w-[90rem] gap-10 lg:grid-cols-[0.88fr_1.12fr] lg:items-center">
             <div>
@@ -132,8 +137,8 @@ export default function AboutPage() {
         <section className="bg-[#153f27] px-5 py-16 text-white sm:px-8 lg:px-10">
           <div className="mx-auto flex max-w-[90rem] flex-col gap-7 lg:flex-row lg:items-center lg:justify-between">
             <div className="max-w-3xl">
-              <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#b9d8bf]">Where to find course administration</p>
-              <h2 className="mt-3 text-3xl font-semibold tracking-[-0.035em]">Class times, formal deadlines, grades and submissions stay on the official course platforms.</h2>
+              <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#b9d8bf]">Course administration</p>
+              <h2 className="mt-3 text-3xl font-semibold tracking-[-0.035em]">Use this page to understand the course. Use Moodle for confirmed deadlines, rubrics and submissions.</h2>
             </div>
             <div className="flex flex-col gap-3 sm:flex-row">
               <a href="https://activelearning.engg.hku.hk/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-bold text-[#173b25]">
