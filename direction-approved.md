@@ -50,3 +50,41 @@ This remains an iteration of the approved direction. Stage 2–6 now use the
 owner-supplied 3D Green Technology artwork, Gate 6 output choices become the
 single visual home for all delivery formats (including film), and duplicate
 example or explanatory sections are removed to reduce mobile page length.
+
+## Approved revision · 2026-08-31
+
+The user selected the Green Technology Project journey direction after seeing
+the card-scale prototype.
+
+> “可以那就用这个风格吧，可以把第一个Gate的Focus也改了”
+
+The approved visual language is a simple, coherent editorial technical
+illustration family. Gates 01–06 tell one continuous example project story:
+a solar-powered rainwater-harvesting irrigation system for a campus planter.
+The final artwork must stay uncluttered and explain the Gate action, not merely
+add a generic sustainability image:
+
+- Gate 01 Focus: identify a Green Technology challenge in the site context.
+- Gate 02 Define: observe evidence and validate the problem.
+- Gate 03 Plan: compare routes and choose a responsible proposal.
+- Gate 04 Learn: assemble the first working version.
+- Gate 05 Improve: test results and revise the system.
+- Gate 06 Contribute: document, teach, hand over and release the work.
+
+The preview that established this direction is:
+`C:\Users\heqih\.codex\generated_images\01a013a3-daf8-7552-b8f0-118b3cbb623e\exec-7866d82e-25bb-4d87-9dea-09ff243dcc44.png`.
+
+## Evidence-loop iteration · 2026-08-31
+
+This is an iteration inside the already approved green editorial direction, so
+no new three-direction exploration is required. The user requested:
+
+> “Act, Keep Evidence, Get Feedback, Revise, Transfer……卡片背景都是纯绿色。我想要它改成就是有一些背景图案，背景就是图片内容，然后跟它是相关的。”
+
+> “这五个就是是跟着后面那个动画一起转的，然后呢，就并不是说定在这里的。”
+
+The five cards will therefore travel on the same circular path as one coherent
+working rhythm. Their content remains upright through counter-rotation, and
+each card uses a low-contrast, action-specific Green Technology illustration.
+Decorative Unicode arrows are removed. The SDG colour wheel on Student
+Projects will no longer show a rectangular white backing or shadow.

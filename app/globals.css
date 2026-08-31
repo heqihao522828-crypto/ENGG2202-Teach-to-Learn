@@ -83,14 +83,38 @@ html {
   to { transform: rotate(360deg); }
 }
 
+@keyframes evidence-loop-counter-spin {
+  from { transform: rotate(var(--counter-angle)); }
+  to { transform: rotate(calc(var(--counter-angle) - 360deg)); }
+}
+
 @keyframes evidence-loop-beacon {
   0%, 100% { opacity: .55; transform: scale(.82); }
   50% { opacity: 1; transform: scale(1.18); }
 }
 
-.evidence-loop-track {
-  transform-origin: 210px 210px;
-  animation: evidence-loop-spin 28s linear infinite;
+.evidence-loop-rotor,
+.evidence-loop-card-rotor {
+  animation: evidence-loop-spin 32s linear infinite;
+  transform-origin: center;
+  will-change: transform;
+}
+
+.evidence-loop-slot {
+  transform: rotate(var(--orbit-angle));
+}
+
+.evidence-loop-upright {
+  animation: evidence-loop-counter-spin 32s linear infinite;
+  transform: rotate(var(--counter-angle));
+  transform-origin: center;
+  will-change: transform;
+}
+
+.evidence-loop-stage:hover .evidence-loop-rotor,
+.evidence-loop-stage:hover .evidence-loop-card-rotor,
+.evidence-loop-stage:hover .evidence-loop-upright {
+  animation-play-state: paused;
 }
 
 .evidence-loop-orbit {
@@ -120,7 +144,9 @@ html {
     transform: none;
   }
 
-  .evidence-loop-track,
+  .evidence-loop-rotor,
+  .evidence-loop-card-rotor,
+  .evidence-loop-upright,
   .evidence-loop-beacon {
     animation: none;
   }

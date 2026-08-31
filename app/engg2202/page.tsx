@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import type { CSSProperties } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import SiteShell from "../components/site-shell";
@@ -114,11 +115,11 @@ const releaseFormats = [
 ];
 
 const evidenceSteps = [
-  { number: "01", label: "Act", copy: "Try the next useful move", symbol: "↗", position: "left-1/2 top-0 -translate-x-1/2" },
-  { number: "02", label: "Keep evidence", copy: "Record result and context", symbol: "◎", position: "right-0 top-[24%]" },
-  { number: "03", label: "Get feedback", copy: "Invite another view", symbol: "↔", position: "right-[4%] bottom-[2%]" },
-  { number: "04", label: "Revise", copy: "Change the next attempt", symbol: "↻", position: "left-[4%] bottom-[2%]" },
-  { number: "05", label: "Transfer", copy: "Use it in a new context", symbol: "⇢", position: "left-0 top-[24%]" },
+  { number: "01", label: "Act", copy: "Try the next useful move", image: "/images/teach-to-learn/evidence-loop/evidence-loop-act.webp" },
+  { number: "02", label: "Keep evidence", copy: "Record result and context", image: "/images/teach-to-learn/evidence-loop/evidence-loop-keep.webp" },
+  { number: "03", label: "Get feedback", copy: "Invite another view", image: "/images/teach-to-learn/evidence-loop/evidence-loop-feedback.webp" },
+  { number: "04", label: "Revise", copy: "Change the next attempt", image: "/images/teach-to-learn/evidence-loop/evidence-loop-revise.webp" },
+  { number: "05", label: "Transfer", copy: "Use it in a new context", image: "/images/teach-to-learn/evidence-loop/evidence-loop-transfer.webp" },
 ] as const;
 
 const notionGuideUrl =
@@ -168,28 +169,42 @@ function EvidenceLoop() {
           <p className="mt-4 text-sm font-semibold leading-6 text-[#b9d9bf]">This is a working rhythm inside every stage, not a seventh stage.</p>
         </div>
 
-        <div className="relative mx-auto aspect-square w-full max-w-[30rem]" role="img" aria-label="Active-learning loop: act, keep evidence, get feedback, revise and transfer">
+        <div className="evidence-loop-stage relative mx-auto aspect-square w-full max-w-[30rem]" role="img" aria-label="Active-learning loop: act, keep evidence, get feedback, revise and transfer">
           <div className="evidence-loop-orbit absolute inset-[13%] rounded-full border border-white/12 bg-[radial-gradient(circle,#2b6540_0%,#1b4b2f_44%,rgba(18,61,36,0)_70%)]" />
-          <svg viewBox="0 0 420 420" className="absolute inset-0 h-full w-full" aria-hidden="true">
-            <defs>
-              <marker id="loop-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-                <path d="M0 0 10 5 0 10Z" fill="#d7f43c" />
-              </marker>
-            </defs>
-            <path d="M210 54a156 156 0 1 1-2 0" fill="none" stroke="rgba(215,244,60,.26)" strokeWidth="20" />
-            <path className="evidence-loop-track" d="M210 54a156 156 0 1 1-2 0" fill="none" stroke="#d7f43c" strokeWidth="4" strokeLinecap="round" strokeDasharray="4 14" markerEnd="url(#loop-arrow)" />
-          </svg>
+          <div className="evidence-loop-rotor absolute inset-0" aria-hidden="true">
+            <svg viewBox="0 0 420 420" className="absolute inset-0 h-full w-full">
+              <path d="M210 54a156 156 0 1 1-2 0" fill="none" stroke="rgba(215,244,60,.26)" strokeWidth="20" />
+              <path d="M210 54a156 156 0 1 1-2 0" fill="none" stroke="#d7f43c" strokeWidth="4" strokeLinecap="round" strokeDasharray="4 14" />
+            </svg>
+          </div>
           <div className="absolute left-1/2 top-1/2 flex h-28 w-28 -translate-x-1/2 -translate-y-1/2 flex-col items-center justify-center rounded-full border border-[#d7f43c]/35 bg-[#0c2f1b]/88 p-3 text-center shadow-[0_22px_70px_-24px_rgba(0,0,0,0.88)] backdrop-blur-md sm:h-40 sm:w-40 sm:p-5">
             <span className="evidence-loop-beacon mb-2 h-3 w-3 rounded-full bg-[#d7f43c] shadow-[0_0_24px_rgba(215,244,60,.9)]" />
             <p className="text-[0.7rem] font-semibold leading-4 text-[#eff8ec] sm:text-sm sm:leading-5">Evidence changes<br />the next action.</p>
           </div>
-          {evidenceSteps.map((step) => (
-            <div key={step.number} className={`absolute flex h-[5rem] w-[6.2rem] flex-col justify-center rounded-2xl border border-white/16 bg-[#245b38]/95 px-3 shadow-[0_20px_48px_-28px_rgba(0,0,0,0.9)] backdrop-blur sm:h-[6rem] sm:w-[8.3rem] sm:px-4 ${step.position}`}>
-              <div className="flex items-center justify-between"><span className="text-[0.58rem] font-bold tracking-[0.15em] text-[#b9d8bf]">{step.number}</span><span className="text-base text-[#d7f43c]">{step.symbol}</span></div>
-              <span className="mt-1 text-xs font-bold leading-4 text-white sm:text-sm">{step.label}</span>
-              <span className="mt-1 hidden text-[0.58rem] leading-3 text-white/58 sm:block">{step.copy}</span>
-            </div>
-          ))}
+          <div className="evidence-loop-card-rotor absolute inset-0">
+            {evidenceSteps.map((step, index) => (
+              <div
+                key={step.number}
+                className="evidence-loop-slot absolute inset-0"
+                style={{
+                  "--orbit-angle": `${index * 72}deg`,
+                  "--counter-angle": `${index * -72}deg`,
+                } as CSSProperties}
+              >
+                <div className="evidence-loop-anchor absolute left-1/2 top-0 -translate-x-1/2">
+                  <div className="evidence-loop-upright">
+                    <div className="evidence-loop-card relative flex h-[5.2rem] w-[6.5rem] flex-col justify-end overflow-hidden rounded-2xl border border-white/24 px-3 py-2.5 shadow-[0_20px_48px_-24px_rgba(0,0,0,0.95)] sm:h-[6.4rem] sm:w-[8.6rem] sm:px-4 sm:py-3">
+                      <Image src={imagePath(step.image)} alt="" fill sizes="138px" className="object-cover" aria-hidden="true" />
+                      <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(16,58,34,.18)_0%,rgba(15,55,32,.76)_48%,rgba(10,42,24,.96)_100%)]" />
+                      <span className="relative text-[0.54rem] font-bold tracking-[0.15em] text-[#d9e8da] sm:text-[0.6rem]">{step.number}</span>
+                      <span className="relative mt-0.5 text-xs font-bold leading-4 text-white sm:text-sm">{step.label}</span>
+                      <span className="relative mt-0.5 hidden text-[0.56rem] leading-3 text-white/76 sm:block">{step.copy}</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </div>

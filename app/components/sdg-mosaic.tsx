@@ -25,7 +25,7 @@ export default function SdgMosaic() {
               alt={goal.alt}
               fill
               sizes="82px"
-              className={`${goal.id === "wheel" ? "object-contain p-1" : "rounded-xl object-cover"} shadow-[0_14px_28px_-16px_rgba(18,61,36,0.5)]`}
+              className={goal.id === "wheel" ? "object-contain mix-blend-multiply" : "rounded-xl object-cover shadow-[0_14px_28px_-16px_rgba(18,61,36,0.5)]"}
             />
           </div>
         ))}
