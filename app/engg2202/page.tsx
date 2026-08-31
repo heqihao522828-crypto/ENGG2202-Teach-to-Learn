@@ -173,15 +173,24 @@ function EvidenceLoop() {
           <div className="evidence-loop-orbit absolute inset-[13%] rounded-full border border-white/12 bg-[radial-gradient(circle,#2b6540_0%,#1b4b2f_44%,rgba(18,61,36,0)_70%)]" />
           <div className="evidence-loop-rotor absolute inset-0" aria-hidden="true">
             <svg viewBox="0 0 420 420" className="absolute inset-0 h-full w-full">
-              <path d="M210 54a156 156 0 1 1-2 0" fill="none" stroke="rgba(215,244,60,.26)" strokeWidth="20" />
-              <path d="M210 54a156 156 0 1 1-2 0" fill="none" stroke="#d7f43c" strokeWidth="4" strokeLinecap="round" strokeDasharray="4 14" />
+              <defs>
+                <marker id="recycle-arrow" viewBox="0 0 10 10" refX="8.2" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+                  <path d="M0 0 10 5 0 10 2.4 5Z" fill="#d7f43c" />
+                </marker>
+              </defs>
+              <circle cx="210" cy="210" r="156" fill="none" stroke="rgba(215,244,60,.1)" strokeWidth="22" />
+              <g fill="none" stroke="#d7f43c" strokeWidth="10" strokeLinecap="round" markerEnd="url(#recycle-arrow)">
+                <path d="M210 54A156 156 0 0 1 365 226" />
+                <path d="M345 288A156 156 0 0 1 118 336" />
+                <path d="M75 288A156 156 0 0 1 147 67" />
+              </g>
             </svg>
           </div>
           <div className="absolute left-1/2 top-1/2 flex h-28 w-28 -translate-x-1/2 -translate-y-1/2 flex-col items-center justify-center rounded-full border border-[#d7f43c]/35 bg-[#0c2f1b]/88 p-3 text-center shadow-[0_22px_70px_-24px_rgba(0,0,0,0.88)] backdrop-blur-md sm:h-40 sm:w-40 sm:p-5">
             <span className="evidence-loop-beacon mb-2 h-3 w-3 rounded-full bg-[#d7f43c] shadow-[0_0_24px_rgba(215,244,60,.9)]" />
             <p className="text-[0.7rem] font-semibold leading-4 text-[#eff8ec] sm:text-sm sm:leading-5">Evidence changes<br />the next action.</p>
           </div>
-          <div className="evidence-loop-card-rotor absolute inset-0">
+          <div className="evidence-loop-card-field absolute inset-0">
             {evidenceSteps.map((step, index) => (
               <div
                 key={step.number}

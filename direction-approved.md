@@ -88,3 +88,15 @@ working rhythm. Their content remains upright through counter-rotation, and
 each card uses a low-contrast, action-specific Green Technology illustration.
 Decorative Unicode arrows are removed. The SDG colour wheel on Student
 Projects will no longer show a rectangular white backing or shadow.
+
+## Evidence-loop motion refinement · 2026-08-31
+
+This remains an iteration of the same approved visual direction. The user
+requested that the five information cards stop moving while the background
+continues to animate:
+
+> “我觉得还是改成01-05都定住，然后背后的背景动画继续转圈就行，然后把旋转的部分做的像是回收的那个感觉。”
+
+Cards 01–05 therefore remain fixed and readable. The only continuous motion
+is a three-part circular arrow behind them, using the course lime and green
+palette to suggest recycling, reuse and an evidence-informed learning loop.
