@@ -17,12 +17,7 @@ const assessmentComponents = [
     weight: "24%",
     mode: "Individual",
     colour: "#4f925f",
-    copy: "Six evidence-based reviews across the year. Each Gate is worth 4% and records how you moved the project forward.",
-    points: [
-      "A meaningful submission for each Gate",
-      "A short individual record of your role, evidence, decision and next action",
-      "A visible response to feedback and changing project needs",
-    ],
+    copy: "Six reviews across the year. Each Gate is worth 4% and records your contribution to the next project decision.",
   },
   {
     number: "02",
@@ -31,11 +26,6 @@ const assessmentComponents = [
     mode: "Individual",
     colour: "#d7f43c",
     copy: "Two reports turn the project record into a clear engineering argument: 18% after Gate 03 and 28% at the end of the project.",
-    points: [
-      "Semester 1: Project Definition & Engineering Plan — 18%",
-      "Semester 2: Final Engineering Development Report — 28%",
-      "Reasoning, evidence, limitations, attribution and personal learning",
-    ],
   },
   {
     number: "03",
@@ -44,11 +34,6 @@ const assessmentComponents = [
     mode: "Team",
     colour: "#efb94b",
     copy: "A structured demonstration of what the team built, how it works and what the available evidence can honestly support.",
-    points: [
-      "A working or honestly bounded solution",
-      "Clear explanation of the design and engineering principles",
-      "Measured performance, known limitations and responsible claims",
-    ],
   },
   {
     number: "04",
@@ -57,11 +42,6 @@ const assessmentComponents = [
     mode: "Individual",
     colour: "#69b6a0",
     copy: "How reliably, constructively and professionally you contribute to the shared project over time.",
-    points: [
-      "Ownership and completion of agreed work",
-      "Communication, feedback and support for teammates",
-      "Initiative, accountability and responsible engineering practice",
-    ],
   },
 ];
 
@@ -73,7 +53,7 @@ const checkpoints = [
     format: "Moodle response + individual Gate record",
     submit: [
       "A clear Green Technology challenge and real context",
-      "The relevant SDG goal and target—not only the icon",
+      "The relevant SDG goal and target, with a short explanation of the connection",
       "Initial observations, sources and assumptions",
       "A first statement of who may benefit and why it matters",
     ],
@@ -200,10 +180,10 @@ export function SemesterMeetings() {
         <div className="grid gap-8 lg:grid-cols-[0.78fr_1.22fr] lg:items-end">
           <div>
             <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#57745e]">Semester meetings</p>
-            <h2 className="mt-4 text-4xl font-semibold tracking-[-0.045em] text-[#143421] sm:text-5xl">Seven fixed meetings. More support when you need it.</h2>
+            <h2 className="mt-4 text-4xl font-semibold tracking-[-0.045em] text-[#143421] sm:text-5xl">Semester 1 meeting schedule.</h2>
           </div>
           <p className="max-w-2xl text-base leading-8 text-[#526858] lg:justify-self-end">
-            B1 and B2 meet together on the dates below. These sessions are used for project decisions, Gate reviews and practical feedback—not only for listening.
+            B1 and B2 meet together on the dates below for project decisions, Gate reviews and practical feedback.
           </p>
         </div>
 
@@ -260,7 +240,7 @@ export function AssessmentInformation() {
               <span className="block text-[#d7f43c]">behind the result.</span>
             </h2>
             <p className="mt-7 max-w-2xl text-lg leading-9 text-white/76">
-              You are assessed on how you investigate, decide, build, test, explain and work with others—not only on whether the final prototype looks finished.
+              Marks come from the investigation, decisions, build evidence, testing, explanation and teamwork behind the final prototype.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <span className="rounded-full border border-white/18 bg-white/8 px-4 py-2 text-sm font-semibold">100% coursework</span>
@@ -301,7 +281,7 @@ export function AssessmentInformation() {
               <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#57745e]">Four assessment components</p>
               <h2 className="mt-4 text-4xl font-semibold tracking-[-0.045em] text-[#143421] sm:text-5xl">One project, viewed from four angles.</h2>
             </div>
-            <p className="max-w-2xl text-base leading-8 text-[#526858] lg:justify-self-end">Together, the four components show what the team created, how the project progressed, what you personally learned and how responsibly you contributed.</p>
+            <p className="max-w-2xl text-base leading-8 text-[#526858] lg:justify-self-end">The four components cover project progress, engineering reasoning, the final demonstration and your professional contribution.</p>
           </div>
           <div className="mt-10 grid gap-5 lg:grid-cols-2">
             {assessmentComponents.map((item) => (
@@ -318,7 +298,6 @@ export function AssessmentInformation() {
                 </div>
                 <div className="p-6 sm:p-8">
                   <p className="text-base leading-8 text-[#48604f]">{item.copy}</p>
-                  <div className="mt-6"><BulletList items={item.points} /></div>
                 </div>
               </article>
             ))}
@@ -331,8 +310,8 @@ export function AssessmentInformation() {
           <div className="grid gap-8 lg:grid-cols-[0.76fr_1.24fr] lg:items-start">
             <div className="lg:sticky lg:top-28">
               <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#57745e]">Six Gate checkpoints · 24%</p>
-              <h2 className="mt-4 text-4xl font-semibold tracking-[-0.045em] text-[#143421] sm:text-5xl">Prove that the project is ready to move forward.</h2>
-              <p className="mt-6 max-w-xl text-base leading-8 text-[#526858]">A Gate is not another mini-report. Submit the evidence the project should already be producing, then explain your own role in 50–100 words.</p>
+              <h2 className="mt-4 text-4xl font-semibold tracking-[-0.045em] text-[#143421] sm:text-5xl">Evidence required at each Gate.</h2>
+              <p className="mt-6 max-w-xl text-base leading-8 text-[#526858]">Submit the working evidence for that stage, then explain your own role in 50 to 100 words.</p>
               <div className="mt-7 rounded-2xl bg-[#eef6ec] p-5">
                 <p className="text-sm font-semibold text-[#2f583a]">Every individual Gate record states:</p>
                 <p className="mt-2 text-sm leading-7 text-[#526858]">My role · My evidence · One decision I contributed to · My next action</p>
@@ -367,7 +346,7 @@ export function AssessmentInformation() {
         <div className="mx-auto max-w-[90rem]">
           <div className="max-w-3xl">
             <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#57745e]">Two written reports · 46%</p>
-            <h2 className="mt-4 text-4xl font-semibold tracking-[-0.045em] text-[#143421] sm:text-5xl">Checkpoints show that you did the work. Reports show that you understand it.</h2>
+            <h2 className="mt-4 text-4xl font-semibold tracking-[-0.045em] text-[#143421] sm:text-5xl">Use the project record to explain your engineering decisions.</h2>
           </div>
           <div className="mt-10 grid gap-5 lg:grid-cols-2">
             {reports.map((report, index) => (
@@ -386,7 +365,7 @@ export function AssessmentInformation() {
             ))}
           </div>
           <div className="mt-5 rounded-[1.5rem] border border-[#cfded1] bg-white p-6 sm:flex sm:items-center sm:justify-between sm:gap-8">
-            <p className="max-w-4xl text-sm leading-7 text-[#526858]">The Gate 03 Project Approval Pack is a team design-review package, not a second report. The Semester 1 report is your individual explanation of why the project definition and plan make engineering sense.</p>
+            <p className="max-w-4xl text-sm leading-7 text-[#526858]">The team uses the Gate 03 Project Approval Pack for its design review. The Semester 1 report is your individual explanation of why the project definition and plan make engineering sense.</p>
             <Link href="/guide" className="mt-5 inline-flex shrink-0 items-center gap-2 rounded-full bg-[#173f28] px-5 py-3 text-sm font-bold text-white sm:mt-0">Open Student Guide <ArrowIcon /></Link>
           </div>
         </div>

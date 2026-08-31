@@ -166,7 +166,7 @@ function EvidenceLoop() {
             what you do next. Transfer happens when your team can use that
             lesson in a new context.
           </p>
-          <p className="mt-4 text-sm font-semibold leading-6 text-[#b9d9bf]">Use this rhythm inside every Gate. It is not a seventh Gate.</p>
+          <p className="mt-4 text-sm font-semibold leading-6 text-[#b9d9bf]">Use this rhythm within all six Gates.</p>
         </div>
 
         <div className="evidence-loop-stage relative mx-auto aspect-square w-full max-w-[30rem]" role="img" aria-label="Active-learning loop: act, keep evidence, get feedback, revise and transfer">
@@ -235,26 +235,15 @@ export default function ProjectJourneyPage() {
             </div>
             <div className="max-w-2xl lg:justify-self-end">
               <p className="text-lg leading-9 text-[#465f4d]">
-                The Gates show your team what decision comes next without
-                turning the project into a weekly checklist. Move forward when
-                the evidence is strong enough. If an assumption fails, return
-                to an earlier Gate and revise the decision. Each Gate ends with
-                a short decision check, not an activity report.
+                Each Gate ends with an engineering decision. Use the available
+                evidence to move forward, or return to an earlier Gate when an
+                assumption no longer holds.
               </p>
-              <div className="mt-7 flex flex-col gap-3 sm:flex-row">
+              <div className="mt-7">
                 <Link href="/guide" className="inline-flex items-center justify-center gap-2 rounded-full bg-[#173f28] px-5 py-3 text-sm font-bold text-white transition hover:bg-[#245d38]">
                   Use the Student Guide
                   <ArrowIcon />
                 </Link>
-                <a
-                  href={notionGuideUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 rounded-full border border-[#a9c0ae] bg-white px-5 py-3 text-sm font-bold text-[#31573c] transition hover:border-[#2c7140]"
-                >
-                  Open Notion Student Guide
-                  <ArrowIcon />
-                </a>
               </div>
             </div>
           </div>
@@ -362,7 +351,7 @@ export default function ProjectJourneyPage() {
           <div className="mx-auto flex max-w-[90rem] flex-col gap-7 lg:flex-row lg:items-center lg:justify-between">
             <div className="max-w-3xl">
               <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#bad7c0]">A working guide for every Gate</p>
-              <h2 className="mt-3 text-3xl font-semibold tracking-[-0.035em] sm:text-4xl">Use the map here, then open the detailed methods, resources and checkpoints in Notion.</h2>
+              <h2 className="mt-3 text-3xl font-semibold tracking-[-0.035em] sm:text-4xl">Notion contains the detailed tasks, templates, resources and checkpoint instructions.</h2>
             </div>
             <a href={notionGuideUrl} target="_blank" rel="noopener noreferrer" className="inline-flex shrink-0 items-center justify-center gap-2 rounded-full bg-[#d7f43c] px-6 py-3.5 text-sm font-bold text-[#17351f] transition hover:bg-[#e8fa7e]">
               Open Notion Student Guide

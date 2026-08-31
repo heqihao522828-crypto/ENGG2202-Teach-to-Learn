@@ -136,9 +136,8 @@ export default function Home() {
               </h2>
             </div>
             <p className="max-w-2xl text-base leading-8 text-[#4a6452] lg:justify-self-end">
-              Every team works through the same engineering decisions, but your
-              team chooses the problem, technology, pace and final contribution.
-              The Gates help you decide what to do next. They are not a weekly checklist.
+              Your team chooses the problem, technology and final contribution.
+              The six Gates mark the decisions needed to develop that work.
             </p>
           </motion.div>
 
@@ -171,7 +170,6 @@ export default function Home() {
         <footer className="border-t border-[#d7e4d9] bg-[#f7faf6] px-5 py-9 sm:px-8 lg:px-10">
           <div className="mx-auto flex max-w-[90rem] flex-col gap-4 text-sm text-[#5d7463] sm:flex-row sm:items-center sm:justify-between">
             <p>ENGG2202 · Teach to Learn · HKU Engineering</p>
-            <p>Learn it. Use it. Explain it. Leave something others can build on.</p>
           </div>
         </footer>
       </main>

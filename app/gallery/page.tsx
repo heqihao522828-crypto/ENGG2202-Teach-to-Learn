@@ -33,16 +33,6 @@ function ArrowIcon() {
   );
 }
 
-function ReleaseIcon({ type }: { type: "understand" | "reuse" | "trust" }) {
-  if (type === "understand") {
-    return <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" className="h-7 w-7" aria-hidden="true"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v16H6.5A2.5 2.5 0 0 0 4 21.5v-16Z" /><path d="M4 18.5A2.5 2.5 0 0 1 6.5 16H20M8 7h8M8 11h6" /></svg>;
-  }
-  if (type === "reuse") {
-    return <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" className="h-7 w-7" aria-hidden="true"><path d="M8 7H5a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2-2v-3" /><path d="M10 14 21 3M15 3h6v6" /></svg>;
-  }
-  return <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" className="h-7 w-7" aria-hidden="true"><path d="M12 3 20 6v5c0 5.2-3.5 8.5-8 10-4.5-1.5-8-4.8-8-10V6l8-3Z" /><path d="m8.5 12 2.2 2.2 4.8-5" /></svg>;
-}
-
 export default function StudentProjectsPage() {
   return (
     <SiteShell>
@@ -56,10 +46,7 @@ export default function StudentProjectsPage() {
                 <span className="block text-[#318248]">Projects.</span>
               </h1>
               <p className="mt-7 max-w-xl text-lg leading-9 text-[#48614f]">
-                Each card opens a public GitHub repository where students share
-                the files, decisions, tests and versions behind the project.
-                Others can use that record to understand the work, reuse it
-                responsibly and improve it.
+                Open a project to see its files, build instructions, tests and development history on GitHub.
               </p>
             </div>
             <SdgMosaic />
@@ -105,51 +92,15 @@ export default function StudentProjectsPage() {
               </a>
             ))}
 
-            <div className="flex min-h-[24rem] flex-col justify-between rounded-[1.8rem] border border-dashed border-[#acc2b0] bg-[#edf4ed] p-7 text-[#34543e] sm:min-h-[31rem]">
+            <div className="flex min-h-[24rem] flex-col justify-center rounded-[1.8rem] border border-dashed border-[#acc2b0] bg-[#edf4ed] p-7 text-[#34543e] sm:min-h-[31rem]">
               <div>
                 <span className="flex h-11 w-11 items-center justify-center rounded-full border border-[#afc6b3] bg-white text-xl">+</span>
-                <p className="mt-8 text-xs font-bold uppercase tracking-[0.15em] text-[#67806d]">From active learning to contribution</p>
-                <h3 className="mt-3 text-2xl font-semibold tracking-[-0.03em] text-[#173823]">More project stories will grow here.</h3>
+                <p className="mt-8 text-xs font-bold uppercase tracking-[0.15em] text-[#67806d]">Project directory</p>
+                <h3 className="mt-3 text-2xl font-semibold tracking-[-0.03em] text-[#173823]">More projects will be added here.</h3>
                 <p className="mt-4 text-sm leading-7 text-[#526a58]">
-                  Each team leaves a clear record of its decisions, evidence,
-                  revisions and shareable materials. An open GitHub repository
-                  gives the next team something they can study, question and
-                  improve.
+                  A project appears in the directory when its repository and release materials are ready for public use.
                 </p>
-                <div className="mt-7 grid grid-cols-2 gap-2 text-center text-[0.68rem] font-bold uppercase tracking-[0.1em] text-[#41614a] sm:grid-cols-4">
-                  {['Evidence', 'Explain', 'Release', 'Build on'].map((item, index) => (
-                    <div key={item} className="rounded-full bg-white px-2 py-2.5 shadow-sm"><span className="mr-1 text-[#2d7c43]">0{index + 1}</span>{item}</div>
-                  ))}
-                </div>
               </div>
-              <p className="border-t border-[#ceddcf] pt-5 text-xs font-bold uppercase tracking-[0.14em] text-[#667b6a]">Leave something the next team can use</p>
-            </div>
-          </div>
-        </section>
-
-        <section className="border-y border-[#d8e4d9] bg-white px-5 py-16 sm:px-8 lg:px-10">
-          <div className="mx-auto max-w-[90rem]">
-            <div>
-              <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#57735e]">A public repository is part of the engineering outcome</p>
-              <h2 className="mt-3 max-w-3xl text-3xl font-semibold tracking-[-0.035em] text-[#153321]">Open source should be understandable, reusable and trustworthy.</h2>
-              <p className="mt-4 max-w-3xl text-sm leading-7 text-[#526858]">A public repository should not contain every file by default. Teams organise the evidence, include what another person needs, and check what is safe and appropriate to share.</p>
-            </div>
-            <div className="mt-9 grid gap-4 sm:grid-cols-3">
-              {[
-                { type: 'understand' as const, number: '01', title: 'Make it understandable', copy: 'Show the question, decisions, setup, evidence, versions and limits behind the polished result.' },
-                { type: 'reuse' as const, number: '02', title: 'Make it reusable', copy: 'Provide a clear README, source files, instructions, licence and attribution so another team can continue responsibly.' },
-                { type: 'trust' as const, number: '03', title: 'Make it trustworthy', copy: 'Check safety, privacy, consent, sensitive locations and sustainability claims before public release.' },
-              ].map((item) => (
-                <article key={item.number} className="relative overflow-hidden rounded-[1.7rem] border border-[#d7e3d9] bg-[#f8fbf8] p-6 text-[#3d5945]">
-                  <div className="absolute -right-8 -top-8 h-28 w-28 rounded-full bg-[#dff0df]" />
-                  <div className="relative flex items-center justify-between">
-                    <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#173f28] text-white"><ReleaseIcon type={item.type} /></span>
-                    <span className="text-xs font-bold tracking-[0.16em] text-[#78907d]">{item.number}</span>
-                  </div>
-                  <h3 className="relative mt-8 text-xl font-semibold tracking-[-0.025em] text-[#173823]">{item.title}</h3>
-                  <p className="relative mt-3 text-sm leading-7 text-[#526858]">{item.copy}</p>
-                </article>
-              ))}
             </div>
           </div>
         </section>
