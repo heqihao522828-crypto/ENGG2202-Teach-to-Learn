@@ -178,12 +178,12 @@ export default function Home() {
               </div>
               <Link href="/gallery" className="hidden shrink-0 items-center gap-2 text-sm font-bold text-[#226439] sm:inline-flex">View project directory <ArrowIcon /></Link>
             </div>
-          </div>
 
-          <div className="project-marquee mt-7 overflow-hidden" aria-label="Student project showcase">
-            <div className="project-marquee-track flex w-max">
-              <ProjectMarqueeGroup />
-              <ProjectMarqueeGroup duplicate />
+            <div className="project-marquee mt-7 w-full overflow-hidden rounded-[1.55rem]" aria-label="Student project showcase">
+              <div className="project-marquee-track flex w-max">
+                <ProjectMarqueeGroup />
+                <ProjectMarqueeGroup duplicate />
+              </div>
             </div>
           </div>
         </section>
