@@ -42,7 +42,7 @@ function ArrowIcon() {
 function ProjectMarqueeCard({ duplicate = false }: { duplicate?: boolean }) {
   return (
     <a
-      href="https://github.com/heqihao522828-crypto/solar-weather-station"
+      href="https://github.com/Active-Learning-Kyle/solar-weather-station"
       target="_blank"
       rel="noopener noreferrer"
       tabIndex={duplicate ? -1 : undefined}

@@ -16,7 +16,7 @@ const projects = [
     description:
       "A solar-powered station that reveals how heat, light, particles and wind vary across campus—turning local measurements into evidence for greener decisions.",
     image: "/images/teach-to-learn/solar-weather-station-cover.png",
-    href: "https://github.com/heqihao522828-crypto/solar-weather-station",
+    href: "https://github.com/Active-Learning-Kyle/solar-weather-station",
     sdgs: [
       { number: "07", title: "Affordable and Clean Energy", image: "/images/teach-to-learn/sdg/goal-07.png" },
       { number: "09", title: "Industry, Innovation and Infrastructure", image: "/images/teach-to-learn/sdg/goal-09.png" },
