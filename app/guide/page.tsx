@@ -6,6 +6,7 @@ export const metadata: Metadata = {
   title: "Student Guide",
   description:
     "Open the ENGG2202 Notion guide for Gate tasks, methods, resources, templates and checkpoint instructions.",
+  alternates: { canonical: "https://active-learning-kyle.github.io/ENGG2202-Teach-to-Learn/guide/" },
 };
 
 const notionGuideUrl =

@@ -10,6 +10,7 @@ export const metadata: Metadata = {
   title: "Project Journey",
   description:
     "The six-stage ENGG2202 project journey from challenge focus to a responsible, reusable contribution.",
+  alternates: { canonical: "https://active-learning-kyle.github.io/ENGG2202-Teach-to-Learn/engg2202/" },
 };
 
 const stages = [

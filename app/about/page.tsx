@@ -9,6 +9,7 @@ export const metadata: Metadata = {
   title: "Course Information",
   description:
     "ENGG2202 meeting dates, assessment structure and written report requirements.",
+  alternates: { canonical: "https://active-learning-kyle.github.io/ENGG2202-Teach-to-Learn/about/" },
 };
 
 function ArrowIcon() {

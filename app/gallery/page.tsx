@@ -8,6 +8,7 @@ export const metadata: Metadata = {
   title: "Student Projects",
   description:
     "Explore ENGG2202 engineering projects through their open repositories, evidence and learning stories.",
+  alternates: { canonical: "https://active-learning-kyle.github.io/ENGG2202-Teach-to-Learn/gallery/" },
 };
 
 const projects = [

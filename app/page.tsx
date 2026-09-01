@@ -152,19 +152,19 @@ export default function Home() {
         <section className="overflow-hidden border-b border-[#d7e4d9] bg-white py-14 sm:py-18">
           <div className="mx-auto max-w-[90rem] px-5 sm:px-8 lg:px-10">
             <div className="overflow-hidden rounded-[2rem] bg-[#102f1d] px-6 py-8 text-white sm:px-9 lg:px-12 lg:py-10">
-              <div className="grid gap-7 lg:grid-cols-[0.7fr_1.3fr] lg:items-center">
+              <div className="grid gap-7 lg:grid-cols-[0.62fr_1.38fr] lg:items-center">
                 <div>
                   <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#b9d8bf]">Teach to Learn</p>
                   <h2 className="mt-3 text-3xl font-semibold tracking-[-0.035em]">Knowledge matters when it can travel.</h2>
                   <p className="mt-3 max-w-xl text-sm leading-7 text-white/70">Learn something, use it in the project, explain the reasoning, help another person apply it, then leave a contribution they can build on.</p>
                 </div>
-                <ol className="flex flex-wrap items-center gap-2 lg:justify-end" aria-label="Teach-to-Learn mastery progression">
+                <ol className="flex min-h-[8rem] w-full flex-wrap items-center justify-center gap-3 rounded-[1.5rem] border border-white/10 bg-white/[0.035] px-4 py-5 sm:px-6 lg:flex-nowrap lg:justify-between" aria-label="Teach-to-Learn mastery progression">
                 {mastery.map((item, index) => (
-                  <li key={item} className="flex items-center gap-2">
-                    <span className={`rounded-full px-3.5 py-2 text-xs font-bold ${index === mastery.length - 1 ? "bg-[#d7f43c] text-[#17351f]" : "bg-white/10 text-white"}`}>
+                  <li key={item} className="flex items-center gap-3">
+                    <span className={`rounded-full px-5 py-3 text-sm font-bold sm:text-base ${index === mastery.length - 1 ? "bg-[#d7f43c] text-[#17351f]" : "bg-white/10 text-white"}`}>
                       {item}
                     </span>
-                    {index < mastery.length - 1 ? <span className="text-white/35">→</span> : null}
+                    {index < mastery.length - 1 ? <span className="text-lg text-white/35 sm:text-xl">→</span> : null}
                   </li>
                 ))}
               </ol>

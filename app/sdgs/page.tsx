@@ -8,6 +8,7 @@ export const metadata: Metadata = {
   title: "Green Technology & the SDGs",
   description:
     "Use the United Nations Sustainable Development Goals as a starting lens for a bounded, evidence-led ENGG2202 engineering challenge.",
+  alternates: { canonical: "https://active-learning-kyle.github.io/ENGG2202-Teach-to-Learn/sdgs/" },
 };
 
 const projectFlow = [
