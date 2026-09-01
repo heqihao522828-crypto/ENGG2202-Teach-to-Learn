@@ -15,6 +15,19 @@ const navigation = [
   { label: "About", href: "/about" },
 ];
 
+const edDiscussionUrl = "https://edstem.org/au/courses/41087/lessons";
+
+export function EdDiscussionLogo({ className = "h-7 w-7" }: { className?: string }) {
+  return (
+    <span
+      className={`inline-flex shrink-0 items-center justify-center rounded-[0.48rem] bg-[linear-gradient(135deg,#7357ee_0%,#e865a4_100%)] font-black lowercase tracking-[-0.08em] text-white shadow-sm ${className}`}
+      aria-hidden="true"
+    >
+      ed
+    </span>
+  );
+}
+
 function ExternalArrow() {
   return (
     <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.7" className="h-3.5 w-3.5" aria-hidden="true">
@@ -103,6 +116,18 @@ export default function SiteShell({ children }: { children: ReactNode }) {
             <ExternalArrow />
           </a>
 
+          <a
+            href={edDiscussionUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Open ENGG2202 Ed Discussion"
+            className="hidden items-center gap-2 rounded-full border border-[#d6d0ec] bg-white px-2.5 py-2 text-xs font-bold text-[#3e3565] transition hover:-translate-y-0.5 hover:border-[#8a77df] min-[1680px]:inline-flex min-[1880px]:px-3.5"
+          >
+            <EdDiscussionLogo className="h-6 w-6 text-[0.72rem]" />
+            <span className="hidden min-[1880px]:inline">Ed Discussion</span>
+            <ExternalArrow />
+          </a>
+
           <button
             type="button"
             onClick={() => setIsMobileMenuOpen((open) => !open)}
@@ -137,6 +162,12 @@ export default function SiteShell({ children }: { children: ReactNode }) {
                 <li className="mt-2 border-t border-[#dce8df] pt-3">
                   <a href="https://activelearning.engg.hku.hk/" target="_blank" rel="noopener noreferrer" className="flex items-center justify-between rounded-xl px-3 py-3 text-xs font-bold uppercase tracking-[0.08em] text-[#526c5a] hover:bg-[#e9f3ea]">
                     Active Learning Hub
+                    <ExternalArrow />
+                  </a>
+                </li>
+                <li>
+                  <a href={edDiscussionUrl} target="_blank" rel="noopener noreferrer" className="flex items-center justify-between rounded-xl px-3 py-3 text-sm font-semibold text-[#3e3565] hover:bg-[#f0edf9]">
+                    <span className="flex items-center gap-2.5"><EdDiscussionLogo className="h-7 w-7 text-xs" />Ed Discussion</span>
                     <ExternalArrow />
                   </a>
                 </li>

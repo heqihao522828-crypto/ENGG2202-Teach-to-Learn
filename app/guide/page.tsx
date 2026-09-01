@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import SiteShell from "../components/site-shell";
+import SiteShell, { EdDiscussionLogo } from "../components/site-shell";
 
 export const metadata: Metadata = {
   title: "Student Guide",
@@ -10,6 +10,7 @@ export const metadata: Metadata = {
 
 const notionGuideUrl =
   "https://tasty-vicuna-87f.notion.site/ENGG2202-Teach-to-Learn-Student-Guide-3cb402ed073681a4aef4eaf93f3dd67d";
+const edDiscussionUrl = "https://edstem.org/au/courses/41087/lessons";
 
 const guideContents = [
   ["01", "Gate task", "The decision your team needs to make and the evidence required before review."],
@@ -43,9 +44,14 @@ export default function StudentGuidePage() {
               <p className="text-lg leading-9 text-white/78">
                 The Project Journey explains the six Gates. The Notion guide provides the working materials for completing them.
               </p>
-              <a href={notionGuideUrl} target="_blank" rel="noopener noreferrer" className="mt-7 inline-flex items-center gap-2 rounded-full bg-[#d7f43c] px-5 py-3 text-sm font-bold text-[#17351f] transition hover:-translate-y-0.5 hover:bg-[#e7fa76]">
-                Open the Notion Student Guide <ArrowIcon />
-              </a>
+              <div className="mt-7 flex flex-col gap-3 sm:flex-row">
+                <a href={notionGuideUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 rounded-full bg-[#d7f43c] px-5 py-3 text-sm font-bold text-[#17351f] transition hover:-translate-y-0.5 hover:bg-[#e7fa76]">
+                  Open the Notion Student Guide <ArrowIcon />
+                </a>
+                <a href={edDiscussionUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 rounded-full border border-white/30 bg-white/10 px-5 py-3 text-sm font-bold text-white transition hover:bg-white/16">
+                  <EdDiscussionLogo className="h-6 w-6 text-[0.7rem]" /> Ed Discussion <ArrowIcon />
+                </a>
+              </div>
             </div>
           </div>
         </section>
@@ -70,7 +76,7 @@ export default function StudentGuidePage() {
         </section>
 
         <section className="border-y border-[#d7e4d9] bg-[#eef6ec] px-5 py-14 sm:px-8 lg:px-10">
-          <div className="mx-auto grid max-w-[90rem] gap-4 sm:grid-cols-2">
+          <div className="mx-auto grid max-w-[90rem] gap-4 md:grid-cols-3">
             <Link href="/engg2202" className="group rounded-[1.7rem] border border-[#d1dfd3] bg-white p-7">
               <p className="text-xs font-bold uppercase tracking-[0.16em] text-[#718776]">Need the overall route?</p>
               <h2 className="mt-4 text-2xl font-semibold text-[#173823]">Return to the Project Journey.</h2>
@@ -80,6 +86,11 @@ export default function StudentGuidePage() {
               <p className="text-xs font-bold uppercase tracking-[0.16em] text-[#b9d8bf]">Ready to work?</p>
               <h2 className="mt-4 text-2xl font-semibold">Open the detailed Notion guide.</h2>
               <span className="mt-6 inline-flex items-center gap-2 text-sm font-bold text-[#d7f43c]">Choose your Gate <ArrowIcon /></span>
+            </a>
+            <a href={edDiscussionUrl} target="_blank" rel="noopener noreferrer" className="group rounded-[1.7rem] border border-[#d6d0ec] bg-white p-7 text-[#30294f]">
+              <div className="flex items-center gap-2.5"><EdDiscussionLogo className="h-8 w-8 text-sm" /><p className="text-xs font-bold uppercase tracking-[0.16em] text-[#6c5c9b]">Questions and course discussion</p></div>
+              <h2 className="mt-4 text-2xl font-semibold">Ask the class on Ed.</h2>
+              <span className="mt-6 inline-flex items-center gap-2 text-sm font-bold text-[#684fc4]">Open ENGG2202 Ed Discussion <ArrowIcon /></span>
             </a>
           </div>
         </section>

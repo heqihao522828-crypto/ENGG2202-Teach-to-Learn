@@ -16,6 +16,7 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-sans);
+  overflow-x: clip;
 }
 
 ::selection {
@@ -115,6 +116,21 @@ html {
   animation: evidence-loop-beacon 2.4s ease-in-out infinite;
 }
 
+@keyframes project-marquee {
+  from { transform: translate3d(0, 0, 0); }
+  to { transform: translate3d(-50%, 0, 0); }
+}
+
+.project-marquee-track {
+  animation: project-marquee 38s linear infinite;
+  will-change: transform;
+}
+
+.project-marquee:hover .project-marquee-track,
+.project-marquee:focus-within .project-marquee-track {
+  animation-play-state: paused;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .hero-motion {
     animation: none;
@@ -136,6 +152,14 @@ html {
 
   .evidence-loop-rotor,
   .evidence-loop-beacon {
+    animation: none;
+  }
+
+  .project-marquee {
+    overflow-x: auto;
+  }
+
+  .project-marquee-track {
     animation: none;
   }
 }

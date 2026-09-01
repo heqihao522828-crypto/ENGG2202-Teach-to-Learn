@@ -46,6 +46,36 @@ const focusGoals = [
   { number: "13", label: "Climate action" },
 ];
 
+const greenTechnologyReading = [
+  {
+    category: "Systems in practice",
+    date: "2026",
+    title: "From waste to hydrogen: what a working system has to solve",
+    copy: "An HKU Engineering alumni study tour examined a waste-to-hydrogen plant, green building technology and the practical choices behind large-scale adoption.",
+    source: "HKU Engineering Alumni Association",
+    href: "https://hkueaa.engg.hku.hk/post/hkueaa-overseas-study-tour-2026-to-korea-ambitious-green-policies-and-industrial-innovation",
+    accent: "bg-[#c8f06a]",
+  },
+  {
+    category: "Water × energy",
+    date: "17 Jun 2025",
+    title: "Can wastewater treatment also produce green hydrogen?",
+    copy: "This HKAE TechTalk introduces a photoelectrochemical system that treats saline wastewater while generating hydrogen, then asks what changes when the process is scaled.",
+    source: "HKU Innovation Wing",
+    href: "https://innowings.engg.hku.hk/greenhydrogen/",
+    accent: "bg-[#70c7b4]",
+  },
+  {
+    category: "Solar materials",
+    date: "Summer 2025",
+    title: "What limits efficient organic photovoltaics?",
+    copy: "HKU Engineering's research newsletter looks at advances in solar energy harvesting alongside new work in filtration, batteries and low-carbon materials.",
+    source: "HKU Engineering Newsletter",
+    href: "https://engg.hku.hk/Portals/0/adam/News%20and%20Events/4fDJg5_Yq0-mgFGRpb5gmA/Link/HKU%20Engineering%20Newsletter%20-%20Summer%202025.pdf",
+    accent: "bg-[#f5c04d]",
+  },
+];
+
 function ArrowIcon() {
   return (
     <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.8" className="h-4 w-4" aria-hidden="true">
@@ -157,6 +187,40 @@ export default function SustainableDevelopmentGoalsPage() {
                   </div>
                   <p className="text-sm font-semibold text-[#31523b]">{goal.label}</p>
                 </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="bg-[#0f2d1c] px-5 py-16 text-white sm:px-8 lg:px-10 lg:py-24">
+          <div className="mx-auto max-w-[90rem]">
+            <div className="grid gap-8 lg:grid-cols-[0.72fr_1.28fr] lg:items-end">
+              <div>
+                <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#b7d6bd]">Green Technology briefing</p>
+                <h2 className="mt-4 text-4xl font-semibold tracking-[-0.04em] sm:text-5xl">Ideas worth bringing into the next team discussion.</h2>
+              </div>
+              <p className="max-w-2xl text-sm leading-7 text-white/68 lg:justify-self-end">
+                This is a curated reading list, not a live news feed. Each item comes from an HKU source and is here to spark a project question, not to prescribe a solution.
+              </p>
+            </div>
+
+            <div className="mt-10 grid gap-4 lg:grid-cols-3">
+              {greenTechnologyReading.map((item) => (
+                <a key={item.title} href={item.href} target="_blank" rel="noopener noreferrer" className="group flex min-h-[23rem] flex-col overflow-hidden rounded-[1.7rem] border border-white/14 bg-white/[0.065] transition hover:-translate-y-1 hover:bg-white/[0.1]">
+                  <div className={`h-2 ${item.accent}`} />
+                  <div className="flex flex-1 flex-col p-6 sm:p-7">
+                    <div className="flex items-center justify-between gap-4 text-[0.65rem] font-bold uppercase tracking-[0.15em] text-white/55">
+                      <span>{item.category}</span>
+                      <span>{item.date}</span>
+                    </div>
+                    <h3 className="mt-8 text-2xl font-semibold leading-8 tracking-[-0.03em]">{item.title}</h3>
+                    <p className="mt-4 text-sm leading-7 text-white/68">{item.copy}</p>
+                    <span className="mt-auto inline-flex items-center justify-between gap-3 pt-8 text-xs font-bold text-[#d7f43c]">
+                      {item.source}
+                      <ArrowIcon />
+                    </span>
+                  </div>
+                </a>
               ))}
             </div>
           </div>
