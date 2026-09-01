@@ -18,6 +18,7 @@ Logos, trademarks and third-party communication assets retain their own terms.
 ## Project-specific generated visuals
 
 - `solar-weather-station-application.webp` was generated from the project owner's completed-prototype photograph to show the intended supervised rooftop microclimate use case. It is a project-card visual, not field-test evidence.
+- `solar-weather-station-cover.png` was generated from the project owner's completed-prototype photographs for the repository and course-site cover. It visualises a rooftop use context and is not field-test evidence.
 - `kyle-green-technology-studio.png` was generated for this site from the
   instructor image supplied by the project owner, replacing the robotic-arm
   emphasis with Green Technology learning, sensing, solar and environmental

@@ -48,7 +48,7 @@ function ProjectMarqueeCard({ duplicate = false }: { duplicate?: boolean }) {
       tabIndex={duplicate ? -1 : undefined}
       className="group relative flex h-52 w-[21rem] shrink-0 overflow-hidden rounded-[1.55rem] border border-white/20 bg-[#163f27] text-white shadow-[0_24px_60px_-42px_rgba(10,42,24,0.8)] sm:w-[25rem]"
     >
-      <Image src={imagePath("/images/teach-to-learn/solar-weather-station-application.webp")} alt={duplicate ? "" : "Solar Weather Station in use"} fill sizes="400px" className="object-cover transition duration-700 group-hover:scale-[1.04]" />
+      <Image src={imagePath("/images/teach-to-learn/solar-weather-station-cover.png")} alt={duplicate ? "" : "Solar Weather Station prototype on a green rooftop"} fill sizes="400px" className="object-cover transition duration-700 group-hover:scale-[1.04]" />
       <div className="absolute inset-0 bg-[linear-gradient(0deg,rgba(8,32,18,0.94)_0%,rgba(8,32,18,0.12)_80%)]" />
       <div className="relative mt-auto p-5">
         <p className="text-[0.65rem] font-bold uppercase tracking-[0.18em] text-[#d7f43c]">Open project · GitHub</p>

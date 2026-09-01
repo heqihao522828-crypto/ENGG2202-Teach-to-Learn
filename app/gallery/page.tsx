@@ -14,8 +14,8 @@ const projects = [
   {
     title: "Solar Weather Station",
     description:
-      "An open-source ESP32-S3 station that connects environmental sensing, a live data dashboard, editable Fusion 360 hardware and evidence-led engineering decisions.",
-    image: "/images/teach-to-learn/solar-weather-station-application.webp",
+      "A solar-powered station that reveals how heat, light, particles and wind vary across campus—turning local measurements into evidence for greener decisions.",
+    image: "/images/teach-to-learn/solar-weather-station-cover.png",
     href: "https://github.com/heqihao522828-crypto/solar-weather-station",
     sdgs: [
       { number: "07", title: "Affordable and Clean Energy", image: "/images/teach-to-learn/sdg/goal-07.png" },
@@ -72,7 +72,7 @@ export default function StudentProjectsPage() {
                 className="group flex min-h-full flex-col overflow-hidden rounded-[1.8rem] border border-[#cfddcf] bg-white shadow-[0_24px_70px_-52px_rgba(15,60,32,0.42)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_28px_80px_-48px_rgba(15,60,32,0.48)]"
               >
                 <div className="relative aspect-[4/3] overflow-hidden bg-[#dce9dc]">
-                  <Image src={imagePath(project.image)} alt="Solar Weather Station installed in a university rooftop garden" fill preload sizes="(min-width: 1280px) 30vw, (min-width: 768px) 48vw, 100vw" className="object-cover object-center transition duration-700 group-hover:scale-[1.035]" />
+                  <Image src={imagePath(project.image)} alt="Solar Weather Station prototype with its solar panel, cup anemometer and wind vane on a green rooftop" fill preload sizes="(min-width: 1280px) 30vw, (min-width: 768px) 48vw, 100vw" className="object-cover object-center transition duration-700 group-hover:scale-[1.035]" />
                   <div className="absolute left-5 top-5 flex gap-2" aria-label="Related Sustainable Development Goals">
                     {project.sdgs.map((sdg) => (
                       <div key={sdg.number} className="relative h-14 w-14 overflow-hidden rounded-xl border-2 border-white bg-white shadow-[0_10px_28px_-12px_rgba(0,0,0,0.65)] sm:h-16 sm:w-16" title={`SDG ${sdg.number}: ${sdg.title}`}>
