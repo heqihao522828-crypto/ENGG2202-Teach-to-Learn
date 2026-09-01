@@ -15,6 +15,16 @@ Logos, trademarks and third-party communication assets retain their own terms.
 - Use should follow the UN SDG logo, colour wheel and icon guidelines linked on
   the source page. Inclusion here does not imply United Nations endorsement.
 
+## World Engineering Day social sticker
+
+- File: `wed-engineering-tools-sticker.png`
+- Original file: `WEDSTICKER_6.png`
+- Source: WFEO World Engineering Day official digital assets
+- Source page: <https://worldengineeringday.net/digital-assets/>
+- The sticker is used in the Green Technology page's World Engineering Day
+  resource panel. It is not presented as the official WED logo, and inclusion
+  does not imply endorsement of ENGG2202 or HKU by UNESCO or WFEO.
+
 ## Project-specific generated visuals
 
 - `solar-weather-station-application.webp` was generated from the project owner's completed-prototype photograph to show the intended supervised rooftop microclimate use case. It is a project-card visual, not field-test evidence.

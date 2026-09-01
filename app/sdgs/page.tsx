@@ -224,6 +224,65 @@ export default function SustainableDevelopmentGoalsPage() {
                 </a>
               ))}
             </div>
+
+            <div className="relative mt-12 overflow-hidden rounded-[2rem] border border-white/12 bg-[#f3f7ee] text-[#153622] shadow-[0_34px_90px_-58px_rgba(0,0,0,0.65)]">
+              <div className="grid lg:min-h-[27rem] lg:grid-cols-[1.18fr_0.82fr]">
+                <div className="relative z-10 flex flex-col justify-center p-7 sm:p-10 lg:p-12">
+                  <div className="flex flex-wrap items-center gap-3">
+                    <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#4e7157]">Global engineering opportunity</p>
+                    <span className="rounded-full border border-[#c8d9ca] bg-white px-3 py-1.5 text-[0.65rem] font-bold uppercase tracking-[0.12em] text-[#47654f]">
+                      4 March every year
+                    </span>
+                  </div>
+                  <h2 className="mt-5 max-w-3xl text-4xl font-semibold leading-[1.02] tracking-[-0.045em] sm:text-5xl">
+                    Take the project beyond the course.
+                  </h2>
+                  <p className="mt-6 max-w-2xl text-base leading-8 text-[#4d6554]">
+                    World Engineering Day connects students and engineers around
+                    the UN Sustainable Development Goals. Explore the WFEO
+                    challenge briefs, previous Hackathon entries and global
+                    events to find questions and see how teams communicate a
+                    working solution.
+                  </p>
+                  <div className="mt-6 rounded-2xl border border-[#d4e1d5] bg-white/85 p-4 text-sm leading-6 text-[#496151]">
+                    <strong className="text-[#1b442a]">Current status:</strong>{" "}
+                    the 2026 Hackathon has concluded; 2027 details have not yet
+                    been announced. Use the briefs for inspiration—your project
+                    still needs a specific context, stakeholder and evidence.
+                  </div>
+                  <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+                    <a href="https://worldengineeringday.net/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 rounded-full bg-[#173f28] px-5 py-3 text-sm font-bold text-white transition hover:bg-[#245d38]">
+                      Explore World Engineering Day
+                      <ArrowIcon />
+                    </a>
+                    <a href="https://worldengineeringday.net/hackathon/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 rounded-full border border-[#a9c0ae] bg-white px-5 py-3 text-sm font-bold text-[#214a2f] transition hover:border-[#2c7140]">
+                      View the Hackathon
+                      <ArrowIcon />
+                    </a>
+                    <a href="https://worldengineeringday.net/events-map/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 px-2 py-3 text-sm font-bold text-[#315f3d] transition hover:text-[#173f28]">
+                      Browse global events
+                      <ArrowIcon />
+                    </a>
+                  </div>
+                </div>
+
+                <div className="relative flex min-h-[20rem] items-center justify-center overflow-hidden bg-[#e5efe2] p-8 sm:p-10 lg:min-h-full">
+                  <div className="absolute -right-16 -top-16 h-56 w-56 rounded-full bg-[#f7bf2f]/25 blur-2xl" aria-hidden="true" />
+                  <div className="absolute -bottom-20 -left-12 h-64 w-64 rounded-full bg-[#38a369]/18 blur-3xl" aria-hidden="true" />
+                  <Image
+                    src={imagePath("/images/teach-to-learn/wed-engineering-tools-sticker.png")}
+                    alt="World Engineering Day social sticker showing engineering drawing tools and coloured gears"
+                    width={1600}
+                    height={1600}
+                    sizes="(min-width: 1024px) 34vw, 70vw"
+                    className="relative h-auto w-full max-w-[25rem] rotate-[2deg] object-contain drop-shadow-[0_24px_30px_rgba(30,70,42,0.18)]"
+                  />
+                  <p className="absolute bottom-5 left-6 right-6 text-center text-[0.62rem] leading-4 text-[#6a7d6e]">
+                    Official World Engineering Day social sticker · used with attribution
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
         </section>
 

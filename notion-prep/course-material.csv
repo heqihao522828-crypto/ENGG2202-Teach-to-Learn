@@ -1,8 +1,10 @@
-Order,Course Material,Release Status,Student Action,Checkpoint,Deadline
-1,Gate 01 · Challenge Focus,Draft ready,Choose and justify a Green Technology challenge direction,Gate 01 checkpoint,To be set in Moodle / Ed Discussion
-2,Gate 02 · Problem Validation,Not released,Validate a stakeholder problem and baseline,Gate 02 checkpoint,To be announced
-3,Gate 03 · Proposal & Plan,Not released,Compare routes and justify a responsible plan,Gate 03 checkpoint,To be announced
-4,Gate 04 · First Working Version,Not released,Learn adapt and create an inspectable first version,Gate 04 checkpoint,To be announced
-5,Gate 05 · Test & Iteration,Not released,Test with evidence revise and retest,Gate 05 checkpoint,To be announced
-6,"Gate 06 · Share, Teach & Release",Not released,Create value for a real audience and decide what is ready to release,Gate 06 checkpoint,To be announced
-
+Order,Course Material,Release Status,Suggested Release,Student Action,Checkpoint,Suggested Checkpoint
+0,Start Here · How the Guide Works,Available,1 Sep 2026,Set up the team repository and evidence rhythm,None,None
+0,AI & Digital Tools · Quick Reference,Available,1 Sep 2026,Use the right tool responsibly and record material AI use,None,None
+0,World Engineering Day & WFEO Hackathon,Available,1 Sep 2026,Use external challenges and judging criteria without replacing local evidence,None,None
+1,Gate 01 · Focus,Available,1 Sep 2026,Choose and justify a Green Technology challenge direction,Gate 01 checkpoint,21 Sep 2026
+2,Gate 02 · Define,Scheduled,22 Sep 2026,Validate a stakeholder problem and baseline,Gate 02 checkpoint,26 Oct 2026
+3,Gate 03 · Plan,Scheduled,27 Oct 2026,Compare routes and justify a responsible plan,Gate 03 checkpoint,7 Dec 2026
+4,Gate 04 · Learn,Scheduled,12 Jan 2027,Create and explain an inspectable first working version,Gate 04 checkpoint,8 Mar 2027
+5,Gate 05 · Improve,Scheduled,9 Mar 2027,Test with evidence revise and retest,Gate 05 checkpoint,19 Apr 2027
+6,Gate 06 · Contribute,Scheduled,20 Apr 2027,Teach share and release something another person can build on,Gate 06 checkpoint,17 May 2027
