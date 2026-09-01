@@ -50,6 +50,16 @@ html {
 
 .sdg-pulse { animation: sdg-pulse 3.6s ease-in-out infinite; will-change: transform, opacity; }
 
+@keyframes sdg-wheel-spin {
+  to { transform: rotate(360deg); }
+}
+
+.sdg-wheel-spin {
+  animation: sdg-wheel-spin 14s linear infinite;
+  transform-origin: center;
+  will-change: transform;
+}
+
 
 @keyframes hero-zoom-in {
   from { transform: scale(1); }
@@ -138,7 +148,8 @@ html {
     transform: none;
   }
 
-  .sdg-pulse { animation: none; opacity: 1; transform: none; }
+  .sdg-pulse,
+  .sdg-wheel-spin { animation: none; opacity: 1; transform: none; }
 
   .hero-zoom-in,
   .hero-zoom-out {

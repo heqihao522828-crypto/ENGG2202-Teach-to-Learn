@@ -8,7 +8,7 @@ import { AssessmentInformation, SemesterMeetings } from "./course-information";
 export const metadata: Metadata = {
   title: "Course Information",
   description:
-    "ENGG2202 meeting dates, assessment structure, Gate checkpoints and written report requirements.",
+    "ENGG2202 meeting dates, assessment structure and written report requirements.",
 };
 
 function ArrowIcon() {
@@ -47,7 +47,7 @@ export default function AboutPage() {
                 fill
                 priority
                 sizes="(min-width: 1024px) 55vw, 100vw"
-                className="object-cover object-[center_30%]"
+                className="object-cover object-[center_10%]"
               />
               <div className="absolute inset-0 bg-[linear-gradient(0deg,rgba(9,38,21,0.92)_0%,rgba(9,38,21,0.2)_66%,transparent_100%)]" />
               <div className="absolute inset-x-0 bottom-0 p-7 text-white sm:p-9">

@@ -45,82 +45,6 @@ const assessmentComponents = [
   },
 ];
 
-const checkpoints = [
-  {
-    number: "01",
-    title: "Focus",
-    question: "What is worth working on?",
-    format: "Moodle response + individual Gate record",
-    submit: [
-      "A clear Green Technology challenge and real context",
-      "The relevant SDG goal and target, with a short explanation of the connection",
-      "Initial observations, sources and assumptions",
-      "A first statement of who may benefit and why it matters",
-    ],
-  },
-  {
-    number: "02",
-    title: "Define",
-    question: "What exactly is the problem?",
-    format: "Moodle response + evidence links + individual Gate record",
-    submit: [
-      "A specific stakeholder or user and the evidence used to understand them",
-      "A baseline showing the current situation",
-      "A problem statement that does not assume the solution",
-      "Measurable requirements or success criteria",
-    ],
-  },
-  {
-    number: "03",
-    title: "Plan",
-    question: "Are we ready to build?",
-    format: "Team Project Approval Pack + repository link + individual Gate record",
-    submit: [
-      "One-page Project Canvas and selected concept",
-      "System architecture, CAD, block diagram or process flow",
-      "BOM, budget, suppliers and likely lead times",
-      "Milestones, responsibilities, risks and safety actions",
-      "An initial GitHub repository with a useful README",
-    ],
-  },
-  {
-    number: "04",
-    title: "Learn",
-    question: "Can we make something work?",
-    format: "GitHub v0.1 + build evidence + individual Gate record",
-    submit: [
-      "A first working version or one working subsystem",
-      "A short build log with photos, code, CAD or configuration evidence",
-      "Sources and licences for reused open-source work",
-      "A brief demonstration of what works and what still does not",
-    ],
-  },
-  {
-    number: "05",
-    title: "Improve",
-    question: "Does it work well enough?",
-    format: "Test record + iteration evidence + individual Gate record",
-    submit: [
-      "A test question, method and success criterion",
-      "Results presented as measurements, observations or user feedback",
-      "At least one failure, limitation or unexpected result",
-      "A documented decision and the change made because of the evidence",
-    ],
-  },
-  {
-    number: "06",
-    title: "Contribute",
-    question: "What can another person take from this?",
-    format: "Release package + selected final output + individual Gate record",
-    submit: [
-      "A public v1.0 repository with clear setup and use instructions",
-      "Evidence, design files, code and documentation needed to continue the work",
-      "A chosen output for a defined audience",
-      "Attribution, licence, safety, privacy, limitations and responsible claims",
-    ],
-  },
-];
-
 const reports = [
   {
     term: "SEMESTER 1",
@@ -301,43 +225,6 @@ export function AssessmentInformation() {
                 </div>
               </article>
             ))}
-          </div>
-        </div>
-      </section>
-
-      <section id="checkpoints" className="scroll-mt-28 border-y border-[#d8e4d9] bg-white px-5 py-16 sm:px-8 lg:px-10 lg:py-24">
-        <div className="mx-auto max-w-[90rem]">
-          <div className="grid gap-8 lg:grid-cols-[0.76fr_1.24fr] lg:items-start">
-            <div className="lg:sticky lg:top-28">
-              <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#57745e]">Six Gate checkpoints · 24%</p>
-              <h2 className="mt-4 text-4xl font-semibold tracking-[-0.045em] text-[#143421] sm:text-5xl">Evidence required at each Gate.</h2>
-              <p className="mt-6 max-w-xl text-base leading-8 text-[#526858]">Submit the working evidence for that stage, then explain your own role in 50 to 100 words.</p>
-              <div className="mt-7 rounded-2xl bg-[#eef6ec] p-5">
-                <p className="text-sm font-semibold text-[#2f583a]">Every individual Gate record states:</p>
-                <p className="mt-2 text-sm leading-7 text-[#526858]">My role · My evidence · One decision I contributed to · My next action</p>
-              </div>
-              <div className="mt-4 rounded-2xl border border-[#d4e1d6] p-5">
-                <p className="text-xs font-bold uppercase tracking-[0.14em] text-[#718776]">Gate status</p>
-                <p className="mt-3 text-sm leading-7 text-[#526858]">4 Passed strongly · 3 Passed · 2 Conditional · 1 Not yet passed · 0 No meaningful submission</p>
-              </div>
-            </div>
-            <div className="grid gap-4">
-              {checkpoints.map((gate) => (
-                <article key={gate.number} className="rounded-[1.8rem] border border-[#d4e1d6] bg-[#f7faf6] p-6 sm:p-8">
-                  <div className="grid gap-6 sm:grid-cols-[8rem_1fr]">
-                    <div>
-                      <span className="text-xs font-bold tracking-[0.18em] text-[#718776]">GATE {gate.number}</span>
-                      <h3 className="mt-3 text-2xl font-semibold text-[#173823]">{gate.title}</h3>
-                    </div>
-                    <div>
-                      <p className="text-lg font-semibold text-[#214b31]">{gate.question}</p>
-                      <p className="mt-3 rounded-xl bg-[#e9f3e8] px-4 py-3 text-xs font-bold uppercase tracking-[0.09em] text-[#52705d]">Submit: {gate.format}</p>
-                      <div className="mt-5"><BulletList items={gate.submit} /></div>
-                    </div>
-                  </div>
-                </article>
-              ))}
-            </div>
           </div>
         </div>
       </section>
