@@ -49,12 +49,12 @@ const focusGoals = [
 
 const greenTechnologyReading = [
   {
-    category: "Systems in practice",
-    date: "2026",
-    title: "From waste to hydrogen: what a working system has to solve",
-    copy: "An HKU Engineering alumni study tour examined a waste-to-hydrogen plant, green building technology and the practical choices behind large-scale adoption.",
-    source: "HKU Engineering Alumni Association",
-    href: "https://hkueaa.engg.hku.hk/post/hkueaa-overseas-study-tour-2026-to-korea-ambitious-green-policies-and-industrial-innovation",
+    category: "Circular design × education",
+    date: "2025",
+    title: "What can an obsolete keyboard teach a new maker?",
+    copy: "Matchbox turns obsolete keyboard parts into an affordable DIY controller kit, giving beginners a hands-on introduction to hardware engineering while extending the life of existing components.",
+    source: "HKU Innovation Academy",
+    href: "https://innoacademy.engg.hku.hk/matchbox/",
     accent: "bg-[#c8f06a]",
   },
   {
