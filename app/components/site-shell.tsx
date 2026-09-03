@@ -47,21 +47,14 @@ export default function SiteShell({ children }: { children: ReactNode }) {
       <header className="sticky top-0 z-50 border-b border-[#dce8df] bg-[#fbfdfb]/95 backdrop-blur-xl">
         <div className="mx-auto flex max-w-[120rem] items-center gap-4 px-5 py-3 sm:px-8 lg:px-10">
           <Link href="/" className="flex shrink-0 items-center gap-2" aria-label="ENGG2202 Engineering Challenges II home">
-            <span className="flex shrink-0 items-center gap-1 sm:gap-1.5">
-              <Image
-                src={imagePath("/images/Logo/hkuengglogo.png")}
-                alt="HKU Engineering"
-                width={160}
-                height={36}
-                className="h-7 w-[124px] shrink-0 object-contain sm:h-9 sm:w-[160px]"
-                preload
-              />
+            <span className="flex shrink-0 items-center">
               <Image
                 src={imagePath("/images/Logo/active-learning-ug-team.png")}
                 alt="Active Learning UG Teaching Team"
-                width={58}
-                height={36}
-                className="hidden h-9 w-[58px] shrink-0 object-contain sm:block"
+                width={64}
+                height={40}
+                className="h-8 w-[52px] shrink-0 object-contain sm:h-10 sm:w-[64px]"
+                preload
               />
             </span>
             <span className="min-w-0 sm:hidden">
