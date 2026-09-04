@@ -12,6 +12,19 @@ export const metadata: Metadata = {
 const notionGuideUrl =
   "https://tasty-vicuna-87f.notion.site/ENGG2202-Teach-to-Learn-Student-Guide-3cb402ed073681a4aef4eaf93f3dd67d";
 const edDiscussionUrl = "https://edstem.org/au/courses/41087/lessons";
+const engineeringCompassUrl =
+  "https://active-learning-kyle.github.io/engineering-compass/";
+const engineeringCompassSourceUrl =
+  "https://github.com/Active-Learning-Kyle/engineering-compass";
+
+const engineeringRoles = [
+  "Problem Framer",
+  "Project Navigator",
+  "Team Connector",
+  "Practical Builder",
+  "Prototype Explorer",
+  "Solution Storyteller",
+];
 
 const guideContents = [
   ["01", "Gate task", "The decision your team needs to make and the evidence required before review."],
@@ -52,6 +65,58 @@ export default function StudentGuidePage() {
                 <a href={edDiscussionUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 rounded-full border border-white/30 bg-white/10 px-5 py-3 text-sm font-bold text-white transition hover:bg-white/16">
                   <EdDiscussionLogo className="h-6 w-6 text-[0.7rem]" /> Ed Discussion <ArrowIcon />
                 </a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="engineering-compass" className="scroll-mt-20 border-b border-[#d7e4d9] bg-[#eef6ec] px-5 py-16 sm:px-8 lg:px-10 lg:py-20">
+          <div className="mx-auto grid max-w-[90rem] overflow-hidden rounded-[2rem] border border-[#cadbcd] bg-white shadow-[0_30px_80px_-58px_rgba(15,60,32,0.5)] lg:grid-cols-[0.92fr_1.08fr]">
+            <div className="p-7 sm:p-10 lg:p-12">
+              <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#57745e]">Before Gate 01 · optional self-reflection</p>
+              <h2 className="mt-4 text-4xl font-semibold leading-tight tracking-[-0.04em] text-[#143421] sm:text-5xl">
+                Find how you can contribute before choosing what to build.
+              </h2>
+              <p className="mt-5 max-w-2xl text-base leading-8 text-[#506656]">
+                Engineering Compass helps you reflect on how you work in a team, the technical areas you have practised and one direction you want to develop next.
+              </p>
+              <div className="mt-6 flex flex-wrap gap-2">
+                {[
+                  "30 questions",
+                  "8–10 minutes",
+                  "English + 繁體中文",
+                  "Answers stay in your browser",
+                ].map((item) => (
+                  <span key={item} className="rounded-full bg-[#edf4ed] px-3 py-2 text-xs font-semibold text-[#41614a]">
+                    {item}
+                  </span>
+                ))}
+              </div>
+              <div className="mt-7 flex flex-col gap-3 sm:flex-row">
+                <a href={engineeringCompassUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 rounded-full bg-[#173f28] px-5 py-3 text-sm font-bold text-white transition hover:-translate-y-0.5 hover:bg-[#245d38]">
+                  Open Engineering Compass <ArrowIcon />
+                </a>
+                <a href={engineeringCompassSourceUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 rounded-full border border-[#bfd0c2] bg-white px-5 py-3 text-sm font-bold text-[#234d31] transition hover:-translate-y-0.5 hover:border-[#4b8259]">
+                  View the open-source project <ArrowIcon />
+                </a>
+              </div>
+            </div>
+
+            <div className="relative overflow-hidden bg-[#123d24] p-7 text-white sm:p-10 lg:p-12">
+              <div className="absolute -right-20 -top-20 h-64 w-64 rounded-full border-[3rem] border-[#d7f43c]/10" aria-hidden="true" />
+              <div className="relative">
+                <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#b8d8bf]">Six current ways of contributing</p>
+                <div className="mt-6 grid gap-3 sm:grid-cols-2">
+                  {engineeringRoles.map((role, index) => (
+                    <div key={role} className="rounded-2xl border border-white/15 bg-white/[0.07] p-4 backdrop-blur-sm">
+                      <span className="text-[0.65rem] font-bold tracking-[0.16em] text-[#d7f43c]">0{index + 1}</span>
+                      <p className="mt-2 text-base font-semibold text-white">{role}</p>
+                    </div>
+                  ))}
+                </div>
+                <p className="mt-6 border-t border-white/15 pt-5 text-sm leading-7 text-white/72">
+                  Use the result to start a team conversation or choose a growth goal. It is a reflection prompt—not a grade, ranking or fixed team role.
+                </p>
               </div>
             </div>
           </div>
